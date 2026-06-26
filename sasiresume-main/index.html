@@ -1,0 +1,1883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sasipriyan — Interview Prep Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0f1f3d;
+    --blue: #1a4a8a;
+    --accent: #2d7dd2;
+    --gold: #e8a020;
+    --green: #1a7a4a;
+    --green-light: #d4f0e0;
+    --orange: #c45c00;
+    --orange-light: #fef0e0;
+    --red: #a0220a;
+    --bg: #f5f7fa;
+    --card: #ffffff;
+    --text: #1a1a2e;
+    --muted: #5a6a7a;
+    --border: #e2e8f0;
+    --tip-bg: #e8f4fd;
+    --tip-border: #2d7dd2;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.7;
+    padding-bottom: 100px;
+  }
+
+  /* ── HEADER ── */
+  .hero {
+    background: linear-gradient(145deg, var(--navy) 0%, var(--blue) 100%);
+    color: white;
+    padding: 40px 20px 32px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; right: -60px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: rgba(45,125,210,0.2);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -40px; left: -40px;
+    width: 150px; height: 150px;
+    border-radius: 50%;
+    background: rgba(232,160,32,0.15);
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+  }
+  .hero .subtitle {
+    font-size: 13px;
+    opacity: 0.8;
+    margin-bottom: 4px;
+  }
+  .hero .tagline {
+    font-size: 12px;
+    opacity: 0.65;
+    font-style: italic;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--navy);
+    font-weight: 600;
+    font-size: 11px;
+    padding: 4px 14px;
+    border-radius: 20px;
+    margin-top: 14px;
+    letter-spacing: 0.5px;
+  }
+
+  /* ── BOTTOM NAV WRAPPER ── */
+  .nav-scroll-wrap {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    display: flex;
+    align-items: stretch;
+    background: var(--navy);
+    border-top: 2px solid var(--accent);
+    z-index: 100;
+  }
+  .nav-arrow-btn {
+    flex: 0 0 auto;
+    width: 30px;
+    background: var(--navy);
+    color: rgba(255,255,255,0.5);
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s;
+    padding: 0;
+    line-height: 1;
+  }
+  .nav-arrow-btn:hover { color: var(--gold); background: rgba(255,255,255,0.07); }
+
+  /* ── BOTTOM NAV ── */
+  .bottom-nav {
+    flex: 1;
+    background: var(--navy);
+    display: flex;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    scroll-behavior: smooth;
+  }
+  .bottom-nav::-webkit-scrollbar { display: none; }
+  .nav-btn {
+    flex: 0 0 auto;
+    padding: 10px 16px 8px;
+    color: rgba(255,255,255,0.55);
+    font-size: 10px;
+    font-weight: 500;
+    text-align: center;
+    cursor: pointer;
+    border: none;
+    background: none;
+    transition: all 0.2s;
+    white-space: nowrap;
+    letter-spacing: 0.3px;
+  }
+  .nav-btn .nav-icon { font-size: 16px; display: block; margin-bottom: 2px; }
+  .nav-btn.active, .nav-btn:hover { color: var(--gold); }
+  .nav-btn.active { border-top: 2px solid var(--gold); margin-top: -2px; }
+
+  /* ── SECTIONS ── */
+  .section {
+    display: none;
+    padding: 16px;
+    animation: fadeIn 0.3s ease;
+  }
+  .section.active { display: block; }
+  @keyframes fadeIn { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+  /* ── SECTION TITLE ── */
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--navy);
+    padding-bottom: 8px;
+    border-bottom: 3px solid var(--accent);
+    margin-bottom: 18px;
+  }
+
+  /* ── CARD ── */
+  .card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 14px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    border: 1px solid var(--border);
+  }
+  .card-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .card-title .badge {
+    font-size: 10px;
+    background: var(--accent);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-weight: 500;
+  }
+  .card-title .badge-gold {
+    background: var(--gold);
+    color: var(--navy);
+  }
+
+  /* ── Q&A STYLE ── */
+  .question {
+    background: var(--orange-light);
+    border-left: 4px solid var(--orange);
+    border-radius: 0 8px 8px 0;
+    padding: 10px 14px;
+    margin: 14px 0 8px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--orange);
+  }
+  .answer {
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.75;
+    margin-bottom: 6px;
+  }
+  .answer p { margin-bottom: 10px; }
+
+  /* ── TIP BOX ── */
+  .tip {
+    background: var(--tip-bg);
+    border-left: 4px solid var(--tip-border);
+    border-radius: 0 8px 8px 0;
+    padding: 10px 14px;
+    font-size: 13px;
+    color: var(--blue);
+    margin: 10px 0;
+    font-weight: 500;
+  }
+
+  /* ── INTRO LABEL ── */
+  .intro-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 6px;
+  }
+  .intro-text {
+    font-size: 14.5px;
+    line-height: 1.8;
+    color: var(--text);
+  }
+  .intro-text p { margin-bottom: 12px; }
+
+  /* ── BULLET LIST ── */
+  .bullet-list {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0;
+  }
+  .bullet-list li {
+    padding: 6px 0 6px 20px;
+    position: relative;
+    font-size: 14px;
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+  }
+  .bullet-list li:last-child { border-bottom: none; }
+  .bullet-list li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 12px;
+    top: 7px;
+  }
+
+  /* ── TECH STACK TAG ── */
+  .tech-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+  .tag {
+    background: #eef4ff;
+    color: var(--blue);
+    font-size: 11px;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    border: 1px solid #c8d8f0;
+  }
+
+  /* ── ARCHITECTURE LINE ── */
+  .arch {
+    background: var(--navy);
+    color: #7dd3fc;
+    font-size: 12px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-family: monospace;
+    margin: 10px 0;
+    line-height: 1.8;
+    word-break: break-word;
+  }
+
+  /* ── STAGE BLOCK ── */
+  .stage {
+    border-left: 3px solid var(--accent);
+    padding-left: 14px;
+    margin: 14px 0;
+  }
+  .stage-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: 4px;
+  }
+  .stage-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 6px;
+  }
+  .stage-body {
+    font-size: 14px;
+    color: var(--text);
+    line-height: 1.75;
+  }
+
+  /* ── RESULT TABLE ── */
+  .result-table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 12px; }
+  .result-table th {
+    background: var(--navy);
+    color: white;
+    padding: 8px 6px;
+    text-align: left;
+    font-weight: 600;
+  }
+  .result-table td {
+    padding: 7px 6px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+  }
+  .result-table tr:nth-child(even) td { background: #f8fafc; }
+  .result-table tr.winner td { background: #d4f0e0; font-weight: 600; }
+  .win-badge { color: var(--green); font-weight: 700; }
+  .zero { color: var(--green); font-weight: 700; }
+  .partial { color: var(--orange); }
+
+  /* ── CHEAT SHEET ── */
+  .cheat-item {
+    display: flex;
+    gap: 10px;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 14px;
+  }
+  .cheat-item:last-child { border-bottom: none; }
+  .cheat-key { font-weight: 600; color: var(--navy); min-width: 80px; font-size: 12px; }
+  .cheat-val { color: var(--text); }
+
+  /* ── SECTION TABS (internal) ── */
+  .sub-tabs { display: flex; gap: 6px; margin-bottom: 14px; overflow-x: auto; padding-bottom: 4px; }
+  .sub-tab {
+    flex: 0 0 auto;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    background: white;
+    border: 1.5px solid var(--border);
+    color: var(--muted);
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .sub-tab.active { background: var(--navy); color: white; border-color: var(--navy); }
+
+  .sub-section { display: none; }
+  .sub-section.active { display: block; }
+
+  /* ── STAR METHOD ── */
+  .star-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+    align-items: flex-start;
+  }
+  .star-label {
+    flex: 0 0 auto;
+    width: 28px; height: 28px;
+    background: var(--accent);
+    color: white;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .star-content { font-size: 14px; line-height: 1.7; }
+  .star-letter { font-weight: 700; color: var(--accent); }
+
+  /* ── CLOSING BOX ── */
+  .closing-box {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
+    color: white;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+  }
+  .closing-box p { font-size: 14px; line-height: 1.7; opacity: 0.9; }
+  .closing-box .big-text {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 8px;
+  }
+
+  /* ── DIVIDER ── */
+  .divider { height: 1px; background: var(--border); margin: 16px 0; }
+
+  /* ── PRIZE BADGE ── */
+  .prize { display: inline-flex; align-items: center; gap: 6px; background: #fef9e7; border: 1.5px solid var(--gold); color: var(--orange); font-size: 12px; font-weight: 700; padding: 4px 12px; border-radius: 20px; margin-bottom: 10px; }
+
+  /* ── PAPER BADGE ── */
+  .paper-badge { background: #eef4ff; border: 1.5px solid var(--accent); color: var(--blue); font-size: 11px; font-weight: 600; padding: 4px 12px; border-radius: 20px; display: inline-block; margin-bottom: 10px; }
+
+  /* ── INLINE CODE ── */
+  code { background: #eef4ff; padding: 1px 6px; border-radius: 4px; font-family: monospace; font-size: 12px; color: var(--blue); }
+
+  /* Readability + responsive refresh */
+  ::selection { background: rgba(45,125,210,0.18); }
+
+  body {
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.72;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .hero {
+    padding: 44px 20px 36px;
+  }
+
+  .hero h1 {
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: clamp(2rem, 5vw, 3.8rem);
+    line-height: 1.08;
+    letter-spacing: 0;
+  }
+
+  .hero .subtitle {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .hero .tagline {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .section {
+    width: min(980px, 100%);
+    margin: 0 auto;
+    padding: 22px 18px;
+  }
+
+  .section-title {
+    font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: clamp(1.35rem, 3vw, 2rem);
+    line-height: 1.25;
+    letter-spacing: 0;
+  }
+
+  .card {
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 10px 24px rgba(15,31,61,0.07);
+  }
+
+  .card-title {
+    font-size: 16px;
+    line-height: 1.45;
+    flex-wrap: wrap;
+  }
+
+  .question {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .answer,
+  .intro-text,
+  .stage-body,
+  .bullet-list li,
+  .cheat-item {
+    font-size: 16px;
+    line-height: 1.78;
+  }
+
+  .tip {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .tag,
+  .paper-badge,
+  .prize {
+    border-radius: 8px;
+    line-height: 1.45;
+  }
+
+  .result-table {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .result-table th,
+  .result-table td {
+    padding: 10px 8px;
+  }
+
+  .nav-scroll-wrap {
+    min-height: 64px;
+  }
+
+  .nav-arrow-btn {
+    width: 42px;
+    min-height: 58px;
+  }
+
+  .nav-btn {
+    min-width: 92px;
+    min-height: 58px;
+    padding: 10px 14px 9px;
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  .nav-btn .nav-icon {
+    font-size: 18px;
+  }
+
+  @media (max-width: 760px) {
+    body {
+      font-size: 16px;
+      line-height: 1.74;
+      padding-bottom: 86px;
+    }
+
+    .hero {
+      padding: 34px 16px 28px;
+      text-align: left;
+    }
+
+    .hero h1 {
+      font-size: clamp(2rem, 11vw, 3rem);
+      line-height: 1.1;
+    }
+
+    .hero-badge {
+      border-radius: 8px;
+    }
+
+    .section {
+      padding: 18px 12px;
+    }
+
+    .card {
+      padding: 16px;
+      margin-bottom: 12px;
+    }
+
+    .question {
+      padding: 11px 12px;
+      margin-top: 12px;
+    }
+
+    .sub-tabs {
+      gap: 8px;
+      padding-bottom: 8px;
+    }
+
+    .sub-tab {
+      min-height: 42px;
+      border-radius: 8px;
+      font-size: 13px;
+    }
+
+    .result-table {
+      display: block;
+      overflow-x: auto;
+      white-space: nowrap;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+
+    .cheat-item,
+    .star-row {
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .cheat-key {
+      min-width: 0;
+      font-size: 13px;
+    }
+
+    .nav-scroll-wrap {
+      min-height: 70px;
+    }
+
+    .nav-arrow-btn {
+      display: none;
+    }
+
+    .bottom-nav {
+      padding: 0 8px;
+      gap: 4px;
+    }
+
+    .nav-btn {
+      min-width: 82px;
+      min-height: 66px;
+      padding: 9px 10px 8px;
+      border-radius: 8px 8px 0 0;
+      font-size: 11px;
+    }
+
+    .top-btn {
+      bottom: 82px;
+      right: 12px;
+    }
+  }
+
+  /* ── SCROLL TO TOP ── */
+  .top-btn {
+    position: fixed;
+    bottom: 70px; right: 16px;
+    width: 36px; height: 36px;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    z-index: 99;
+  }
+
+  .top-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+  }
+
+  @media (max-width: 760px) {
+    .top-btn {
+      bottom: 82px;
+      right: 12px;
+    }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>SASIPRIYAN A</h1>
+  <p class="subtitle">M.Tech CSE · VIT Chennai · Full Stack Developer</p>
+  <p class="tagline">MERN Stack · AI Integration · Research</p>
+  <span class="hero-badge">HR INTERVIEW PREP GUIDE</span>
+</div>
+
+<!-- BOTTOM NAV -->
+<div class="nav-scroll-wrap">
+  <button class="nav-arrow-btn" id="navLeft" onclick="scrollNav(-1)">&#8249;</button>
+  <nav class="bottom-nav" id="bottomNav">
+    <button class="nav-btn active" onclick="showSection('intro')"><span class="nav-icon">👋</span>Intro</button>
+    <button class="nav-btn" onclick="showSection('projects')"><span class="nav-icon">⚙️</span>Projects</button>
+    <button class="nav-btn" onclick="showSection('hackathon')"><span class="nav-icon">🏆</span>Hackathon</button>
+    <button class="nav-btn" onclick="showSection('paper')"><span class="nav-icon">📄</span>Paper</button>
+    <button class="nav-btn" onclick="showSection('samsung')"><span class="nav-icon">🎙️</span>Samsung</button>
+    <button class="nav-btn" onclick="showSection('hr')"><span class="nav-icon">💼</span>HR Q&A</button>
+    <button class="nav-btn" onclick="showSection('tech')"><span class="nav-icon">💻</span>Technical</button>
+    <button class="nav-btn" onclick="showSection('cheat')"><span class="nav-icon">📋</span>Cheatsheet</button>
+  </nav>
+  <button class="nav-arrow-btn" id="navRight" onclick="scrollNav(1)">&#8250;</button>
+</div>
+
+<button class="top-btn" id="topBtn" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- ════════════════════════════════════════ -->
+<!-- SECTION: INTRO -->
+<!-- ════════════════════════════════════════ -->
+<div id="intro" class="section active">
+  <h2 class="section-title">Self Introduction</h2>
+
+  <div class="sub-tabs">
+    <button class="sub-tab active" onclick="showSub('intro','long')">📝 Long (2-3 min)</button>
+    <button class="sub-tab" onclick="showSub('intro','short')">⚡ 60 Seconds</button>
+  </div>
+
+  <!-- Long Intro -->
+  <div id="intro-long" class="sub-section active">
+    <div class="card">
+      <div class="intro-label">Use this when they say "Tell me about yourself in detail"</div>
+      <div class="intro-text">
+        <p>Good afternoon. My name is Sasipriyan. I am currently pursuing my M.Tech in Computer Science and Engineering at VIT Chennai, after completing my B.Tech in Information Technology from Chennai Institute of Technology in 2025.</p>
+        <p>I am a Full-Stack Developer with hands-on experience in the MERN stack — React.js, Node.js, Express.js, and MongoDB. My core strengths lie in backend architecture, RESTful API design, authentication systems, and integrating AI-driven automation into real-world applications. I am also familiar with Docker, Kubernetes, CI/CD pipelines, and cloud fundamentals on AWS.</p>
+        <p>To gain industry exposure alongside my academics, I completed a learning-focused internship at Algonive as a Web Developer, where I built a Team Workflow and Task Tracking Management System. In that project, I designed role-based dashboards for admins and team members, implemented REST APIs using Node.js and Express, structured MongoDB schemas, and followed Git-based collaborative development workflows. That experience shifted my thinking from academic-level development to industry-oriented system design.</p>
+        <p>In terms of projects, I have built five significant applications. My flagship project is a Sales Call Analytics and Performance Platform — a real-time system with WebRTC-based in-app calling, automated call logging, and AI-generated call summaries powered by LLM APIs. This is the same system that won me First Prize at the HackCrate Hackathon.</p>
+        <p>I also built an AI Personal Task Automation Agent that integrates Gmail and Google Calendar APIs using OAuth 2.0. The system uses LLM-based NLP to detect task-related content from emails and automatically schedules them in Google Calendar. This project won Second Prize at the Dataset 2.0 Hackathon.</p>
+        <p>Another project I built is an Automated Software Vulnerability and Patch Management System that pulls real-time CVE/NVD vulnerability data, identifies outdated software, and automates patch deployment using WinGet. Additionally, I built a Scalable Student Portal containerized with Docker and Kubernetes, featuring a CI/CD pipeline for automated deployments.</p>
+        <p>On the research side, I have published a paper titled "Energy-Efficient AI Accelerator Architecture for Edge Devices" in IJERT — proposing optimized hardware accelerator designs for AI workloads on edge devices like IoT sensors and automotive ECUs. I am also conducting active research on Machine Unlearning in Keyword Spotting Systems — funded by Samsung Research Institute Bangalore under their PRISM program — where I am working on making AI models selectively forget specific speakers without full retraining, important for GDPR compliance.</p>
+        <p>Overall, I am someone who builds with purpose — not just making things work, but designing them properly with clean architecture, scalable structure, and real-world impact. I am genuinely excited about the work BGST does at the intersection of software and embedded intelligence, and I believe this is exactly the environment where I can grow and contribute meaningfully.</p>
+      </div>
+      <div class="tip">💡 Practice this version out loud. Pause between sections. It should feel natural, not rehearsed.</div>
+    </div>
+  </div>
+
+  <!-- 60 Second Intro -->
+  <div id="intro-short" class="sub-section">
+    <div class="card">
+      <div class="intro-label">Use this for first impression or quick introduction</div>
+      <div class="intro-text">
+        <p>Good afternoon. My name is Sasipriyan. I am pursuing my M.Tech in Computer Science at VIT Chennai, after completing B.Tech in Information Technology from Chennai Institute of Technology.</p>
+        <p>I am a Full-Stack Developer specializing in React.js, Node.js, Express, and MongoDB, with a focus on backend architecture, REST APIs, authentication systems, and AI-driven automation.</p>
+        <p>I completed an internship at Algonive where I built a Team Workflow and Task Tracking System. My key projects include an AI-powered task automation system using Gmail and Calendar APIs, a real-time Sales Call Analytics Platform with WebRTC and LLM integration, and an Automated Vulnerability Management System.</p>
+        <p>I have won First Prize at HackCrate Hackathon for my Sales Analytics Platform, Second Prize at Dataset 2.0 for an AI Task Automation Agent, and published a research paper in IJERT on Energy-Efficient AI Accelerator Architecture for Edge Devices. I am also actively researching Machine Unlearning in Speech Recognition systems under Samsung's PRISM program.</p>
+        <p>Overall, I am passionate about building scalable, efficient systems that combine strong engineering fundamentals with intelligent automation — and I am excited about the opportunity at BGST.</p>
+      </div>
+      <div class="tip">💡 60 seconds. Eye contact with camera. Smile. End with energy. Don't rush the last line.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<!-- SECTION: PROJECTS -->
+<!-- ════════════════════════════════════════ -->
+<div id="projects" class="section">
+  <h2 class="section-title">Project Explanations</h2>
+
+  <div class="sub-tabs">
+    <button class="sub-tab active" onclick="showSub('projects','p1')">P1 Sales</button>
+    <button class="sub-tab" onclick="showSub('projects','p2')">P2 AI Agent</button>
+    <button class="sub-tab" onclick="showSub('projects','p3')">P3 Vuln</button>
+    <button class="sub-tab" onclick="showSub('projects','p4')">P4 Portal</button>
+    <button class="sub-tab" onclick="showSub('projects','p5')">P5 Unlearn</button>
+  </div>
+
+  <!-- P1 -->
+  <div id="projects-p1" class="sub-section active">
+    <div class="card">
+      <div class="card-title">Sales Call Analytics & Performance Platform <span class="badge badge-gold">★ Flagship</span></div>
+      <div class="prize">🏆 First Prize — HackCrate Hackathon</div>
+
+      <div class="question">Problem Statement</div>
+      <div class="answer">Sales teams had no centralized system to track calls, manage leads, analyze performance, or get AI-powered insights from conversations. Everything was manual, slow, and scattered.</div>
+
+      <div class="question">What I Built</div>
+      <ul class="bullet-list">
+        <li>WebRTC-based in-app calling between sales reps and clients</li>
+        <li>Automated call logging after every session</li>
+        <li>LLM API integration to auto-generate structured call summaries</li>
+        <li>Analytics dashboard in React.js for managers</li>
+        <li>Lead assignment system for distributed sales workflows</li>
+      </ul>
+
+      <div class="question">Architecture</div>
+      <div class="arch">React Frontend → Node.js + Express Backend<br>→ WebRTC Signaling Layer<br>→ MongoDB (Calls, Leads, Users)<br>→ LLM API for Summarization</div>
+
+      <div class="question">My Exact Role</div>
+      <ul class="bullet-list">
+        <li>Designed complete backend architecture and REST API structure</li>
+        <li>Built WebRTC signaling layer for peer-to-peer real-time communication</li>
+        <li>Structured MongoDB schemas with proper indexing</li>
+        <li>Integrated LLM API with structured prompts for call summaries</li>
+        <li>Used async design so WebRTC and LLM ran independently without blocking</li>
+      </ul>
+
+      <div class="question">Key Challenge</div>
+      <div class="answer">Integrating WebRTC and LLM API simultaneously without latency issues. I built them as two independent async streams and merged output post-call.</div>
+
+      <div class="question">Impact</div>
+      <div class="answer">Centralized sales operations, improved accountability, and gave managers AI-powered insights without manual review of calls.</div>
+
+      <div class="tech-tags">
+        <span class="tag">React.js</span><span class="tag">Node.js</span><span class="tag">Express.js</span>
+        <span class="tag">MongoDB</span><span class="tag">WebRTC</span><span class="tag">LLM API</span><span class="tag">REST APIs</span>
+      </div>
+      <div class="tip">💡 This is your strongest project. Use it when asked to explain one project deeply.</div>
+    </div>
+  </div>
+
+  <!-- P2 -->
+  <div id="projects-p2" class="sub-section">
+    <div class="card">
+      <div class="card-title">AI Personal Task Automation Agent</div>
+      <div class="prize">🥈 Second Prize — Dataset 2.0 Hackathon</div>
+
+      <div class="question">Problem Statement</div>
+      <div class="answer">People receive many emails containing tasks but manually reading, extracting, and scheduling them is time-consuming and error-prone.</div>
+
+      <div class="question">What I Built</div>
+      <ul class="bullet-list">
+        <li>Users authenticate securely using OAuth 2.0 with Google</li>
+        <li>Gmail API fetches emails from the user's inbox</li>
+        <li>LLM-based NLP processes email content to detect task-related items</li>
+        <li>Google Calendar API automatically creates events for detected tasks</li>
+        <li>All processed tasks and logs stored in MongoDB for tracking</li>
+      </ul>
+
+      <div class="question">Architecture</div>
+      <div class="arch">React Frontend → Node.js + Express REST APIs<br>→ OAuth 2.0 Auth → Gmail API<br>→ LLM NLP Processing<br>→ Google Calendar API → MongoDB</div>
+
+      <div class="question">My Exact Role</div>
+      <ul class="bullet-list">
+        <li>Designed backend API structure and OAuth 2.0 authentication flow</li>
+        <li>Integrated Gmail API for secure email fetching</li>
+        <li>Structured LLM prompts for accurate task detection</li>
+        <li>Built Google Calendar event creation with error handling</li>
+        <li>Implemented secure token refresh logic</li>
+      </ul>
+
+      <div class="question">Key Challenge</div>
+      <div class="answer">Two challenges: (1) Handling OAuth 2.0 token refresh securely without re-authentication, and (2) Accurate NLP-based task extraction from unstructured email content without false positives.</div>
+
+      <div class="tech-tags">
+        <span class="tag">React.js</span><span class="tag">Node.js</span><span class="tag">OAuth 2.0</span>
+        <span class="tag">Gmail API</span><span class="tag">Calendar API</span><span class="tag">LLM API</span><span class="tag">MongoDB</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- P3 -->
+  <div id="projects-p3" class="sub-section">
+    <div class="card">
+      <div class="card-title">Automated Vulnerability & Patch Management System</div>
+
+      <div class="question">Problem Statement</div>
+      <div class="answer">Organizations struggle to continuously monitor vulnerabilities and deploy patches before attackers exploit outdated software. Most processes are manual, slow, and reactive.</div>
+
+      <div class="question">What I Built</div>
+      <ul class="bullet-list">
+        <li>Fetches real-time vulnerability data from CVE/NVD data sources</li>
+        <li>Identifies outdated or vulnerable software versions on monitored systems</li>
+        <li>Automates patch installation using WinGet — Windows package manager</li>
+        <li>React.js dashboard for real-time visibility into vulnerability status</li>
+        <li>Backend handles automation scripts and API coordination</li>
+      </ul>
+
+      <div class="question">Architecture</div>
+      <div class="arch">React Dashboard → Node.js + Express Backend<br>→ CVE/NVD APIs → Automation Scripts<br>→ WinGet Patch Execution → MongoDB Logs</div>
+
+      <div class="question">Key Challenge</div>
+      <div class="answer">Accurately mapping CVE entries to installed software versions without false positives — the same software can have different naming formats across different CVE databases and system registries.</div>
+
+      <div class="tech-tags">
+        <span class="tag">React.js</span><span class="tag">Node.js</span><span class="tag">CVE/NVD</span>
+        <span class="tag">WinGet</span><span class="tag">Automation Scripts</span><span class="tag">Git</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- P4 -->
+  <div id="projects-p4" class="sub-section">
+    <div class="card">
+      <div class="card-title">Scalable Student Portal — Docker, Kubernetes & CI/CD</div>
+
+      <div class="question">What I Built</div>
+      <ul class="bullet-list">
+        <li>Containerized using Docker for consistent deployment and environment isolation</li>
+        <li>Deployed on Kubernetes with load balancing — core modules stay accessible even during high-load failures in other services</li>
+        <li>CI/CD pipeline to automate build, testing, and deployment cycles</li>
+      </ul>
+
+      <div class="question">Key Learning</div>
+      <div class="answer">This project gave me hands-on experience with DevOps practices — how containerization, orchestration, and automated pipelines work together in production environments. Directly aligned with how software teams at companies like BGST build and deploy software.</div>
+
+      <div class="tech-tags">
+        <span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">CI/CD</span>
+        <span class="tag">React.js</span><span class="tag">Node.js</span><span class="tag">OAuth 2.0</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- P5 -->
+  <div id="projects-p5" class="sub-section">
+    <div class="card">
+      <div class="card-title">Machine Unlearning in Keyword Spotting (Research)</div>
+      <span class="paper-badge">Samsung PRISM Program · Project 26LAI01VITC</span>
+
+      <div class="question">Problem Statement</div>
+      <div class="answer">In trained speech recognition models, once a person's voice is learned, removing it requires full retraining — computationally expensive and impractical for privacy compliance under GDPR.</div>
+
+      <div class="question">What I Am Researching</div>
+      <ul class="bullet-list">
+        <li>Train a Wav2Vec2-based speaker identification model on 40 speakers</li>
+        <li>Apply multiple machine unlearning algorithms to selectively remove one speaker</li>
+        <li>Evaluate using forgetting metrics vs utility retention metrics</li>
+        <li>Stress-test unlearning boundaries under real-world noise conditions</li>
+      </ul>
+
+      <div class="question">Why It Matters</div>
+      <div class="answer">GDPR gives users the right to have their data removed from AI systems. This research proves it can be done efficiently — without retraining the entire model — while preserving performance on all other users.</div>
+
+      <div class="tech-tags">
+        <span class="tag">Python</span><span class="tag">PyTorch</span><span class="tag">Wav2Vec2</span>
+        <span class="tag">HuggingFace</span><span class="tag">Machine Unlearning</span><span class="tag">Speech Processing</span>
+      </div>
+      <div class="tip">💡 Say: "This is funded by Samsung Research Institute Bangalore under their PRISM program — it is active research completing May 2026."</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<!-- SECTION: HACKATHON -->
+<!-- ════════════════════════════════════════ -->
+<div id="hackathon" class="section">
+  <h2 class="section-title">Hackathon Wins</h2>
+
+  <div class="card">
+    <div class="prize">🏆 First Prize — HackCrate Hackathon</div>
+    <div class="question">Tell me about the HackCrate Hackathon you won.</div>
+    <div class="answer">
+      <p>At HackCrate, I built a real-time Sales Call Tracking and Analytics Platform under a 24-hour deadline. The idea was to centralize sales operations by integrating lead assignment, WebRTC-based in-app calling, automated call logging, and AI-powered call summarization — all in one platform.</p>
+      <p>I was responsible for the complete backend — specifically, building the WebRTC signaling layer for real-time communication and integrating LLM APIs for automated call summarization simultaneously.</p>
+      <p>I solved the dual-integration challenge by breaking it into two independent async streams — built the WebRTC signaling layer first, then layered the LLM API integration with structured prompts on top. The two systems ran independently, ensuring neither blocked the other.</p>
+      <p>The platform was fully functional at demo time — real-time calling, automated logging, and AI-generated insights. We won First Prize because our solution addressed a real business problem with a technically strong, fully functional implementation rather than just a prototype.</p>
+    </div>
+    <div class="tip">💡 Be specific about your individual role. Say: "I was responsible for backend architecture, WebRTC signaling, and LLM integration." Never say "we did everything together."</div>
+  </div>
+
+  <div class="card">
+    <div class="prize">🥈 Second Prize — Dataset 2.0 Hackathon</div>
+    <div class="question">Explain the AI Task Automation Agent you built at Dataset 2.0.</div>
+    <div class="answer">
+      <p>At Dataset 2.0, our team built an AI-powered Task Automation Agent that integrates Gmail and Google Calendar APIs. The system authenticates users via OAuth 2.0, fetches their emails, uses LLM-based NLP to detect tasks from email content, and automatically schedules them into Google Calendar.</p>
+      <p>My specific role was backend API structuring, implementing the OAuth 2.0 authentication flow with token refresh handling, and integrating the LLM for accurate task extraction from unstructured email text.</p>
+      <p>The key technical challenge was designing the token refresh mechanism without requiring users to re-authenticate, and prompting the LLM in a structured way to extract tasks accurately without false positives.</p>
+    </div>
+    <div class="tip">💡 Always connect hackathon wins to your project skills — they show you can deliver under pressure.</div>
+  </div>
+
+  <div class="card">
+    <div class="question">How do you handle pressure and tight deadlines?</div>
+    <div class="answer">I stay structured under pressure. I break down the problem into independent components, prioritize what delivers the most visible value first, and execute in focused blocks. My two hackathon wins — both under 24-hour deadlines — are the best evidence of this. In both cases I had to design, build, and demo fully working systems in a single day. Pressure sharpens my focus rather than breaking it.</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<!-- SECTION: PAPER -->
+<!-- ════════════════════════════════════════ -->
+<div id="paper" class="section">
+  <h2 class="section-title">Research Paper</h2>
+
+  <div class="card">
+    <span class="paper-badge">IJERT · Vol. 15 Issue 01 · January 2026</span>
+    <div class="card-title" style="margin-top:10px;">Energy-Efficient AI Accelerator Architecture for Edge Devices</div>
+
+    <div class="stage">
+      <div class="stage-label">Start Here — The Hook</div>
+      <div class="stage-body">Think about a drone flying autonomously, a smart security camera detecting faces in real time, or a wearable fitness device monitoring your health. All of these devices need to run AI — but they run on tiny batteries, have very limited memory, and cannot afford to heat up. The question is: <strong>how do you run powerful AI on a device that has almost no resources?</strong> That is the exact problem our paper addresses.</div>
+    </div>
+
+    <div class="stage">
+      <div class="stage-label">Root Cause Discovery</div>
+      <div class="stage-body">When we looked at traditional AI chip designs, we found that more than <strong>60% of total energy</strong> is not spent on actual computation — it is spent on <strong>moving data</strong> back and forth between the processor and main memory. So the problem is not the computation itself. <strong>The problem is the data movement.</strong> Once we identified that, we designed our architecture around solving exactly that.</div>
+    </div>
+
+    <div class="question">Three Core Ideas We Proposed</div>
+
+    <div class="stage">
+      <div class="stage-label">Idea 1 — Data Locality</div>
+      <div class="stage-title">Keep data close to the processor</div>
+      <div class="stage-body">We designed a three-tier memory system. L1 — fast local buffer right at each processing unit, single cycle access. L2 — shared scratchpad for a cluster. L3 — global on-chip SRAM for weights and activations. Data rarely needs to travel far. This cuts energy significantly.</div>
+    </div>
+
+    <div class="stage">
+      <div class="stage-label">Idea 2 — Sparsity Exploitation</div>
+      <div class="stage-title">Skip zero-value computations entirely</div>
+      <div class="stage-body">In real neural networks, a large number of weights and activations are zero. Multiplying by zero is always zero — so those computations are pointless. We built a Sparsity Engine that detects zeros before computation and skips those operations entirely. No wasted compute. No wasted energy.</div>
+    </div>
+
+    <div class="stage">
+      <div class="stage-label">Idea 3 — Adaptive Dataflow</div>
+      <div class="stage-title">Adapt execution strategy per layer</div>
+      <div class="stage-body">Different neural network layers have different access patterns. Traditional accelerators use one fixed strategy — which is inefficient. Our architecture adapts per layer — selecting weight stationary, output stationary, or row stationary — so every layer runs as efficiently as possible.</div>
+    </div>
+
+    <div class="question">Validation</div>
+    <div class="answer">We tested against MobileNetV2 and ResNet-18. Compared against conventional fixed-dataflow accelerators and NVDLA-style industry-grade edge accelerators. Results showed lower power consumption and faster inference compared to both baselines.</div>
+
+    <div class="question">My Contribution</div>
+    <div class="answer">I contributed to the architectural design analysis — specifically how the three-tier memory hierarchy and dataflow controller interact. I worked on performance comparison studies and drafted the sections on optimization strategies and evaluation metrics.</div>
+
+    <div class="divider"></div>
+
+    <div class="question">Why is this relevant to Bosch?</div>
+    <div class="answer">BGST works on automotive ECUs, IoT sensors, embedded AI systems, ADAS — all resource-constrained edge devices. Every smart sensor in a Bosch vehicle faces exactly the problem our paper solves. Running AI efficiently on hardware with limited power and memory.</div>
+
+    <div class="question">Why IJERT specifically?</div>
+    <div class="answer">IJERT is a peer-reviewed, indexed journal that aligned with our research domain and our timeline for a first-year M.Tech publication. The peer review process validated the quality of our work externally.</div>
+
+    <div class="question">Was this fully implemented in hardware?</div>
+    <div class="answer">The current work is based on cycle-accurate simulation using CACTI and synthesized gate-level models on a 28nm CMOS process. The next step in the roadmap is FPGA or ASIC prototype implementation — which is our future work section.</div>
+
+    <div class="tip">💡 Closing line: "We rethought how AI chips manage data — keep it close, skip useless computations, adapt per layer. It is a foundational problem for the next generation of intelligent embedded products."</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<!-- SECTION: SAMSUNG -->
+<!-- ════════════════════════════════════════ -->
+<div id="samsung" class="section">
+  <h2 class="section-title">Samsung PRISM Research</h2>
+
+  <div class="card">
+    <span class="paper-badge">Samsung Research Institute Bangalore · PRISM Program · Project 26LAI01VITC</span>
+    <div class="card-title" style="margin-top:10px;">Machine Unlearning in Keyword Spotting Systems</div>
+
+    <div class="stage">
+      <div class="stage-label">Start with the hook</div>
+      <div class="stage-body">Imagine you trained an AI model that can recognize your voice. Now you say — "I want my voice removed from your system." Under GDPR, you legally have that right. The obvious answer is to retrain the entire model from scratch. But with millions of users, that takes days of compute and is completely impractical. So the real question is: <strong>can we make an AI model surgically forget one specific person — without retraining everything, and without affecting anyone else?</strong> That is machine unlearning. And this is a Samsung-funded research project.</div>
+    </div>
+
+    <div class="stage">
+      <div class="stage-label">The Setup</div>
+      <div class="stage-body">We used the VoxCeleb dataset — 40 speakers, 4,874 voice clips. We used Wav2Vec2 — Facebook's state-of-the-art speech transformer model. After training, the model identified our target speaker with 99.37% confidence. That is the starting point. Now we need to make it forget.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Stage-by-Stage Breakdown</div>
+
+    <div class="stage">
+      <div class="stage-label">Stage 1</div>
+      <div class="stage-title">Baseline Model Training</div>
+      <div class="stage-body">We trained the Wav2Vec2-based speaker identification model on all 40 speakers. Retain set accuracy: 93.45%. Target speaker (forget set) accuracy: 99.37%. The model knows everyone very well. This is what we now need to selectively modify.</div>
+    </div>
+
+    <div class="stage">
+      <div class="stage-label">Stage 2</div>
+      <div class="stage-title">Gradient-Based Weight Zeroing</div>
+      <div class="stage-body">Instead of removing data, we identified which specific weights inside the model are responsible for recognizing the target speaker. We used gradient analysis to find the top 5% of weights most influential for that speaker's predictions — then zeroed them out. Like surgically cutting the exact wires that hold that person's memory. Then we ran recovery fine-tuning on the retain set. Result: forget accuracy dropped from 99% to 79%. Partial forgetting — promising but not complete yet.</div>
+    </div>
+
+    <div class="stage">
+      <div class="stage-label">Stage 3</div>
+      <div class="stage-title">Gradient Ascent Unlearning</div>
+      <div class="stage-body">A different strategy. Normal training reduces error. Gradient ascent does the opposite — we pushed the model's error upward on the target speaker's data. Essentially training the model to be wrong about that person. Forget accuracy dropped to 5.7% — very close to complete. But we had to be careful: push it too far and the model starts forgetting other speakers too. That is called catastrophic forgetting. We stopped at the right balance point.</div>
+    </div>
+
+    <div class="stage">
+      <div class="stage-label">Stage 4</div>
+      <div class="stage-title">Comparative Unlearning — 4 Methods</div>
+      <div class="stage-body">We implemented four completely different unlearning strategies and benchmarked them side by side.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Results — All Methods Compared</div>
+    <table class="result-table">
+      <thead>
+        <tr><th>Method</th><th>Forget Acc ↓</th><th>Retain Acc ↑</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>Random Labeling</td><td class="partial">9.76%</td><td>99.15%</td></tr>
+        <tr><td>SISA Partitioning</td><td class="zero">0%</td><td class="partial">93.43%</td></tr>
+        <tr><td>Knowledge Distillation</td><td class="zero">0%</td><td class="partial">90.68%</td></tr>
+        <tr class="winner"><td>⭐ Weight Editing</td><td class="zero">0%</td><td class="win-badge">98.31%</td></tr>
+        <tr><td>Gradient Ascent</td><td class="partial">5.70%</td><td class="partial">90.90%</td></tr>
+      </tbody>
+    </table>
+    <div class="tip">💡 Winner: Weight Editing — complete forgetting at 0% with highest retain accuracy at 98.31%. Best of both worlds.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">What Each Method Did</div>
+
+    <div class="stage">
+      <div class="stage-label">Random Labeling</div>
+      <div class="stage-body">Assign random labels from other speakers to the target speaker's data and fine-tune. Simple, but the model got confused rather than truly forgetting. Still had 9.76% forget accuracy — not good enough for GDPR.</div>
+    </div>
+
+    <div class="stage">
+      <div class="stage-label">SISA Partitioning</div>
+      <div class="stage-body">Split training data into 3 shards. Retrain only the shards containing the target speaker — but with that person removed. Achieved complete forgetting in just 14 seconds. Only method with a mathematical guarantee — data physically never seen in retrained shards.</div>
+    </div>
+
+    <div class="stage">
+      <div class="stage-label">Knowledge Distillation</div>
+      <div class="stage-body">Train a teacher model that has never seen the target speaker. Make the original model copy the teacher. Since the teacher never knew that person, the student inherits that ignorance. Target speaker confidence dropped from 99.2% to near 49% — essentially random chance.</div>
+    </div>
+
+    <div class="stage">
+      <div class="stage-label">Weight Editing — WINNER ⭐</div>
+      <div class="stage-body">Refined gradient zeroing. Zero the top 5% of influential weights, then do targeted recovery fine-tuning on the retain set. Result: 0% forget accuracy, 98.31% retain accuracy. Complete forgetting with almost no collateral damage.</div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Noise Stress Testing — Real-World Validation</div>
+    <div class="answer">
+      <p>We did not stop at clean audio. In the real world, voice systems deal with background noise, microphone distortion, and environmental sounds. We asked: <em>if we add noise to the audio, will the forgotten speaker accidentally get recognized again?</em></p>
+      <p>We injected noise at multiple levels into both raw audio waveforms and the model's internal embeddings.</p>
+      <p><strong>Key finding:</strong> Even under heavy noise, the forgotten speaker's accuracy stayed locked at 0%. The privacy boundary never broke under any noise condition tested.</p>
+    </div>
+    <div class="result-table" style="overflow:auto;">
+      <table class="result-table">
+        <thead><tr><th>Condition</th><th>Before Unlearning</th><th>After Unlearning</th></tr></thead>
+        <tbody>
+          <tr><td>Clean audio confidence</td><td class="partial">99.95%</td><td class="zero">0.003%</td></tr>
+          <tr><td>Noisy audio (15dB)</td><td class="partial">43.04%</td><td class="zero">0.000%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="tip">💡 The model didn't just forget — it forgot permanently and robustly under all conditions.</div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Key Conclusions</div>
+    <ul class="bullet-list">
+      <li><strong>GDPR compliance is achievable</strong> — "Right to be forgotten" can be honored without full retraining</li>
+      <li><strong>Weight Editing is optimal</strong> — 0% forget accuracy, 98.31% retain accuracy, best balance</li>
+      <li><strong>Forgetting is permanent and robust</strong> — noise cannot reactivate the forgotten identity</li>
+    </ul>
+
+    <div class="question">Why Samsung funded this</div>
+    <div class="answer">Samsung builds voice-enabled products — phones, smart TVs, Bixby, Galaxy devices. Any product that learns user voice data must honor data deletion at scale. This research gives them a practical, efficient way to do that.</div>
+
+    <div class="question">What was your specific role?</div>
+    <div class="answer">I was part of a three-member team under Samsung's PRISM program. My contributions covered implementing the unlearning pipeline stages, running the comparative evaluation across all four methods, conducting the noise robustness analysis, and contributing to the research documentation. We completed all milestones from February to May 2026 and are currently preparing an IEEE journal paper based on the findings.</div>
+
+    <div class="closing-box">
+      <p class="big-text">One-Line Summary</p>
+      <p>"I researched how to make AI systems forget a specific person's voice — without retraining the entire model — while still perfectly recognizing everyone else. Funded by Samsung Research Institute Bangalore, and we delivered a working solution with real experimental results."</p>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<!-- SECTION: HR Q&A -->
+<!-- ════════════════════════════════════════ -->
+<div id="hr" class="section">
+  <h2 class="section-title">HR Questions & Answers</h2>
+
+  <div class="sub-tabs">
+    <button class="sub-tab active" onclick="showSub('hr','about')">About You</button>
+    <button class="sub-tab" onclick="showSub('hr','bosch')">About Bosch</button>
+    <button class="sub-tab" onclick="showSub('hr','career')">Career</button>
+    <button class="sub-tab" onclick="showSub('hr','star')">STAR</button>
+    <button class="sub-tab" onclick="showSub('hr','hire')">Hire Me</button>
+    <button class="sub-tab" onclick="showSub('hr','intern')">Internship</button>
+    <button class="sub-tab" onclick="showSub('hr','tone')">💬 Tone</button>
+  </div>
+
+  <!-- ABOUT YOU -->
+  <div id="hr-about" class="sub-section active">
+    <div class="card">
+      <div class="question">What are your strengths?</div>
+      <div class="answer">
+        <p>My key strength is structured problem-solving. When I approach a project, I focus not just on making it work, but on designing it properly — from backend architecture and API structure to database modeling and system design.</p>
+        <p>I also adapt quickly to new technologies. Every project I have built involved at least one technology I picked up independently and implemented practically — WebRTC, LLM APIs, OAuth 2.0, CVE/NVD automation, machine unlearning. I do not wait to be taught; I learn what is needed and apply it.</p>
+        <p>Additionally, I am consistent and disciplined under deadlines. Two hackathon wins under 24-hour pressure — delivering fully working systems — is the best proof of that.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="question">What is your weakness?</div>
+      <div class="answer">
+        <p>Earlier, I used to spend extra time refining implementation details to ensure everything was perfectly structured and optimized. While that helped code quality, I realized it could slow down delivery in fast-paced environments.</p>
+        <p>Over time, I have learned to balance perfection with practicality — prioritizing deadlines and delivering value first, then optimizing iteratively. This is a habit I continue to work on every day.</p>
+      </div>
+      <div class="tip">💡 Always pair a weakness with how you are actively fixing it. Never say "I have no weakness."</div>
+    </div>
+
+    <div class="card">
+      <div class="question">Why are you pursuing M.Tech after B.Tech?</div>
+      <div class="answer">
+        <p>I wanted to deepen my technical foundation and gain research exposure alongside real project experience. M.Tech at VIT gives me access to advanced coursework, research opportunities, and a stronger placement platform.</p>
+        <p>During my M.Tech, I have already published a research paper, built five complex projects, and completed an internship simultaneously — so I am using this program purposefully, not just academically.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="question">Why did you choose Full-Stack Development?</div>
+      <div class="answer">
+        <p>I enjoy having end-to-end ownership of what I build. Full-stack development lets me architect the backend, design the database, build the API, and see it all come to life on the frontend. That complete control over a product motivates me deeply.</p>
+        <p>Also, in companies like BGST that build complete software products — full-stack skills make a developer far more versatile and valuable to the team.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT BOSCH -->
+  <div id="hr-bosch" class="sub-section">
+    <div class="card">
+      <div class="question">Why Bosch Global Software Technologies?</div>
+      <div class="answer">
+        <p>BGST stands out because it operates at the intersection of world-class engineering and software innovation. Bosch is a 130-plus year legacy company, yet BGST drives cutting-edge work in autonomous driving, IoT, embedded systems, and AI — areas I am genuinely passionate about.</p>
+        <p>As a full-stack developer with experience in AI integrations, real-time systems, and scalable architecture, I want to work where my skills create real-world impact at scale. BGST gives that opportunity — software that goes into products used by millions globally.</p>
+        <p>Also, as a German-origin company, Bosch's culture of quality, precision, and structured engineering aligns perfectly with how I approach my own development work.</p>
+      </div>
+      <div class="tip">💡 Mention: quality, precision, real-world impact. These are Bosch core values.</div>
+    </div>
+
+    <div class="card">
+      <div class="question">What do you know about BGST?</div>
+      <div class="answer">
+        <p>BGST, formerly known as Robert Bosch Engineering and Business Solutions, is the software and technology center of the Bosch Group in India. Headquartered in Bangalore, with offices in Coimbatore, Hyderabad, and Chennai.</p>
+        <p>BGST works on software for automotive systems, IoT, cloud, AI, cybersecurity, and Industry 4.0. Key focus areas include connected mobility, autonomous driving software, ADAS, digital manufacturing, and embedded systems. It is one of India's largest software development centers.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CAREER -->
+  <div id="hr-career" class="sub-section">
+    <div class="card">
+      <div class="question">Where do you see yourself in 5 years?</div>
+      <div class="answer">
+        <p>In 5 years, I see myself as a skilled software engineer who has grown from working on individual modules to owning end-to-end system design for complex, production-grade applications.</p>
+        <p>Within BGST specifically, I want to gain deep domain expertise — whether in automotive software, IoT systems, or cloud platforms — and eventually take on technical leadership responsibilities where I can mentor others and contribute to architectural decisions.</p>
+        <p>I also plan to continue research in parallel. I am already exploring machine unlearning and AI acceleration — areas that directly align with Bosch's future technology roadmap.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="question">Are you open to relocation?</div>
+      <div class="answer">Yes, absolutely. I am fully open to relocating to Bangalore, Coimbatore, Hyderabad, or any location where BGST needs me. I understand that for a company at this scale, being present at the right office is important for team collaboration and growth.</div>
+    </div>
+
+    <div class="card">
+      <div class="question">Are you open to learning new technologies?</div>
+      <div class="answer">Yes, that is actually one of my core traits. Every project in my resume involved learning a new technology on the go — WebRTC, LLM APIs, OAuth 2.0, CVE/NVD automation, machine unlearning, Docker, Kubernetes. I do not wait to be taught — I pick up what is needed and implement it. I am fully ready to adapt to whatever stack BGST works on.</div>
+    </div>
+  </div>
+
+  <!-- STAR -->
+  <div id="hr-star" class="sub-section">
+    <div class="card">
+      <div class="intro-label">STAR = Situation → Task → Action → Result</div>
+
+      <div class="question">Tell me about a challenge you faced and how you solved it.</div>
+      <div class="star-row"><div class="star-label">S</div><div class="star-content"><span class="star-letter">Situation: </span>During the HackCrate Hackathon, we were building a real-time Sales Call Analytics Platform under a 24-hour deadline.</div></div>
+      <div class="star-row"><div class="star-label">T</div><div class="star-content"><span class="star-letter">Task: </span>I was responsible for the backend — integrating WebRTC for real-time calls and connecting LLM APIs for automated call summarization simultaneously.</div></div>
+      <div class="star-row"><div class="star-label">A</div><div class="star-content"><span class="star-letter">Action: </span>I broke the problem into two independent async streams — built the WebRTC signaling layer first, then integrated the LLM API with structured prompts. Using async design, neither system blocked the other.</div></div>
+      <div class="star-row"><div class="star-label">R</div><div class="star-content"><span class="star-letter">Result: </span>Platform was fully functional at demo time. We won First Prize.</div></div>
+    </div>
+
+    <div class="card">
+      <div class="question">Tell me about a time you worked in a team.</div>
+      <div class="answer">During my internship at Algonive, I was part of a small team building a Team Workflow and Task Tracking System. My role was backend API development and database modeling. I coordinated daily on feature progress using Git branches, merged code without conflicts, and ensured my APIs were documented for the frontend team. The experience taught me how to communicate technical decisions clearly and collaborate under shared timelines.</div>
+    </div>
+
+    <div class="card">
+      <div class="question">Have you ever disagreed with a teammate?</div>
+      <div class="answer">There was a disagreement about database structure. My teammate preferred a flat document design in MongoDB, while I believed structured schema with proper indexing would be more efficient at scale. Instead of pushing my view, I prepared a quick comparison showing query performance differences. My teammate agreed after seeing the data. Disagreements resolve better with evidence than with debate — the goal is always the best solution, not winning the argument.</div>
+    </div>
+
+    <div class="card">
+      <div class="question">What would you do if your code fails in production?</div>
+      <div class="answer">First, stay calm — panic wastes time. I would immediately check logs to isolate the failure point, roll back to the last stable version if needed, fix the root cause on a separate branch, and test before redeployment. Communication is critical — I would inform the team early rather than waiting until I have a fix. In my Vulnerability Management project, I built monitoring dashboards specifically because real-time visibility into system health is key to catching failures early.</div>
+    </div>
+  </div>
+
+  <!-- HIRE ME -->
+  <div id="hr-hire" class="sub-section">
+    <div class="card">
+      <div class="question">Why should we hire you?</div>
+      <div class="answer">
+        <p>I believe I am a strong fit because I combine solid technical skills with practical implementation experience. I have built full-stack applications involving backend architecture, AI integrations, authentication systems, real-time features, containerized deployments, and vulnerability automation — covering a broad range of what BGST works on.</p>
+        <p>Beyond technical skills, I focus on clean architecture and structured system design — not just making things work, but building them properly. My hackathon wins and internship experience show I can apply knowledge in real-world scenarios under deadlines.</p>
+        <p>I am also a quick learner who adapts fast. Every major project involved at least one new technology I picked up independently and implemented in a working system. Given the opportunity at BGST, I am confident I can contribute from day one while continuously growing with the organization.</p>
+      </div>
+      <div class="tip">💡 Practice saying this out loud tonight. Confident delivery matters more than perfect wording.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Questions to Ask the Interviewer</div>
+      <div class="intro-label" style="margin-bottom:8px;">Always ask 1–2 questions. It shows genuine interest.</div>
+      <ul class="bullet-list">
+        <li>What does the typical onboarding process look like for a fresher joining BGST?</li>
+        <li>What technologies and domains does the team I would be joining primarily work on?</li>
+        <li>How does BGST support continuous learning and upskilling for early-career engineers?</li>
+        <li>What does a typical first 3 months look like for someone in this role?</li>
+        <li>Are there research collaboration opportunities within BGST for engineers who are interested?</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- TONE GUIDE -->
+  <div id="hr-tone" class="sub-section">
+    <div class="card">
+      <div class="card-title">💬 How to Sound Human — Not Rehearsed</div>
+      <div class="tip">💡 Interviewers detect memorized scripts instantly. These techniques make you sound genuine, confident, and real.</div>
+
+      <div class="question">The Golden Rule</div>
+      <div class="answer">Understand your answer deeply — don't memorize words, memorize the <strong>story</strong>. If you know your projects inside out, the words come naturally on their own.</div>
+
+      <div class="divider"></div>
+      <div class="card-title">Natural Openers — Use These</div>
+      <div class="cheat-item"><span class="cheat-key">Personal</span><span class="cheat-val">"Honestly..." / "To be candid..." / "I genuinely believe..."</span></div>
+      <div class="cheat-item"><span class="cheat-key">Reflective</span><span class="cheat-val">"Looking back..." / "When I think about it..." / "That's something I've actually thought about..."</span></div>
+      <div class="cheat-item"><span class="cheat-key">Specific</span><span class="cheat-val">"There was a specific moment..." / "The one thing I've realized is..."</span></div>
+      <div class="cheat-item"><span class="cheat-key">Casual</span><span class="cheat-val">"So here's the thing..." / "What I've found is..." / "The way I see it..."</span></div>
+
+      <div class="divider"></div>
+      <div class="card-title">Handling Silence & Pauses</div>
+      <div class="answer">A 2–3 second pause before a hard question looks like <strong>thoughtfulness</strong>, not hesitation. Say <em>"That's a good question — let me think for a second"</em> — that's completely normal and professional. Pausing confidently beats rushing every time.</div>
+
+      <div class="question">What to say when you don't know the answer</div>
+      <div class="answer">Never bluff. Say: <em>"I haven't worked with that specifically, but here's how I'd approach learning it..."</em> or <em>"I'm not fully familiar yet, but based on what I know about [related concept], I'd think..."</em> — this shows intellectual honesty and a growth mindset. Both are valued far more than pretending.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Rehearsed vs Humanized — Side-by-Side</div>
+
+      <div class="question">Strengths — Rehearsed (avoid)</div>
+      <div class="answer" style="border-left:4px solid var(--red);padding-left:10px;color:var(--red);opacity:0.85;">"My strengths are structured problem-solving, quick technology adoption, and consistent performance under deadlines."</div>
+
+      <div class="question">Strengths — Humanized (say this)</div>
+      <div class="answer" style="border-left:4px solid var(--green);padding-left:10px;">"Honestly, what I think I do well is that I don't just make things work — I think about <em>why</em> they should be designed a certain way. That kind of structural thinking has helped a lot in my projects. And I'm comfortable picking up new technology on the go — every major thing I've built had at least one tool I'd never touched before, and I figured it out."</div>
+
+      <div class="question">Weakness — Rehearsed (avoid)</div>
+      <div class="answer" style="border-left:4px solid var(--red);padding-left:10px;color:var(--red);opacity:0.85;">"Earlier, I used to spend extra time refining implementation details to ensure everything was perfectly structured and optimized."</div>
+
+      <div class="question">Weakness — Humanized (say this)</div>
+      <div class="answer" style="border-left:4px solid var(--green);padding-left:10px;">"I'll be honest — I can be a bit of a perfectionist with code structure. I've had to consciously train myself to ship something solid and iterate, rather than waiting for perfect. Hackathons taught me that the hard way — you just don't have that luxury there. I'm much better at it now."</div>
+
+      <div class="tip">💡 The humanized versions say the exact same thing — but they sound like a real person talking, not a bullet list being read aloud.</div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Tricky Questions — Any Company</div>
+
+      <div class="question">What is your expected CTC / salary?</div>
+      <div class="answer">
+        <p>For freshers most companies have fixed packages. If asked: <em>"I'm open to the standard package for this role. Honestly, I'm more focused on the learning environment and the quality of work — if the opportunity is right, the rest follows."</em></p>
+        <p>If they push for a number: research the market first. Give a range, not a single number — always anchor to the upper end.</p>
+      </div>
+
+      <div class="question">Do you have other offers?</div>
+      <div class="answer">Be honest but strategic: <em>"I'm in the process of a few other conversations, but I'm genuinely excited about this one specifically because [one real reason]. I haven't committed anywhere yet."</em> Never lie about having offers you don't have.</div>
+
+      <div class="question">What if you don't get selected?</div>
+      <div class="answer"><em>"I'd obviously be disappointed, but I'd ask for feedback if possible, work on the gaps, and keep going. Setbacks are part of the process."</em> Keep it brief and confident — don't over-explain.</div>
+
+      <div class="question">What is your biggest failure?</div>
+      <div class="answer">Never say you have no failures. Never give something trivial. Use a real, small-scale situation with a clear lesson. Example: <em>"Early in my internship, I underestimated how long a backend module would take and committed to a timeline I couldn't meet. I had to reset expectations with my mentor. The lesson: always build in buffer and communicate blockers early — before they become actual delays. I've applied that to every project since."</em></div>
+
+      <div class="question">Why should we hire a fresher over someone with experience?</div>
+      <div class="answer"><em>"A fresher brings fresh thinking without legacy habits — I'm not attached to 'how it's always been done.' I've proven I can deliver real, working systems under pressure — two hackathon wins, a Samsung-funded research project, and a published paper aren't theoretical achievements. I'm also highly trainable and will grow into exactly what this team needs, rather than needing to unlearn old patterns."</em></div>
+    </div>
+  </div>
+
+  <!-- INTERNSHIP -->
+  <div id="hr-intern" class="sub-section">
+    <div class="card">
+      <div class="question">What was your role at Algonive?</div>
+      <div class="answer">I worked as a Web Developer intern at Algonive from December 2025 to January 2026. My core responsibility was building a Team Workflow and Task Tracking Management System. Specifically, I designed role-based dashboards for admin and team members, implemented REST APIs using Node.js and Express, structured MongoDB schemas, applied version control using Git, and worked on both backend architecture and frontend integration.</div>
+    </div>
+
+    <div class="card">
+      <div class="question">What did you learn from the internship?</div>
+      <div class="answer">The biggest learning was the shift from academic-level development to industry-oriented system thinking. I learned how to translate business requirements into structured system design, implement role-based access control properly, and write modular, maintainable backend code that others can build on. It changed how I approach every project since.</div>
+    </div>
+
+    <div class="card">
+      <div class="question">Was it a paid internship?</div>
+      <div class="answer">It was a learning-focused internship. My primary goal was to gain real-world development experience and strengthen my understanding of industry practices before entering the workforce. The skills and mindset shift I got from that experience directly shaped the quality of my later projects.</div>
+      <div class="tip">💡 Be honest and confident. Never apologize for a learning internship — frame it as a deliberate investment in industry readiness.</div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<!-- SECTION: CHEAT SHEET -->
+<!-- ════════════════════════════════════════ -->
+<div id="cheat" class="section">
+  <h2 class="section-title">Last-Minute Cheat Sheet</h2>
+  <div class="tip" style="margin-bottom:16px;">💡 Read this the morning of your interview.</div>
+
+  <div class="card">
+    <div class="card-title">Key Numbers to Remember</div>
+    <div class="cheat-item"><span class="cheat-key">Bosch founded</span><span class="cheat-val">1886 — 130+ year legacy company</span></div>
+    <div class="cheat-item"><span class="cheat-key">BGST HQ</span><span class="cheat-val">Bangalore. Also in Coimbatore, Hyderabad, Chennai</span></div>
+    <div class="cheat-item"><span class="cheat-key">BGST focus</span><span class="cheat-val">Automotive software, IoT, AI, Industry 4.0, Cloud, Cybersecurity</span></div>
+    <div class="cheat-item"><span class="cheat-key">Internship</span><span class="cheat-val">Algonive · Dec 2025 – Jan 2026 · Web Developer</span></div>
+    <div class="cheat-item"><span class="cheat-key">HackCrate</span><span class="cheat-val">1st Prize — Sales Call Analytics Platform</span></div>
+    <div class="cheat-item"><span class="cheat-key">Dataset 2.0</span><span class="cheat-val">2nd Prize — AI Task Automation Agent</span></div>
+    <div class="cheat-item"><span class="cheat-key">IJERT Paper</span><span class="cheat-val">Energy-Efficient AI Accelerator for Edge Devices · Jan 2026</span></div>
+    <div class="cheat-item"><span class="cheat-key">Samsung</span><span class="cheat-val">PRISM · Machine Unlearning · Project 26LAI01VITC · Feb–May 2026</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Your Tech Stack</div>
+    <div class="intro-label" style="margin-bottom:8px;">Frontend</div>
+    <div class="tech-tags"><span class="tag">React.js</span><span class="tag">React Native</span><span class="tag">HTML5</span><span class="tag">CSS3</span></div>
+    <div class="intro-label" style="margin:10px 0 8px;">Backend</div>
+    <div class="tech-tags"><span class="tag">Node.js</span><span class="tag">Express.js</span><span class="tag">REST APIs</span></div>
+    <div class="intro-label" style="margin:10px 0 8px;">Databases</div>
+    <div class="tech-tags"><span class="tag">MongoDB</span><span class="tag">MySQL</span></div>
+    <div class="intro-label" style="margin:10px 0 8px;">Cloud & DevOps</div>
+    <div class="tech-tags"><span class="tag">Docker</span><span class="tag">Kubernetes</span><span class="tag">CI/CD</span><span class="tag">AWS basics</span></div>
+    <div class="intro-label" style="margin:10px 0 8px;">Integrations</div>
+    <div class="tech-tags"><span class="tag">OAuth 2.0</span><span class="tag">Gmail API</span><span class="tag">Calendar API</span><span class="tag">LLM APIs</span><span class="tag">WebRTC</span><span class="tag">CVE/NVD</span><span class="tag">WinGet</span></div>
+    <div class="intro-label" style="margin:10px 0 8px;">Research</div>
+    <div class="tech-tags"><span class="tag">Python</span><span class="tag">Wav2Vec2</span><span class="tag">PyTorch</span><span class="tag">Speech Processing</span></div>
+    <div class="intro-label" style="margin:10px 0 8px;">Tools</div>
+    <div class="tech-tags"><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">Linux</span></div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Bosch Core Values to Weave In</div>
+    <ul class="bullet-list">
+      <li><strong>Quality</strong> — "I focus on clean architecture and proper code quality"</li>
+      <li><strong>Responsibility</strong> — "I take ownership of what I build end-to-end"</li>
+      <li><strong>Sustainability</strong> — "Software at BGST powers energy-efficient, intelligent systems"</li>
+      <li><strong>Innovation</strong> — "I integrate AI-driven automation into practical engineering"</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div class="card-title">Online Interview Checklist — Tonight</div>
+    <ul class="bullet-list">
+      <li>Test camera + microphone</li>
+      <li>Charge laptop to full</li>
+      <li>Keep resume PDF open on desktop</li>
+      <li>Set up plain background with good lighting</li>
+      <li>Keep formal shirt ready (top half visible)</li>
+      <li>Join 10–15 minutes early</li>
+      <li>Keep VIT student ID and resume printout nearby</li>
+      <li>Practice self-intro once out loud before sleeping</li>
+    </ul>
+  </div>
+
+  <div class="closing-box">
+    <p class="big-text">You are shortlisted because they like your profile.</p>
+    <p>Walk in confident, speak clearly, and show genuine enthusiasm.</p>
+    <p style="margin-top:12px; font-size:18px;">All the best, Sasipriyan! 🚀</p>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════ -->
+<!-- SECTION: TECHNICAL -->
+<!-- ════════════════════════════════════════ -->
+<div id="tech" class="section">
+  <h2 class="section-title">Technical Interview Prep</h2>
+  <div class="tip" style="margin-bottom:16px;">💡 These are asked at <strong>all companies</strong> — not just BGST. Every answer is explained in plain English first, then technically.</div>
+
+  <div class="sub-tabs">
+    <button class="sub-tab active" onclick="showSub('tech','react')">⚛️ React</button>
+    <button class="sub-tab" onclick="showSub('tech','node')">🟢 Node/Express</button>
+    <button class="sub-tab" onclick="showSub('tech','mongo')">🍃 MongoDB</button>
+    <button class="sub-tab" onclick="showSub('tech','restgit')">🔗 REST+Git</button>
+    <button class="sub-tab" onclick="showSub('tech','ai')">🤖 AI/LLM</button>
+    <button class="sub-tab" onclick="showSub('tech','oop')">📦 OOP</button>
+    <button class="sub-tab" onclick="showSub('tech','dsa')">📊 DSA+CS</button>
+  </div>
+
+  <!-- ── REACT ── -->
+  <div id="tech-react" class="sub-section active">
+    <div class="card">
+      <div class="card-title">⚛️ React.js — Core Concepts</div>
+
+      <div class="question">What is React? Why use it?</div>
+      <div class="answer">React is a JavaScript library built by Facebook for building user interfaces. Instead of directly manipulating the browser's real DOM (which is slow and expensive), React maintains a <strong>Virtual DOM</strong> in memory. When state changes, React calculates the minimum changes needed and updates only those parts in the real DOM. It also promotes reusable <strong>components</strong> — small, self-contained UI blocks you compose together to build complex interfaces. This makes UIs fast, modular, and maintainable.</div>
+
+      <div class="question">What is the Virtual DOM? How does reconciliation work?</div>
+      <div class="answer">The browser's real DOM is slow to update. React creates a lightweight copy of it in memory — the Virtual DOM. When state changes: (1) React updates the Virtual DOM, (2) compares the new Virtual DOM to the previous one — this is called <strong>diffing</strong>, (3) calculates the minimum number of real DOM operations needed, (4) applies only those targeted changes. Result: fewer, precise DOM updates = faster UI. This process is called <strong>reconciliation</strong>.</div>
+
+      <div class="question">What are React Hooks? List the most important ones.</div>
+      <div class="answer">
+        <p>Hooks let you use React features (state, lifecycle, context) inside <strong>functional components</strong> — introduced in React 16.8 to replace class components.</p>
+        <p><strong>useState</strong> — Manages local component state. <code>const [count, setCount] = useState(0)</code>. Calling the setter triggers a re-render with the new value.</p>
+        <p><strong>useEffect</strong> — Runs side effects after rendering — API calls, subscriptions, DOM manipulation. Dependency array controls when it runs: <code>[]</code> = only on mount, <code>[value]</code> = when value changes, no array = every render. Return a cleanup function to handle unmount.</p>
+        <p><strong>useContext</strong> — Reads a React Context value directly without prop drilling (passing props through every layer). Great for auth state, theme, language.</p>
+        <p><strong>useCallback</strong> — Memoizes a function reference so it isn't recreated on every render. Prevents unnecessary re-renders of child components that receive it as a prop.</p>
+        <p><strong>useMemo</strong> — Memoizes a computed value. Only recalculates when dependencies change. Use for expensive calculations.</p>
+        <p><strong>useRef</strong> — Holds a mutable value that persists across renders without triggering re-render. Also used to directly access DOM elements (e.g., focus an input).</p>
+      </div>
+
+      <div class="question">Props vs State — what's the difference?</div>
+      <div class="answer">
+        <p><strong>Props:</strong> Data passed from parent to child. <em>Read-only</em> — the child cannot modify them. Flow down the component tree. Like function arguments.</p>
+        <p><strong>State:</strong> Data owned and managed by the component itself. <em>Mutable</em> via useState. When state changes, the component re-renders. Like a component's internal memory.</p>
+        <p>Rule: if data comes from outside → props. If data changes inside the component → state.</p>
+      </div>
+
+      <div class="question">Controlled vs Uncontrolled component?</div>
+      <div class="answer">
+        <p><strong>Controlled:</strong> Form input's value is driven by React state. Every keystroke updates state; the input's <code>value</code> prop is set from state. You have full control and can validate in real time. Most common approach.</p>
+        <p><strong>Uncontrolled:</strong> Input manages its own value in the DOM. You use a <code>useRef</code> to read the value when needed (e.g., on submit). Less React code but less control — used for simple/legacy cases.</p>
+      </div>
+
+      <div class="question">What is React Router?</div>
+      <div class="answer">A library for client-side routing in React apps. Instead of the browser fetching a new HTML page from the server on every link click, React Router intercepts navigation and renders different components for different URL paths — all without a full page reload. This is what makes React a <strong>Single Page Application (SPA)</strong>: it behaves like a multi-page site but only loads once.</div>
+
+      <div class="tip">💡 Bonus: mention <code>React.memo</code> (prevents re-render if props haven't changed), <code>lazy()</code> + <code>Suspense</code> (code splitting for performance) if asked about optimization.</div>
+    </div>
+  </div>
+
+  <!-- ── NODE/EXPRESS ── -->
+  <div id="tech-node" class="sub-section">
+    <div class="card">
+      <div class="card-title">🟢 Node.js & Express.js — Core Concepts</div>
+
+      <div class="question">What is Node.js?</div>
+      <div class="answer">Node.js is a <strong>runtime environment</strong> that lets you run JavaScript outside the browser — on a server. It is built on Google's <strong>V8 engine</strong> (same engine Chrome uses). Before Node.js, JavaScript only ran in browsers. Node.js made it possible to use JavaScript for backend development, enabling the full MERN stack in one language.</div>
+
+      <div class="question">What is the Event Loop? (Most asked Node.js question)</div>
+      <div class="answer">
+        <p>Node.js is <strong>single-threaded</strong> — it runs on one thread. But it can handle thousands of concurrent requests without blocking. How? Through the <strong>event loop</strong>.</p>
+        <p>When Node receives a request, instead of waiting (blocking) for slow operations like database queries or file reads, it says <em>"go do this, call me back when done"</em> and moves on to the next request. When the operation completes, its callback is placed in a queue. The event loop continuously checks this queue and executes callbacks when the call stack is empty.</p>
+        <p>This is <strong>non-blocking I/O</strong> — Node never sits idle waiting for one operation to finish before starting another. This is why Node is highly efficient for I/O-heavy applications like REST APIs.</p>
+        <p>Order: Call Stack → Web APIs/libuv (async work happens here) → Callback Queue → Event Loop picks from queue → back to Call Stack.</p>
+      </div>
+
+      <div class="question">Callbacks vs Promises vs Async/Await?</div>
+      <div class="answer">
+        <p>All three handle asynchronous operations — they evolved over time to solve the same problem more cleanly.</p>
+        <p><strong>Callbacks:</strong> Pass a function to be called when async work is done. Problem: deeply nested callbacks become unreadable — "callback hell."</p>
+        <p><strong>Promises:</strong> An object representing a future value — <em>pending</em> → <em>fulfilled</em> or <em>rejected</em>. Chainable with <code>.then().catch()</code>. Much cleaner than callbacks.</p>
+        <p><strong>Async/Await:</strong> Syntactic sugar over Promises. Makes async code look synchronous — easier to read and debug. <code>async</code> marks a function as asynchronous; <code>await</code> pauses that function until the Promise resolves. Under the hood it is still Promises — no new runtime mechanism.</p>
+      </div>
+
+      <div class="question">What is middleware in Express.js?</div>
+      <div class="answer">Middleware is a function that sits between the incoming request and outgoing response in Express. It has access to <code>req</code>, <code>res</code>, and <code>next()</code>. Middleware can: modify req/res, end the request-response cycle, or call <code>next()</code> to pass control forward. Examples: <code>express.json()</code> to parse JSON bodies, auth checking middleware, CORS headers, logging, error handling. Middleware runs in the order it is defined — arrangement matters.</div>
+
+      <div class="question">What is JWT and how does authentication work with it?</div>
+      <div class="answer">
+        <p><strong>JWT (JSON Web Token)</strong> is a compact, self-contained token for securely transmitting identity information. Structure: <code>Header.Payload.Signature</code> — three base64-encoded parts joined by dots.</p>
+        <p><strong>Flow:</strong> User logs in → server verifies credentials → server signs a JWT with a secret key → sends token to client → client stores it (localStorage or httpOnly cookie) → client sends token in <code>Authorization: Bearer &lt;token&gt;</code> header with every request → server verifies the signature → grants or rejects access.</p>
+        <p><strong>Key property:</strong> Stateless — the server stores no session data. The token itself carries user identity. This is what makes JWT ideal for scalable REST APIs.</p>
+      </div>
+
+      <div class="tip">💡 Key buzzwords to use: event-driven, non-blocking I/O, single-threaded, V8 engine, npm (Node Package Manager), middleware pipeline, stateless REST server.</div>
+    </div>
+  </div>
+
+  <!-- ── MONGODB ── -->
+  <div id="tech-mongo" class="sub-section">
+    <div class="card">
+      <div class="card-title">🍃 MongoDB — Core Concepts</div>
+
+      <div class="question">What is MongoDB? How is it different from SQL?</div>
+      <div class="answer">
+        <p>MongoDB is a <strong>NoSQL database</strong> that stores data as flexible JSON-like documents (internally <strong>BSON</strong> — Binary JSON). Instead of rows in tables, you have <strong>documents</strong> in <strong>collections</strong>.</p>
+        <table class="result-table" style="margin-top:10px;">
+          <thead><tr><th>Feature</th><th>SQL (MySQL, PostgreSQL)</th><th>MongoDB (NoSQL)</th></tr></thead>
+          <tbody>
+            <tr><td>Data format</td><td>Rows & columns in tables</td><td>JSON-like documents</td></tr>
+            <tr><td>Schema</td><td>Fixed, predefined</td><td>Flexible, schema-less</td></tr>
+            <tr><td>Relations</td><td>Foreign keys + JOINs</td><td>Embedded docs or $lookup</td></tr>
+            <tr><td>Scaling</td><td>Vertical (bigger server)</td><td>Horizontal (more servers)</td></tr>
+            <tr><td>Best for</td><td>Complex queries, strict relations</td><td>Flexible data, high volume</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="question">What is Indexing in MongoDB?</div>
+      <div class="answer">Without an index, MongoDB must scan every document in a collection to find matches — a full collection scan, <strong>O(n)</strong>. An index is like a book's index — it stores a sorted reference to field values with pointers to their documents. With an index, MongoDB jumps directly to matches — <strong>O(log n)</strong>. You create one with <code>db.collection.createIndex({field: 1})</code>. Trade-off: indexes speed up reads but slightly slow down writes, because the index itself must be updated on every insert/update.</div>
+
+      <div class="question">What is the Aggregation Pipeline?</div>
+      <div class="answer">MongoDB's way of processing and transforming documents through a series of stages. Each stage takes documents as input, transforms them, passes results to the next. Common stages: <code>$match</code> (filter — like SQL WHERE), <code>$group</code> (group by field — like SQL GROUP BY), <code>$sort</code>, <code>$project</code> (select/rename/reshape fields), <code>$limit</code>, <code>$lookup</code> (join with another collection). Used for analytics dashboards, reports, summaries — anything beyond simple find queries.</div>
+
+      <div class="question">What is Mongoose?</div>
+      <div class="answer">Mongoose is an <strong>ODM (Object Data Modeling)</strong> library for MongoDB with Node.js. Even though MongoDB is schema-less, Mongoose lets you define a <strong>Schema</strong> in Node code to enforce structure, data types, and validation. You define a Schema → create a Model from it → use the Model to query, create, and update documents. It also provides middleware hooks (pre/post save), virtuals, and query helpers. Bridges MongoDB's flexibility with the structure Node.js applications need.</div>
+
+      <div class="question">When would you use SQL over MongoDB?</div>
+      <div class="answer">SQL is better when: data is highly relational (many entities referencing each other), you need complex multi-table JOINs, you need full ACID compliance, or the schema is stable and well-defined. MongoDB is better when: data structure varies or evolves rapidly, you need horizontal scaling, you're storing flexible document-like records (user profiles, call logs, task data), or you want seamless JSON flow from frontend to backend — exactly why it fits the MERN stack.</div>
+
+      <div class="tip">💡 Connect to your projects: "I chose MongoDB because my data — call logs, task records, vulnerability reports — had varying structure and needed flexible document storage that integrates naturally with Node.js and REST APIs."</div>
+    </div>
+  </div>
+
+  <!-- ── REST + GIT ── -->
+  <div id="tech-restgit" class="sub-section">
+    <div class="card">
+      <div class="card-title">🔗 REST APIs — Core Concepts</div>
+
+      <div class="question">What is a REST API?</div>
+      <div class="answer"><strong>REST (Representational State Transfer)</strong> is an architectural style for building web APIs. It defines how clients (browsers, mobile apps) communicate with servers over HTTP. You define <strong>endpoints</strong> — URLs that represent resources (like <code>/users</code>, <code>/orders</code>) — and use standard HTTP methods to perform operations on them. REST is not a library or protocol — it is a set of design constraints that make APIs predictable, scalable, and stateless.</div>
+
+      <div class="question">Core REST Principles?</div>
+      <div class="answer">
+        <p><strong>Stateless:</strong> Each request must contain all information needed to process it. The server stores zero client session data. This is what makes REST APIs horizontally scalable — any server can handle any request.</p>
+        <p><strong>Uniform Interface:</strong> Consistent, predictable URL structure and HTTP method usage. <code>/users</code> = collection, <code>/users/123</code> = specific user. Nouns in URLs, not verbs.</p>
+        <p><strong>Client-Server separation:</strong> Frontend and backend are fully independent and communicate only through API calls. Each can evolve separately.</p>
+        <p><strong>Cacheable:</strong> Responses can be cached by clients or CDNs for performance.</p>
+      </div>
+
+      <div class="question">HTTP Methods — what each one means</div>
+      <div class="answer">
+        <p><strong>GET</strong> — Retrieve data. No request body. Safe (no side effects) and idempotent (same result every call). <code>GET /users</code> returns all users.</p>
+        <p><strong>POST</strong> — Create a new resource. Has a request body. Not idempotent — calling twice creates two records. <code>POST /users</code> creates a user.</p>
+        <p><strong>PUT</strong> — Replace the entire resource. Send all fields. Idempotent. <code>PUT /users/123</code> completely replaces that user.</p>
+        <p><strong>PATCH</strong> — Partially update a resource. Only send the fields to change. More efficient than PUT for small edits.</p>
+        <p><strong>DELETE</strong> — Delete a resource. <code>DELETE /users/123</code> removes that user.</p>
+      </div>
+
+      <div class="question">HTTP Status Codes — must-know</div>
+      <div class="answer">
+        <p><strong>200 OK</strong> — Success. <strong>201 Created</strong> — Resource created (POST). <strong>204 No Content</strong> — Success, no body (DELETE).</p>
+        <p><strong>400 Bad Request</strong> — Invalid client data, validation error. <strong>401 Unauthorized</strong> — Not authenticated, missing or invalid token. <strong>403 Forbidden</strong> — Authenticated but lacks permission. <strong>404 Not Found</strong> — Resource doesn't exist.</p>
+        <p><strong>500 Internal Server Error</strong> — Something crashed on the server. <strong>503 Service Unavailable</strong> — Server overloaded or down.</p>
+      </div>
+
+      <div class="question">REST vs GraphQL?</div>
+      <div class="answer">
+        <p><strong>REST:</strong> Multiple endpoints, each returns a fixed data structure. Simple, widely understood. Can lead to over-fetching (more data than needed) or under-fetching (need multiple requests for related data).</p>
+        <p><strong>GraphQL:</strong> Single endpoint (<code>/graphql</code>). Client specifies exactly what fields it needs in the query. Server returns only that — no more, no less. Great for complex nested data and mobile clients. Steeper learning curve.</p>
+        <p>Use REST: standard CRUD, simple relationships, most teams. Use GraphQL: complex nested queries, many different clients needing different data shapes.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">🌿 Git & GitHub — Core Concepts</div>
+
+      <div class="question">What is Git? What is GitHub? How are they different?</div>
+      <div class="answer">
+        <p><strong>Git</strong> is a distributed <strong>version control system</strong> — a tool that tracks every change to your code over time, runs locally on your machine, and lets you revert to any version, create branches, and collaborate. The full history lives in your local <code>.git</code> folder.</p>
+        <p><strong>GitHub</strong> is a cloud platform for hosting Git repositories. It adds collaboration features: pull requests, code reviews, issue tracking, Actions (CI/CD). GitHub is to Git what YouTube is to video — the platform, not the tool itself.</p>
+      </div>
+
+      <div class="question">Essential Git Commands — explained plainly</div>
+      <div class="answer">
+        <p><code>git init</code> — Initialize a new repo in the current folder. Creates a hidden <code>.git</code> directory.</p>
+        <p><code>git clone [url]</code> — Copy a remote repository (full history included) to your local machine.</p>
+        <p><code>git add [file]</code> — Stage changes for the next commit. Think of staging as "what I want in my next snapshot."</p>
+        <p><code>git commit -m "message"</code> — Save a snapshot of staged changes. Commits are permanent checkpoints.</p>
+        <p><code>git push origin main</code> — Upload local commits to the remote repo on GitHub.</p>
+        <p><code>git pull</code> — Fetch remote changes and merge them into your current branch.</p>
+        <p><code>git branch [name]</code> — Create a new branch for isolated development.</p>
+        <p><code>git checkout [branch]</code> — Switch to a different branch.</p>
+        <p><code>git merge [branch]</code> — Merge another branch into your current one.</p>
+        <p><code>git stash</code> — Temporarily shelve uncommitted changes so you can switch branches cleanly. <code>git stash pop</code> restores them.</p>
+        <p><code>git log</code> — View commit history. <code>git status</code> — See staged, modified, and untracked files.</p>
+      </div>
+
+      <div class="question">What is a Pull Request (PR)?</div>
+      <div class="answer">A Pull Request is a GitHub feature where you request to merge your feature branch into the main branch — after teammates have reviewed your code. You push your branch, open a PR on GitHub describing what changed and why, reviewers comment and request changes, and once approved it merges. PRs are the standard professional collaboration workflow — they enforce code review and protect the main branch from direct unreviewed pushes.</div>
+
+      <div class="question">What is a merge conflict and how do you resolve it?</div>
+      <div class="answer">A conflict occurs when two branches changed the same line of the same file and Git cannot automatically decide which version to keep. To resolve: open the conflicted file — Git marks both versions with <code>&lt;&lt;&lt;&lt;&lt;&lt;</code>, <code>=======</code>, <code>&gt;&gt;&gt;&gt;&gt;&gt;</code>. Edit the file to keep the correct version, delete the conflict markers, <code>git add</code> the file, then <code>git commit</code>. Best practice: communicate with teammates before working on the same file simultaneously.</div>
+
+      <div class="question">What is .gitignore?</div>
+      <div class="answer">A <code>.gitignore</code> file tells Git which files and folders NOT to track. Common entries: <code>node_modules/</code> (huge, regenerable with <code>npm install</code>), <code>.env</code> (environment variables and secrets — <strong>never commit secrets</strong>), <code>build/</code> and <code>dist/</code> folders (generated files), OS-specific files like <code>.DS_Store</code>.</div>
+
+      <div class="tip">💡 In your internship and projects you used Git for feature branching and collaborative development. Mention: "We followed a branching workflow — feature branches off main, pull requests for review, never directly pushing to main."</div>
+    </div>
+  </div>
+
+  <!-- ── AI / LLM ── -->
+  <div id="tech-ai" class="sub-section">
+    <div class="card">
+      <div class="card-title">🤖 AI / LLM — Core Concepts</div>
+
+      <div class="question">What is an LLM (Large Language Model)?</div>
+      <div class="answer">An LLM is an AI model trained on enormous amounts of text — books, websites, code, research papers — to understand and generate human language. It learns statistical patterns of how words and concepts relate to each other. Given an input (called a <strong>prompt</strong>), it predicts and generates the most likely continuation or response. GPT-4, Claude, Llama, and Gemini are LLMs. The "large" refers to billions of learnable parameters (weights) in the neural network.</div>
+
+      <div class="question">How does an LLM work — high level?</div>
+      <div class="answer">
+        <p>LLMs use the <strong>Transformer architecture</strong> (Google's 2017 "Attention Is All You Need" paper).</p>
+        <p><strong>Tokenization:</strong> Text is split into tokens — roughly words or word pieces. The model processes tokens, not characters. "Hello world" = ~2 tokens; "unbelievable" = ~3 tokens.</p>
+        <p><strong>Attention mechanism:</strong> The model learns which tokens are most relevant to each other. "The bank was robbed" — "bank" relates to "robbed", so it's a financial bank, not a river bank. Attention captures this contextual meaning across the entire input.</p>
+        <p><strong>Prediction:</strong> Given input tokens, the model predicts the next most probable token, appends it, predicts the next — building the response one token at a time. This is called <strong>autoregressive generation</strong>.</p>
+        <p><strong>Training:</strong> Trained on massive datasets by predicting the next token, comparing to the actual token, and adjusting billions of weights via backpropagation. Done billions of times.</p>
+      </div>
+
+      <div class="question">What is Prompt Engineering?</div>
+      <div class="answer">Prompt engineering is crafting input text to get the best possible output from an LLM. The phrasing of your question significantly affects output quality. Techniques: clear instructions, providing examples (<strong>few-shot prompting</strong>), specifying output format (<em>"respond only in JSON"</em>), setting context with a <strong>system prompt</strong>, breaking complex tasks into steps (<strong>chain-of-thought</strong>). In your Sales Analytics Platform — you used structured system prompts to make the LLM extract call summaries in a consistent, parseable format.</div>
+
+      <div class="question">System Prompt vs User Prompt?</div>
+      <div class="answer">
+        <p><strong>System Prompt:</strong> Developer-defined instructions that set the AI's behavior, role, tone, and constraints — given before the conversation starts. Example: <em>"You are a sales call analyzer. Extract the key decisions, follow-up actions, and sentiment from the transcript. Return as a JSON object with fields: summary, actions[], sentiment."</em></p>
+        <p><strong>User Prompt:</strong> The actual runtime input — the call transcript text in your case. Good system prompts constrain output format and reduce unpredictability.</p>
+      </div>
+
+      <div class="question">What is Temperature in LLMs?</div>
+      <div class="answer"><strong>Temperature</strong> controls the randomness of the model's output. <strong>Low (0.0–0.3):</strong> deterministic and focused — always picks the most probable token. Best for data extraction, summarization, structured output. <strong>High (0.7–1.0):</strong> creative and varied — explores less likely but interesting paths. Best for writing, brainstorming, ideation. In your Sales Analytics project, you'd use low temperature for consistent, structured call summaries.</div>
+
+      <div class="question">What is OAuth 2.0? (Your AI Task Agent used this)</div>
+      <div class="answer"><strong>OAuth 2.0</strong> is an authorization framework that lets a third-party app access a user's resources on another service — <em>without the user sharing their password</em>. Flow: User clicks "Sign in with Google" → your app redirects to Google's auth server → user grants specific permissions (scopes) → Google gives your app an <strong>access token</strong> → your app uses that token to call Gmail API / Calendar API on the user's behalf. The token has limited scope and expiry. Your AI Task Agent used this so users could safely authorize email and calendar access — you never stored their password.</div>
+
+      <div class="question">What is WebRTC? (Your Sales Platform used this)</div>
+      <div class="answer"><strong>WebRTC (Web Real-Time Communication)</strong> is a browser API and protocol that enables peer-to-peer audio, video, and data sharing directly between browsers — without a central media server. Works over <strong>UDP</strong> for low latency. Requires a <strong>signaling server</strong> (your Node.js backend) to help two peers discover each other and exchange connection parameters (SDP offer/answer). Once connected, media flows directly peer-to-peer. You built this signaling layer in your Sales Call Platform to enable in-app calling.</div>
+
+      <div class="question">What is RAG (Retrieval-Augmented Generation)?</div>
+      <div class="answer">RAG gives an LLM access to external, up-to-date information at query time. Flow: (1) search a vector database for documents relevant to the user's query, (2) inject those documents as context into the prompt along with the question, (3) the LLM generates an answer grounded in those documents. Solves the problem of LLMs having outdated training data or no access to private/specific documents. Used in enterprise AI systems, document Q&A, knowledge bases.</div>
+
+      <div class="tip">💡 Connect LLM use to your projects: "I used LLM APIs with structured prompts for call summarization, and LLM-based NLP for task extraction from email text — in both cases I focused on prompt design to ensure consistent, structured output."</div>
+    </div>
+  </div>
+
+  <!-- ── OOP ── -->
+  <div id="tech-oop" class="sub-section">
+    <div class="card">
+      <div class="card-title">📦 Object-Oriented Programming (OOP)</div>
+
+      <div class="question">What is OOP? What are its 4 pillars?</div>
+      <div class="answer">OOP is a paradigm that organizes code around <strong>objects</strong> — entities that combine data (attributes/fields) and behavior (methods/functions). The 4 pillars:</div>
+
+      <div class="stage">
+        <div class="stage-label">Pillar 1</div>
+        <div class="stage-title">Encapsulation — Hide internal details</div>
+        <div class="stage-body">Bundle data and the methods that operate on it inside a class. Control access with modifiers: <strong>private</strong> (only within the class), <strong>public</strong> (accessible from anywhere), <strong>protected</strong> (within class + subclasses). External code only interacts through defined public methods. Example: a <code>BankAccount</code> class exposes <code>deposit()</code> and <code>withdraw()</code> but keeps <code>balance</code> private — nobody can set <code>balance = 1000000</code> directly. Prevents accidental or unauthorized modification.</div>
+      </div>
+
+      <div class="stage">
+        <div class="stage-label">Pillar 2</div>
+        <div class="stage-title">Abstraction — Show only what matters</div>
+        <div class="stage-body">Hide implementation complexity; expose only the necessary interface. When you call <code>car.start()</code>, you don't know or care about fuel injection, ignition timing, spark plugs — you just know it starts. In code: abstract classes and interfaces define <em>what</em> a class must do without specifying <em>how</em>. Reduces complexity for the caller and allows internals to change without affecting external code.</div>
+      </div>
+
+      <div class="stage">
+        <div class="stage-label">Pillar 3</div>
+        <div class="stage-title">Inheritance — Reuse and extend</div>
+        <div class="stage-body">A child class inherits properties and methods from a parent class, then adds or overrides as needed. Promotes code reuse. Example: <code>Animal</code> has <code>eat()</code> and <code>sleep()</code>. <code>Dog extends Animal</code> and adds <code>bark()</code>. <code>Dog</code> automatically inherits <code>eat()</code> and <code>sleep()</code> without rewriting them. Types: single, multilevel, hierarchical. Multiple inheritance is supported in Python but not Java (Java uses interfaces instead).</div>
+      </div>
+
+      <div class="stage">
+        <div class="stage-label">Pillar 4</div>
+        <div class="stage-title">Polymorphism — Same name, different behavior</div>
+        <div class="stage-body"><em>Poly = many, morph = form.</em> Same method name behaves differently based on the object or arguments. Two types: <strong>Method Overloading</strong> (compile-time) — same method name, different parameters in the same class: <code>add(int, int)</code> and <code>add(double, double)</code>. <strong>Method Overriding</strong> (runtime) — child class redefines a parent's method with the same signature. When the overridden method is called on a child object, the child's version runs — even if the reference variable is of the parent type.</div>
+      </div>
+
+      <div class="question">Abstract Class vs Interface?</div>
+      <div class="answer">
+        <p><strong>Abstract Class:</strong> Can have abstract methods (no body) AND concrete methods (with implementation). A class can extend only one abstract class. Used when you want shared partial implementation. Has a constructor. Can have instance variables.</p>
+        <p><strong>Interface:</strong> All methods are abstract (no implementation in Java pre-8; default methods allowed in Java 8+). A class can implement <em>multiple</em> interfaces — this is how Java achieves multiple inheritance. Used to define a contract: "any class implementing this must have these methods." No constructor, no instance variables (only constants).</p>
+        <p>Rule of thumb: abstract class = "is-a" relationship with shared code. Interface = "can-do" capability contract.</p>
+      </div>
+
+      <div class="question">Method Overloading vs Method Overriding?</div>
+      <div class="answer">
+        <p><strong>Overloading:</strong> Same class. Same method name, different parameters (number or type). Resolved at <em>compile time</em>. <code>print(int x)</code> and <code>print(String s)</code> — compiler picks based on argument type.</p>
+        <p><strong>Overriding:</strong> Parent + child class. Child redefines parent's method with same name and same signature. Resolved at <em>runtime</em> based on the actual object type. Use <code>@Override</code> annotation in Java to explicitly confirm intent.</p>
+      </div>
+
+      <div class="question">What is a Constructor?</div>
+      <div class="answer">A special method that runs automatically when a new object is created (<code>new ClassName()</code>). Initializes the object's attributes. Same name as the class. No return type. Can be overloaded. If you don't define one, the compiler provides a default no-argument constructor. The first line in a subclass constructor is often <code>super()</code> — calling the parent's constructor.</div>
+
+      <div class="tip">💡 Bonus: SOLID principles — Single Responsibility, Open/Closed, Liskov Substitution, Interface Segregation, Dependency Inversion. Mention if asked about clean architecture or design principles.</div>
+    </div>
+  </div>
+
+  <!-- ── DSA + CS ── -->
+  <div id="tech-dsa" class="sub-section">
+    <div class="card">
+      <div class="card-title">📊 Data Structures & Algorithms</div>
+
+      <div class="question">What is Big O Notation?</div>
+      <div class="answer">
+        <p>Big O describes how an algorithm's time or space requirements <strong>grow as input size (n) grows</strong>. It measures worst-case efficiency — helps compare algorithms without caring about hardware.</p>
+        <p><strong>O(1) — Constant:</strong> Same time regardless of n. Example: <code>array[5]</code> — index access is instant.</p>
+        <p><strong>O(log n) — Logarithmic:</strong> Halves the problem each step. Binary search. Efficient even for huge n.</p>
+        <p><strong>O(n) — Linear:</strong> Grows proportionally. Looping through an array once.</p>
+        <p><strong>O(n log n):</strong> Merge sort, quick sort. The gold standard for sorting.</p>
+        <p><strong>O(n²) — Quadratic:</strong> Nested loops over same data. Bubble sort. Gets slow fast — avoid for large inputs.</p>
+        <p><strong>O(2ⁿ) — Exponential:</strong> Doubles with each addition to n. Recursion without memoization. Impractical for n &gt; 30.</p>
+      </div>
+
+      <div class="question">Key Data Structures — when to use each?</div>
+      <div class="answer">
+        <p><strong>Array:</strong> Indexed collection. O(1) read by index, O(n) insert/delete in middle. Use when size is known and you need fast index access.</p>
+        <p><strong>Linked List:</strong> Nodes with data + pointer to next. O(n) access, O(1) insert/delete at known position. Use when frequent insertions/deletions, size unknown.</p>
+        <p><strong>Stack (LIFO):</strong> Push and pop from top. Last In First Out. Use for: function call stack, undo operations, parsing, DFS traversal.</p>
+        <p><strong>Queue (FIFO):</strong> Enqueue/dequeue. First In First Out. Use for: BFS traversal, task scheduling, print queues.</p>
+        <p><strong>Hash Map:</strong> Key-value pairs. O(1) average for insert/search/delete. The most versatile data structure in interview problems — use it when you need fast lookup by key, frequency counting, or caching.</p>
+        <p><strong>Binary Search Tree (BST):</strong> Left child &lt; root &lt; right child. O(log n) search in a balanced tree. Use for: sorted data with fast search, range queries.</p>
+      </div>
+
+      <div class="question">Common Problem-Solving Patterns</div>
+      <div class="answer">
+        <p><strong>Two Pointers:</strong> Two indices moving toward each other or in the same direction through an array. Reduces O(n²) brute force to O(n). Classic use: find pair with target sum in a sorted array, reverse an array in-place.</p>
+        <p><strong>Sliding Window:</strong> Maintain a variable-size window over a subarray/substring. Expand right, shrink left as needed — O(n). Classic use: maximum sum subarray of size k, longest substring without repeating characters.</p>
+        <p><strong>Binary Search:</strong> On any sorted structure — compare midpoint, eliminate half each time — O(log n). Think binary search whenever the input is sorted or you're finding a threshold/boundary value.</p>
+        <p><strong>HashMap for O(1) lookup:</strong> When brute force requires nested loops (O(n²)), ask: can storing seen values in a hashmap reduce it to O(n)? Classic: Two Sum — instead of checking every pair, store each number and check if the complement exists in the map.</p>
+        <p><strong>BFS vs DFS:</strong> BFS (queue) — explore level by level, optimal for shortest path. DFS (stack/recursion) — go deep first, good for exploring all paths, connected components, cycle detection.</p>
+      </div>
+
+      <div class="question">Sorting Algorithms — key ones</div>
+      <div class="answer">
+        <p><strong>Bubble Sort:</strong> Repeatedly swap adjacent elements if out of order. O(n²) time, O(1) space. Simple to code, terrible for large data. Never used in production.</p>
+        <p><strong>Insertion Sort:</strong> Build sorted array one element at a time. O(n²) worst, O(n) best (already sorted). Good for small or nearly-sorted arrays.</p>
+        <p><strong>Merge Sort:</strong> Divide in half, sort each half, merge. O(n log n) always. O(n) space. Stable (preserves order of equal elements). Best for large datasets.</p>
+        <p><strong>Quick Sort:</strong> Pick a pivot, partition into &lt; pivot and &gt; pivot, recurse. O(n log n) average, O(n²) worst. O(log n) space. Very cache-friendly — fastest in practice for most inputs. Most language built-ins use a variant.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">💻 CS Fundamentals — OS, DBMS, CN</div>
+
+      <div class="question">Process vs Thread?</div>
+      <div class="answer">
+        <p><strong>Process:</strong> An independent program in execution. Has its own memory space (code, data, heap, stack). Isolated — one process crashing doesn't affect others. Heavier to create and context-switch.</p>
+        <p><strong>Thread:</strong> A unit of execution <em>within</em> a process. Shares memory with other threads in the same process. Lighter — faster to create and switch. Multiple threads can run in parallel on multi-core CPUs. Risk: shared memory → <strong>race conditions</strong> if not synchronized with locks/mutexes.</p>
+        <p>Node.js note: single main thread, but I/O is handled by underlying worker threads and the OS — giving the appearance of concurrency through the event loop without race conditions in your application code.</p>
+      </div>
+
+      <div class="question">What is a Deadlock?</div>
+      <div class="answer">Deadlock is when two or more processes are each waiting for a resource held by the other — and none can proceed. Classic example: Process A holds Resource 1 and waits for Resource 2. Process B holds Resource 2 and waits for Resource 1. Both wait forever. Prevention strategies: resource ordering (always acquire locks in a fixed global order), timeout mechanisms, deadlock detection and recovery algorithms.</div>
+
+      <div class="question">What is ACID in databases? (Very commonly asked)</div>
+      <div class="answer">
+        <p>ACID is a set of guarantees that make database transactions reliable.</p>
+        <p><strong>Atomicity:</strong> A transaction is all-or-nothing. If any part fails, the entire transaction rolls back — no partial updates. "Transfer $100 from A to B" — either both the debit and credit happen, or neither.</p>
+        <p><strong>Consistency:</strong> A transaction moves the database from one valid state to another valid state. All defined rules and constraints are maintained.</p>
+        <p><strong>Isolation:</strong> Concurrent transactions execute as if they were sequential. One transaction's intermediate state is invisible to others running simultaneously.</p>
+        <p><strong>Durability:</strong> Once committed, the transaction persists — even if the system crashes immediately after. Written to disk, not just memory.</p>
+        <p>SQL databases are fully ACID. MongoDB is ACID within a single document; multi-document transactions are supported since v4.0 but add overhead.</p>
+      </div>
+
+      <div class="question">What is Database Normalization?</div>
+      <div class="answer">Normalization organizes a relational database to reduce data <strong>redundancy</strong> (storing same data multiple times) and improve <strong>integrity</strong> (one source of truth). It divides data into related tables with defined relationships. <strong>1NF</strong>: atomic values in each column, no repeating groups. <strong>2NF</strong>: 1NF + no partial dependencies on composite keys. <strong>3NF</strong>: 2NF + no transitive dependencies (non-key columns don't depend on other non-key columns). Goal: each fact stored exactly once in the right place.</div>
+
+      <div class="question">SQL Joins — types?</div>
+      <div class="answer">
+        <p><strong>INNER JOIN:</strong> Returns rows that have matching values in both tables. Most common — only matching rows.</p>
+        <p><strong>LEFT JOIN:</strong> All rows from the left table + matched rows from the right. Unmatched right rows show NULL.</p>
+        <p><strong>RIGHT JOIN:</strong> All rows from the right table + matched left rows.</p>
+        <p><strong>FULL OUTER JOIN:</strong> All rows from both tables. NULLs where no match exists.</p>
+      </div>
+
+      <div class="question">HTTP vs HTTPS?</div>
+      <div class="answer"><strong>HTTP</strong> — HyperText Transfer Protocol. Data travels as plain text. Anyone intercepting the network traffic can read it. <strong>HTTPS</strong> — HTTP with <strong>SSL/TLS encryption</strong>. Data is encrypted end-to-end. The server has an SSL certificate signed by a Certificate Authority (CA). The browser verifies this before establishing a secure connection. Always use HTTPS in production — browsers now actively warn users about HTTP sites, and modern APIs reject non-HTTPS requests.</div>
+
+      <div class="question">TCP vs UDP?</div>
+      <div class="answer">
+        <p><strong>TCP (Transmission Control Protocol):</strong> Connection-oriented. Establishes connection via 3-way handshake. Guarantees delivery, ordering, and error checking. Retransmits lost packets. Slower due to overhead. Use for: HTTP/S, file transfer, email, database connections — anywhere data integrity matters.</p>
+        <p><strong>UDP (User Datagram Protocol):</strong> Connectionless. No delivery guarantee, no ordering. Faster, minimal overhead. Use for: video streaming, online gaming, live voice/video calls, DNS lookups — where speed and low latency matter more than perfect delivery. <strong>WebRTC</strong> (which you used) uses UDP internally for low-latency audio/video.</p>
+      </div>
+
+      <div class="tip">💡 Process vs Thread and ACID are the most commonly asked CS fundamentals in interviews. Know them cold. If asked about OS scheduling or memory management — answer what you know, be honest about depth.</div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function showSection(id) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    const btns = document.querySelectorAll('.nav-btn');
+    const order = ['intro','projects','hackathon','paper','samsung','hr','tech','cheat'];
+    btns[order.indexOf(id)].classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  function showSub(section, sub) {
+    const parent = document.getElementById(section);
+    parent.querySelectorAll('.sub-section').forEach(s => s.classList.remove('active'));
+    parent.querySelectorAll('.sub-tab').forEach(t => t.classList.remove('active'));
+    document.getElementById(section + '-' + sub).classList.add('active');
+    event.target.classList.add('active');
+    window.scrollTo({top:0, behavior:'smooth'});
+  }
+
+  // Scroll to top button
+  window.addEventListener('scroll', () => {
+    const btn = document.getElementById('topBtn');
+    btn.style.display = window.scrollY > 300 ? 'flex' : 'none';
+  });
+
+  // Nav arrow scroll
+  function scrollNav(dir) {
+    document.getElementById('bottomNav').scrollBy({ left: dir * 140, behavior: 'smooth' });
+  }
+
+  // Mouse wheel → horizontal scroll on nav
+  document.getElementById('bottomNav').addEventListener('wheel', function(e) {
+    e.preventDefault();
+    this.scrollLeft += e.deltaY || e.deltaX;
+  }, { passive: false });
+
+  // Show/hide arrows based on scroll position
+  function updateNavArrows() {
+    const nav = document.getElementById('bottomNav');
+    document.getElementById('navLeft').style.opacity  = nav.scrollLeft > 0 ? '1' : '0.25';
+    document.getElementById('navRight').style.opacity = nav.scrollLeft < nav.scrollWidth - nav.clientWidth - 2 ? '1' : '0.25';
+  }
+  document.getElementById('bottomNav').addEventListener('scroll', updateNavArrows);
+  updateNavArrows();
+</script>
+</body>
+</html>

@@ -1,0 +1,3527 @@
+window.INTERVIEW_PREP_DATA = {
+  "metadata": {
+    "title": "React, Vite and Next.js Interview Preparation",
+    "total": 200,
+    "updated": "2026-06-26",
+    "references": [
+      "https://react.dev/reference/react",
+      "https://vite.dev/guide/",
+      "https://nextjs.org/docs"
+    ]
+  },
+  "questions": [
+    {
+      "id": 1,
+      "category": "React Fundamentals - JSX",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "jsx"
+      ],
+      "question": "How would you explain JSX to an interviewer?",
+      "answer": "JSX is a JavaScript syntax extension that lets us write UI markup inside JavaScript. React transforms JSX into JavaScript function calls that create React elements, so the code stays readable while still running as plain JavaScript after compilation.",
+      "keyPoints": [
+        "JSX looks like HTML but is JavaScript syntax.",
+        "It improves readability by keeping UI structure near component logic.",
+        "It is compiled by tools such as Babel, esbuild or SWC before the browser runs it."
+      ]
+    },
+    {
+      "id": 2,
+      "category": "React Fundamentals - JSX",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "jsx"
+      ],
+      "question": "Why do React teams prefer JSX instead of writing React.createElement manually?",
+      "answer": "JSX is preferred because it expresses the UI tree in a familiar, declarative way. Writing React.createElement manually becomes noisy for nested layouts, while JSX keeps components easier to scan, refactor and review.",
+      "keyPoints": [
+        "JSX is optional but widely used.",
+        "It makes nested UI easier to read.",
+        "It still becomes JavaScript during the build step."
+      ]
+    },
+    {
+      "id": 3,
+      "category": "React Fundamentals - JSX",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "jsx",
+        "build"
+      ],
+      "question": "Can browsers understand JSX directly?",
+      "answer": "No. Browsers understand HTML, CSS and JavaScript, but not JSX syntax. A build tool transpiles JSX into JavaScript before the code is served to the browser.",
+      "keyPoints": [
+        "JSX must be transformed before execution.",
+        "Vite commonly uses esbuild and framework plugins for this transformation.",
+        "Next.js uses its compiler pipeline, including SWC, for JSX and TypeScript transformations."
+      ]
+    },
+    {
+      "id": 4,
+      "category": "React Fundamentals - JSX",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "jsx",
+        "html"
+      ],
+      "question": "What differences between JSX and HTML should you mention in an interview?",
+      "answer": "JSX is closer to JavaScript than HTML, so some attribute names and rules are different. For example, use className instead of class, htmlFor instead of for, camelCase event names such as onClick, object syntax for style and always close tags properly.",
+      "keyPoints": [
+        "JSX uses JavaScript expressions inside curly braces.",
+        "Attributes often use DOM property names.",
+        "A component must return one root value, often a fragment."
+      ]
+    },
+    {
+      "id": 5,
+      "category": "React Fundamentals - JSX",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "jsx",
+        "compiler"
+      ],
+      "question": "How does JSX get converted into JavaScript during a React build?",
+      "answer": "During development or production build, the compiler parses JSX and converts it into React element creation calls. With the modern JSX transform, the compiler imports helpers from react/jsx-runtime, so most files no longer need an explicit React import just to use JSX.",
+      "keyPoints": [
+        "Classic JSX produced React.createElement calls.",
+        "Modern JSX transform uses jsx-runtime helpers.",
+        "The output is normal JavaScript objects describing the UI."
+      ]
+    },
+    {
+      "id": 6,
+      "category": "React Fundamentals - Components",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "components"
+      ],
+      "question": "How would you compare functional components and class components?",
+      "answer": "Functional components are JavaScript functions that return JSX, while class components extend React.Component and use methods like render. Modern React favors functional components because Hooks let them manage state, effects and reusable logic without class lifecycle complexity.",
+      "keyPoints": [
+        "Class components are still supported.",
+        "Functional components are simpler for most new code.",
+        "Hooks are the main reason functional components became the default."
+      ]
+    },
+    {
+      "id": 7,
+      "category": "React Fundamentals - Components",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "components",
+        "hooks"
+      ],
+      "question": "Why are functional components preferred in modern React projects?",
+      "answer": "They are preferred because they are shorter, easier to test and work naturally with Hooks. Hooks let developers reuse stateful logic without inheritance patterns, wrapper components or confusing class this binding.",
+      "keyPoints": [
+        "Less boilerplate than classes.",
+        "Better composition through custom Hooks.",
+        "Aligns with current React documentation and ecosystem patterns."
+      ]
+    },
+    {
+      "id": 8,
+      "category": "React Fundamentals - Components",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "composition"
+      ],
+      "question": "What is component composition in React?",
+      "answer": "Component composition means building larger UIs by combining smaller components through props and children. Instead of forcing inheritance, React encourages passing components into other components and composing behavior explicitly.",
+      "keyPoints": [
+        "Composition keeps components reusable.",
+        "children is the most common composition pattern.",
+        "It reduces tight coupling between parent and child components."
+      ]
+    },
+    {
+      "id": 9,
+      "category": "React Fundamentals - Components",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "performance",
+        "pure-components"
+      ],
+      "question": "What are Pure Components, and what problem do they solve?",
+      "answer": "A Pure Component is a class component that performs a shallow comparison of props and state to skip unnecessary re-renders. In functional React, React.memo gives a similar optimization for components when props have not changed.",
+      "keyPoints": [
+        "PureComponent uses shallow comparison.",
+        "It helps performance when render output depends only on props and state.",
+        "It can fail if objects are mutated instead of replaced immutably."
+      ]
+    },
+    {
+      "id": 10,
+      "category": "React Fundamentals - Components",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "architecture"
+      ],
+      "question": "How do you explain presentational and container components?",
+      "answer": "Presentational components focus on how the UI looks and receive data through props. Container components focus on how data is fetched, transformed or connected to state. The pattern is useful, but Hooks and server components can reduce the need for strict separation.",
+      "keyPoints": [
+        "Presentational components are easier to reuse.",
+        "Containers handle data and side effects.",
+        "The pattern is a guideline, not a mandatory rule."
+      ]
+    },
+    {
+      "id": 11,
+      "category": "React Fundamentals - Props",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "props"
+      ],
+      "question": "What are props in React?",
+      "answer": "Props are inputs passed from a parent component to a child component. They let components receive data, callbacks and configuration while keeping the child reusable and predictable.",
+      "keyPoints": [
+        "Props flow from parent to child.",
+        "Props are read-only from the child component viewpoint.",
+        "Changing props can cause a child component to re-render."
+      ]
+    },
+    {
+      "id": 12,
+      "category": "React Fundamentals - Props",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "props",
+        "immutability"
+      ],
+      "question": "Why should props be treated as immutable?",
+      "answer": "Props should be treated as immutable because the parent owns them. If a child mutates props directly, React cannot reliably track changes and the data flow becomes difficult to debug.",
+      "keyPoints": [
+        "Immutable props support predictable rendering.",
+        "To change parent data, call a callback passed through props.",
+        "Create new objects or arrays instead of mutating existing ones."
+      ]
+    },
+    {
+      "id": 13,
+      "category": "React Fundamentals - Props",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "props",
+        "state"
+      ],
+      "question": "How would you explain the difference between props and state?",
+      "answer": "Props are data received from a parent, while state is data managed inside a component or Hook. Props are external inputs; state represents values that can change over time because of user actions, network responses or other events.",
+      "keyPoints": [
+        "Props are read-only for the receiving component.",
+        "State is owned and updated by the component using setState or Hooks.",
+        "Both props and state can affect rendering."
+      ]
+    },
+    {
+      "id": 14,
+      "category": "React Fundamentals - Props",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "props",
+        "callbacks"
+      ],
+      "question": "How do you pass functions as props, and why is it useful?",
+      "answer": "A parent can pass a function to a child so the child can notify the parent about an event, such as a button click or form submission. This keeps state ownership in the parent while allowing child components to stay reusable.",
+      "keyPoints": [
+        "Common pattern for child-to-parent communication.",
+        "Name callbacks clearly, such as onSave or onChange.",
+        "Avoid unnecessary inline callbacks only when they cause measurable re-render problems."
+      ]
+    },
+    {
+      "id": 15,
+      "category": "React Fundamentals - Props",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "props",
+        "state-management"
+      ],
+      "question": "What is prop drilling, and how do you handle it?",
+      "answer": "Prop drilling happens when data is passed through many intermediate components that do not use it directly. It can be handled by composition, Context API, localizing state, or a state management library when the state is truly shared widely.",
+      "keyPoints": [
+        "Not every prop chain is a problem.",
+        "Composition can remove many drilling cases.",
+        "Context is useful for app-level values such as auth, theme and locale."
+      ]
+    },
+    {
+      "id": 16,
+      "category": "React Fundamentals - State",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "state"
+      ],
+      "question": "What is state in React?",
+      "answer": "State is data that a component remembers between renders and can update over time. When state changes, React schedules a re-render so the UI can reflect the latest value.",
+      "keyPoints": [
+        "State is for dynamic values.",
+        "useState is the common Hook for local state.",
+        "State updates should be treated immutably."
+      ]
+    },
+    {
+      "id": 17,
+      "category": "React Fundamentals - State",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "state"
+      ],
+      "question": "When should you use state instead of a normal variable?",
+      "answer": "Use state when a value must survive re-renders and changes to that value should update the UI. A normal variable is recreated during render and changing it does not tell React to render again.",
+      "keyPoints": [
+        "Use state for values shown in the UI.",
+        "Use refs for mutable values that should not trigger rendering.",
+        "Use derived values instead of duplicating state when possible."
+      ]
+    },
+    {
+      "id": 18,
+      "category": "React Fundamentals - State",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "state",
+        "immutability"
+      ],
+      "question": "Why should state not be modified directly in React?",
+      "answer": "Direct mutation does not create a new reference, so React may not detect that meaningful data changed. Using the setter creates a predictable update path and lets React schedule rendering correctly.",
+      "keyPoints": [
+        "Never mutate arrays or objects in state directly.",
+        "Use spread, map, filter or structured cloning patterns to create new values.",
+        "State setters are the official way to request UI updates."
+      ]
+    },
+    {
+      "id": 19,
+      "category": "React Fundamentals - State",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "rendering"
+      ],
+      "question": "What causes a React component to re-render?",
+      "answer": "A component re-renders when its state changes, when its parent re-renders and passes new props, when context it reads changes, or when an external store subscription tells React to update. Re-rendering means React calls the component again to calculate the next UI.",
+      "keyPoints": [
+        "Re-rendering is not always bad.",
+        "DOM updates happen only after React compares the new output with the previous output.",
+        "Memoization can reduce avoidable work when used correctly."
+      ]
+    },
+    {
+      "id": 20,
+      "category": "React Fundamentals - State",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "lifecycle",
+        "rendering"
+      ],
+      "question": "How would you explain React's rendering lifecycle?",
+      "answer": "React first renders by calling components to produce a description of the UI. Then it reconciles that result with the previous tree and commits the necessary DOM changes. After commit, effects run for work that synchronizes with external systems.",
+      "keyPoints": [
+        "Render phase calculates UI.",
+        "Commit phase applies changes.",
+        "Effects run after the commit, not during rendering."
+      ]
+    },
+    {
+      "id": 21,
+      "category": "React Hooks - useState",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "hooks",
+        "usestate"
+      ],
+      "question": "What is useState, and when do you use it?",
+      "answer": "useState is a React Hook for adding local state to a functional component. It returns the current value and a setter function that schedules an update.",
+      "keyPoints": [
+        "Call Hooks only at the top level of components or custom Hooks.",
+        "The initial value is used on the first render.",
+        "Calling the setter triggers React to render with the new state."
+      ]
+    },
+    {
+      "id": 22,
+      "category": "React Hooks - useState",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "hooks",
+        "usestate"
+      ],
+      "question": "How does state updating work with useState?",
+      "answer": "Calling the state setter requests an update; React does not immediately mutate the current variable. On the next render, the Hook returns the updated value, and React updates the UI if the rendered output changed.",
+      "keyPoints": [
+        "State values are snapshots for the current render.",
+        "Multiple updates can be batched.",
+        "Use functional updates when the next value depends on the previous value."
+      ]
+    },
+    {
+      "id": 23,
+      "category": "React Hooks - useState",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "hooks",
+        "batching"
+      ],
+      "question": "Why do interviewers say state updates are asynchronous?",
+      "answer": "State updates are scheduled and may be batched for performance, so reading the state variable immediately after calling its setter usually gives the old render's value. React applies the update in a later render cycle.",
+      "keyPoints": [
+        "The current render's state does not change mid-function.",
+        "Batching reduces unnecessary renders.",
+        "Use effects or derived calculations when you need to react to updated state."
+      ]
+    },
+    {
+      "id": 24,
+      "category": "React Hooks - useState",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "hooks",
+        "usestate"
+      ],
+      "question": "What is the difference between direct state updates and functional updates?",
+      "answer": "A direct update sets state from a value you already know. A functional update passes a function to the setter, receives the previous state, and returns the next state, which is safer for counters, queues and multiple updates in one event.",
+      "keyPoints": [
+        "Use setCount(count + 1) when the current snapshot is enough.",
+        "Use setCount(prev => prev + 1) when the next value depends on previous state.",
+        "Functional updates avoid stale closure bugs."
+      ]
+    },
+    {
+      "id": 25,
+      "category": "React Hooks - useState",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "hooks",
+        "state"
+      ],
+      "question": "When would you use multiple useState Hooks in one component?",
+      "answer": "Use multiple useState Hooks when pieces of state are independent, such as searchText, selectedId and isOpen. Splitting unrelated state makes updates clearer and avoids replacing large objects for small changes.",
+      "keyPoints": [
+        "Group state when fields change together.",
+        "Split state when values are independent.",
+        "For complex transitions, consider useReducer."
+      ]
+    },
+    {
+      "id": 26,
+      "category": "React Hooks - useEffect",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "hooks",
+        "useeffect"
+      ],
+      "question": "What is useEffect used for in React?",
+      "answer": "useEffect runs code after React commits updates to the screen. It is mainly used to synchronize a component with external systems such as APIs, subscriptions, timers, browser APIs or third-party widgets.",
+      "keyPoints": [
+        "Effects are for side effects, not basic rendering logic.",
+        "Do not use effects to calculate values that can be derived during render.",
+        "Effects can return cleanup functions."
+      ]
+    },
+    {
+      "id": 27,
+      "category": "React Hooks - useEffect",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "hooks",
+        "dependencies"
+      ],
+      "question": "Why does useEffect have a dependency array?",
+      "answer": "The dependency array tells React when the effect should re-run based on values used inside the effect. Correct dependencies prevent stale values and unnecessary synchronization.",
+      "keyPoints": [
+        "No array runs after every render.",
+        "An empty array runs after initial mount, with cleanup on unmount.",
+        "A dependency list runs when one dependency changes."
+      ]
+    },
+    {
+      "id": 28,
+      "category": "React Hooks - useEffect",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "hooks",
+        "useeffect"
+      ],
+      "question": "How do you explain the difference between useEffect with no array, empty array and dependencies?",
+      "answer": "With no dependency array, the effect runs after every render. With an empty array, it runs once after mount and cleans up on unmount. With dependencies, it runs after mount and whenever one listed dependency changes.",
+      "keyPoints": [
+        "No array is useful but can easily cause repeated work.",
+        "Empty array is common for one-time setup.",
+        "Dependency arrays should include reactive values used in the effect."
+      ]
+    },
+    {
+      "id": 29,
+      "category": "React Hooks - useEffect",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "hooks",
+        "cleanup"
+      ],
+      "question": "What is a cleanup function in useEffect?",
+      "answer": "A cleanup function is returned from an effect to undo or stop the side effect before the component unmounts or before the effect runs again. It is used for unsubscribing, clearing timers, aborting requests and removing event listeners.",
+      "keyPoints": [
+        "Cleanup prevents leaks and duplicate subscriptions.",
+        "React runs cleanup before the next effect execution for changed dependencies.",
+        "Strict Mode may run setup and cleanup twice in development to reveal bugs."
+      ]
+    },
+    {
+      "id": 30,
+      "category": "React Hooks - useEffect",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "hooks",
+        "useeffect"
+      ],
+      "question": "What common useEffect mistakes do you watch for in code reviews?",
+      "answer": "Common mistakes include missing dependencies, using effects for derived state, forgetting cleanup, creating infinite loops by setting state incorrectly and ignoring race conditions in async requests. A strong answer is to say effects should synchronize with external systems, not replace normal render logic.",
+      "keyPoints": [
+        "Keep dependency arrays honest.",
+        "Abort or ignore stale async responses.",
+        "Move pure calculations outside effects."
+      ]
+    },
+    {
+      "id": 31,
+      "category": "React Hooks - useRef",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "hooks",
+        "useref"
+      ],
+      "question": "What is useRef in React?",
+      "answer": "useRef returns a stable object with a current property that persists across renders. It is commonly used to access DOM nodes or store mutable values that should not trigger a re-render.",
+      "keyPoints": [
+        "Changing ref.current does not re-render.",
+        "Refs persist for the component lifetime.",
+        "Common uses include focus management, timers and previous values."
+      ]
+    },
+    {
+      "id": 32,
+      "category": "React Hooks - useRef",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "hooks",
+        "useref",
+        "state"
+      ],
+      "question": "What is the difference between useRef and useState?",
+      "answer": "useState stores values that affect rendering, while useRef stores mutable values outside the render flow. Updating state re-renders the component; updating a ref does not.",
+      "keyPoints": [
+        "Use state for UI data.",
+        "Use refs for imperative handles or mutable bookkeeping.",
+        "Do not use refs to avoid state when the UI should update."
+      ]
+    },
+    {
+      "id": 33,
+      "category": "React Hooks - useRef",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "hooks",
+        "dom"
+      ],
+      "question": "How do you access DOM elements in React?",
+      "answer": "Create a ref with useRef, pass it to the element through the ref prop, and read the DOM node from ref.current after the element is mounted. This is useful for focusing inputs, measuring elements or integrating imperative libraries.",
+      "keyPoints": [
+        "Avoid direct document.querySelector for component-owned DOM.",
+        "DOM refs are available after commit.",
+        "Use effects or event handlers for DOM operations."
+      ]
+    },
+    {
+      "id": 34,
+      "category": "React Hooks - useRef",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "hooks",
+        "useref"
+      ],
+      "question": "Why does updating useRef not trigger a re-render?",
+      "answer": "React keeps the same ref object across renders and does not track changes to ref.current for rendering. That is intentional because refs are for mutable values outside React's reactive render model.",
+      "keyPoints": [
+        "Refs are mutable containers.",
+        "React state is reactive; refs are not.",
+        "Use refs carefully because changes are invisible to the UI unless another render happens."
+      ]
+    },
+    {
+      "id": 35,
+      "category": "React Hooks - useMemo",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "hooks",
+        "usememo",
+        "performance"
+      ],
+      "question": "What is useMemo?",
+      "answer": "useMemo is a Hook that caches the result of a calculation between renders until its dependencies change. It is mainly used for expensive derived values or stable object references passed to memoized children.",
+      "keyPoints": [
+        "It caches a value, not a function call side effect.",
+        "It should not be required for correctness.",
+        "Measure before adding it everywhere."
+      ]
+    },
+    {
+      "id": 36,
+      "category": "React Hooks - useMemo",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "hooks",
+        "performance"
+      ],
+      "question": "When should you use useMemo in a real project?",
+      "answer": "Use useMemo when a calculation is expensive, when a stable reference prevents unnecessary child renders, or when a dependency to another Hook should not change unless its real inputs change. Do not use it for simple calculations that are already cheap.",
+      "keyPoints": [
+        "Good for filtering large lists or heavy transforms.",
+        "Useful with React.memo when references matter.",
+        "It has overhead, so avoid blind usage."
+      ]
+    },
+    {
+      "id": 37,
+      "category": "React Hooks - useMemo",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "memoization",
+        "caching"
+      ],
+      "question": "How do you explain memoization versus caching?",
+      "answer": "Memoization is a specific caching technique where the result of a function is stored based on its inputs. Caching is broader and can include network responses, database queries, files or computed values.",
+      "keyPoints": [
+        "useMemo is local render memoization.",
+        "HTTP cache and query cache are different forms of caching.",
+        "Memoized results must be invalidated when inputs change."
+      ]
+    },
+    {
+      "id": 38,
+      "category": "React Hooks - useMemo",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "performance",
+        "usememo"
+      ],
+      "question": "When does useMemo become unnecessary or harmful?",
+      "answer": "useMemo is unnecessary for cheap calculations and can make code harder to read. It can be harmful when dependencies are wrong, when it hides design problems, or when the overhead is greater than recalculating the value.",
+      "keyPoints": [
+        "Do not optimize every expression.",
+        "Wrong dependencies create stale values.",
+        "Prefer simple code until profiling shows a bottleneck."
+      ]
+    },
+    {
+      "id": 39,
+      "category": "React Hooks - useCallback",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "hooks",
+        "usecallback"
+      ],
+      "question": "What is useCallback?",
+      "answer": "useCallback returns a memoized function reference that changes only when its dependencies change. It is useful when passing callbacks to memoized child components or when a stable function is needed as another Hook dependency.",
+      "keyPoints": [
+        "useCallback caches the function reference.",
+        "It does not make the function execution faster by itself.",
+        "It is most useful with React.memo or effect dependencies."
+      ]
+    },
+    {
+      "id": 40,
+      "category": "React Hooks - useCallback",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "hooks",
+        "usememo",
+        "usecallback"
+      ],
+      "question": "What is the difference between useMemo and useCallback?",
+      "answer": "useMemo memoizes the result of a calculation, while useCallback memoizes the function itself. In practice, useCallback(fn, deps) is similar to useMemo(() => fn, deps).",
+      "keyPoints": [
+        "useMemo returns a value.",
+        "useCallback returns a function reference.",
+        "Both depend on correct dependency arrays."
+      ]
+    },
+    {
+      "id": 41,
+      "category": "React Hooks - useCallback",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "hooks",
+        "performance"
+      ],
+      "question": "How can useCallback improve performance?",
+      "answer": "It can prevent child components wrapped in React.memo from re-rendering only because a callback prop got a new reference. This matters when the child is expensive or appears many times in a list.",
+      "keyPoints": [
+        "Useful when reference equality matters.",
+        "Not useful if the child always re-renders anyway.",
+        "Pair with profiling, not assumptions."
+      ]
+    },
+    {
+      "id": 42,
+      "category": "React Hooks - useCallback",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "hooks",
+        "performance"
+      ],
+      "question": "When should you avoid useCallback?",
+      "answer": "Avoid useCallback for simple components where re-rendering is cheap or where no memoized child depends on callback identity. Adding it everywhere increases mental overhead and can make dependency bugs more likely.",
+      "keyPoints": [
+        "No benefit without a reference-sensitive consumer.",
+        "It can reduce readability.",
+        "Use it intentionally around measured render problems."
+      ]
+    },
+    {
+      "id": 43,
+      "category": "React Lifecycle",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "lifecycle"
+      ],
+      "question": "How would you explain the React component lifecycle today?",
+      "answer": "In modern React, think of lifecycle as render, commit and effect synchronization rather than only class methods. Components render to describe UI, React commits DOM changes, then effects run to synchronize with external systems.",
+      "keyPoints": [
+        "Class lifecycle methods still exist.",
+        "Hooks express lifecycle behavior through effects and cleanup.",
+        "Render must stay pure."
+      ]
+    },
+    {
+      "id": 44,
+      "category": "React Lifecycle",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "lifecycle"
+      ],
+      "question": "What happens during the mounting phase?",
+      "answer": "Mounting is when a component appears for the first time. React calls the component, creates the corresponding UI, commits it to the DOM and then runs effects scheduled for after mount.",
+      "keyPoints": [
+        "Initial state is created during mount.",
+        "DOM nodes are inserted during commit.",
+        "Effects run after the component is on the screen."
+      ]
+    },
+    {
+      "id": 45,
+      "category": "React Lifecycle",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "lifecycle"
+      ],
+      "question": "What happens during the updating phase?",
+      "answer": "Updating happens when state, props or context change. React renders the component again, compares the new output with the previous output and commits only the necessary changes.",
+      "keyPoints": [
+        "Updates can be batched.",
+        "Effects may clean up and run again if dependencies changed.",
+        "Not every render leads to DOM changes."
+      ]
+    },
+    {
+      "id": 46,
+      "category": "React Lifecycle",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "lifecycle"
+      ],
+      "question": "What happens during the unmounting phase?",
+      "answer": "Unmounting happens when a component is removed from the UI. React removes its DOM nodes and runs cleanup functions from effects so subscriptions, timers and listeners are stopped.",
+      "keyPoints": [
+        "Cleanup avoids memory leaks.",
+        "Unmount can happen because of routing, conditional rendering or list changes.",
+        "Do not set state after unmount."
+      ]
+    },
+    {
+      "id": 47,
+      "category": "React Lifecycle",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "hooks",
+        "lifecycle"
+      ],
+      "question": "Which Hook pattern replaces componentDidMount?",
+      "answer": "The closest Hook pattern is useEffect with an empty dependency array for setup after the first commit. However, the better interview answer is that effects are for synchronization, not exact one-to-one lifecycle replacement.",
+      "keyPoints": [
+        "useEffect(() => {...}, []) runs after mount.",
+        "In development Strict Mode, setup can run twice to detect unsafe effects.",
+        "Prefer thinking in effects and dependencies."
+      ]
+    },
+    {
+      "id": 48,
+      "category": "React Lifecycle",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "hooks",
+        "cleanup"
+      ],
+      "question": "Which Hook pattern replaces componentWillUnmount?",
+      "answer": "Return a cleanup function from useEffect. React runs that cleanup when the component unmounts and before re-running the effect due to dependency changes.",
+      "keyPoints": [
+        "Use cleanup for subscriptions, timers and listeners.",
+        "Abort in-flight requests when appropriate.",
+        "Cleanup should undo the setup work."
+      ]
+    },
+    {
+      "id": 49,
+      "category": "Virtual DOM and Reconciliation",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "virtual-dom"
+      ],
+      "question": "What is the Virtual DOM in React?",
+      "answer": "The Virtual DOM is an in-memory representation of the UI that React can compare between renders. React uses this representation to decide what needs to change in the real DOM.",
+      "keyPoints": [
+        "It is not a browser feature.",
+        "It helps React reason about UI updates declaratively.",
+        "Modern React also uses Fiber internally for scheduling work."
+      ]
+    },
+    {
+      "id": 50,
+      "category": "Virtual DOM and Reconciliation",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "dom"
+      ],
+      "question": "How is the Virtual DOM different from the real DOM?",
+      "answer": "The real DOM is the browser's actual document tree and changing it can be expensive. The Virtual DOM is a lightweight JavaScript representation that React can compare quickly before applying minimal required changes to the real DOM.",
+      "keyPoints": [
+        "Virtual DOM lives in JavaScript memory.",
+        "Real DOM updates affect layout, paint and browser work.",
+        "React abstracts direct DOM manipulation for most UI updates."
+      ]
+    },
+    {
+      "id": 51,
+      "category": "Virtual DOM and Reconciliation",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "reconciliation"
+      ],
+      "question": "How does React update the DOM after a state change?",
+      "answer": "React re-renders the affected component tree to produce a new element tree, compares it with the previous tree during reconciliation and commits the required DOM operations. This keeps UI updates declarative while avoiding unnecessary DOM work.",
+      "keyPoints": [
+        "Render calculates the next UI.",
+        "Reconciliation finds differences.",
+        "Commit applies changes."
+      ]
+    },
+    {
+      "id": 52,
+      "category": "Virtual DOM and Reconciliation",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "reconciliation"
+      ],
+      "question": "What is reconciliation in React?",
+      "answer": "Reconciliation is the process of comparing the previous rendered tree with the next rendered tree to determine what changed. React uses component type and keys to preserve or replace parts of the UI efficiently.",
+      "keyPoints": [
+        "Same component type generally preserves state.",
+        "Different types usually cause remounting.",
+        "Keys help React match list items correctly."
+      ]
+    },
+    {
+      "id": 53,
+      "category": "Virtual DOM and Reconciliation",
+      "type": "Technical",
+      "difficulty": "Advanced",
+      "tags": [
+        "react",
+        "diffing",
+        "advanced"
+      ],
+      "question": "How would you explain React's diffing algorithm in an advanced interview?",
+      "answer": "React uses heuristic diffing rather than comparing every possible tree transformation. It assumes different element types produce different trees and uses keys to match children in lists, giving practical performance for UI updates.",
+      "keyPoints": [
+        "Tree diffing is optimized with assumptions.",
+        "Keys are essential for stable identity.",
+        "Bad keys can cause wrong state preservation or extra DOM work."
+      ]
+    },
+    {
+      "id": 54,
+      "category": "Virtual DOM and Reconciliation",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "performance",
+        "virtual-dom"
+      ],
+      "question": "Is the Virtual DOM always faster? How should you answer this carefully?",
+      "answer": "The Virtual DOM is not magically always faster than direct DOM work. Its advantage is that it gives React a predictable declarative model and batches efficient updates for complex UIs; for tiny manual updates, direct DOM can be faster but harder to maintain.",
+      "keyPoints": [
+        "Avoid saying Virtual DOM is always faster.",
+        "React's value is predictability and efficient coordination.",
+        "Performance depends on the UI and update pattern."
+      ]
+    },
+    {
+      "id": 55,
+      "category": "React Rendering",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "rendering"
+      ],
+      "question": "What causes re-rendering in React applications?",
+      "answer": "Re-rendering is caused by state updates, parent renders, context value changes and external store updates. The component function runs again, producing a new UI description that React can reconcile.",
+      "keyPoints": [
+        "Rendering is a calculation, not necessarily a DOM mutation.",
+        "Frequent renders are acceptable if cheap.",
+        "Profile before optimizing."
+      ]
+    },
+    {
+      "id": 56,
+      "category": "React Rendering",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "rendering",
+        "props"
+      ],
+      "question": "What is the difference between a parent re-render and a child re-render?",
+      "answer": "When a parent re-renders, React will normally call its child components too, even if their props look similar. A child can skip some re-renders with React.memo when its props are shallowly equal and rendering is expensive enough to justify it.",
+      "keyPoints": [
+        "Parent render can cascade to children.",
+        "React.memo can help with stable props.",
+        "Context changes can still re-render consumers."
+      ]
+    },
+    {
+      "id": 57,
+      "category": "React Rendering",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "memo",
+        "performance"
+      ],
+      "question": "What is React.memo?",
+      "answer": "React.memo is a higher-order component that memoizes a functional component's rendered output based on shallow prop comparison. It can skip re-rendering when props have not changed.",
+      "keyPoints": [
+        "Useful for expensive pure components.",
+        "Works best with stable props and callbacks.",
+        "It does not prevent renders caused by the component's own state or context."
+      ]
+    },
+    {
+      "id": 58,
+      "category": "React Rendering",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "memo",
+        "performance"
+      ],
+      "question": "When should React.memo be avoided?",
+      "answer": "Avoid React.memo when the component is cheap, props change every render, or readability suffers. It also becomes less useful if parents pass new object, array or function references every time.",
+      "keyPoints": [
+        "Memoization has cost and complexity.",
+        "Stabilize props only when useful.",
+        "Measure with React DevTools Profiler."
+      ]
+    },
+    {
+      "id": 59,
+      "category": "React Rendering",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "memo",
+        "usememo"
+      ],
+      "question": "What is the difference between React.memo and useMemo?",
+      "answer": "React.memo memoizes a component based on props, while useMemo memoizes a calculated value inside a component. React.memo affects whether a child component renders; useMemo affects whether a calculation reruns.",
+      "keyPoints": [
+        "React.memo wraps a component.",
+        "useMemo runs inside a component.",
+        "They can be used together for performance-sensitive paths."
+      ]
+    },
+    {
+      "id": 60,
+      "category": "Events, Forms and Lists",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "events"
+      ],
+      "question": "What are Synthetic Events in React?",
+      "answer": "Synthetic Events are React's normalized event objects that wrap browser events and provide consistent behavior across browsers. They let you use familiar handlers such as onClick and onChange in JSX.",
+      "keyPoints": [
+        "React event names are camelCase.",
+        "Handlers receive a Synthetic Event object.",
+        "Modern React no longer requires event pooling workarounds in typical code."
+      ]
+    },
+    {
+      "id": 61,
+      "category": "Events, Forms and Lists",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "javascript",
+        "events",
+        "react"
+      ],
+      "question": "How do you explain event bubbling in React?",
+      "answer": "Event bubbling means an event starts at the target element and then moves up through its ancestors. In React, parent handlers can receive events triggered by child elements unless propagation is stopped.",
+      "keyPoints": [
+        "Useful for event delegation.",
+        "Parent onClick can run after child onClick.",
+        "Call stopPropagation only when needed."
+      ]
+    },
+    {
+      "id": 62,
+      "category": "Events, Forms and Lists",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "javascript",
+        "events",
+        "react"
+      ],
+      "question": "What is event capturing, and how is it used in React?",
+      "answer": "Event capturing is the phase where an event travels from the root down to the target before bubbling back up. In React, you can use capture handlers such as onClickCapture when you need to handle the event before normal bubbling handlers.",
+      "keyPoints": [
+        "Capture happens before bubble.",
+        "React supports capture by adding Capture to the handler name.",
+        "It is less commonly used than bubbling."
+      ]
+    },
+    {
+      "id": 63,
+      "category": "Events, Forms and Lists",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "javascript",
+        "events",
+        "react"
+      ],
+      "question": "What is the difference between preventDefault and stopPropagation?",
+      "answer": "preventDefault stops the browser's default action, such as a form submit refreshing the page. stopPropagation stops the event from continuing through the capture or bubble path to other handlers.",
+      "keyPoints": [
+        "Use preventDefault for default browser behavior.",
+        "Use stopPropagation for event flow control.",
+        "They solve different problems and can be used together."
+      ]
+    },
+    {
+      "id": 64,
+      "category": "Events, Forms and Lists",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "forms"
+      ],
+      "question": "What is a controlled component in React forms?",
+      "answer": "A controlled component is a form element whose value is controlled by React state. The input value comes from state and changes are handled through an onChange callback that updates that state.",
+      "keyPoints": [
+        "React is the source of truth.",
+        "Useful for validation and conditional UI.",
+        "Can be verbose for very large forms."
+      ]
+    },
+    {
+      "id": 65,
+      "category": "Events, Forms and Lists",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "forms",
+        "refs"
+      ],
+      "question": "What is an uncontrolled component?",
+      "answer": "An uncontrolled component keeps its current value in the DOM instead of React state. You usually read the value through a ref when needed, such as on submit.",
+      "keyPoints": [
+        "DOM is the source of truth.",
+        "Less state wiring for simple forms.",
+        "Harder to do live validation and dependent UI."
+      ]
+    },
+    {
+      "id": 66,
+      "category": "Events, Forms and Lists",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "forms"
+      ],
+      "question": "How do controlled and uncontrolled components differ?",
+      "answer": "Controlled components store form values in React state and update through handlers. Uncontrolled components store values in the DOM and are read using refs or form APIs. Controlled forms offer more control; uncontrolled forms can be simpler for basic inputs.",
+      "keyPoints": [
+        "Controlled equals React state source of truth.",
+        "Uncontrolled equals DOM source of truth.",
+        "Many form libraries mix both approaches internally."
+      ]
+    },
+    {
+      "id": 67,
+      "category": "Events, Forms and Lists",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "forms",
+        "validation"
+      ],
+      "question": "How do you handle form validation in React?",
+      "answer": "For small forms, validate on change, blur or submit using local state and error messages. For larger forms, use libraries such as React Hook Form with schema validation like Zod or Yup to keep validation consistent and performant.",
+      "keyPoints": [
+        "Show user-friendly errors near fields.",
+        "Validate both client-side and server-side.",
+        "Avoid validating every keystroke if it hurts performance or UX."
+      ]
+    },
+    {
+      "id": 68,
+      "category": "Events, Forms and Lists",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "forms"
+      ],
+      "question": "How do you handle multiple inputs in a React form?",
+      "answer": "Use a single state object keyed by input name, or use a form library for complex cases. In the change handler, read the field name and value, then update only that field immutably.",
+      "keyPoints": [
+        "Use name attributes consistently.",
+        "Handle checkbox values differently from text values.",
+        "For complex forms, prefer a tested form library."
+      ]
+    },
+    {
+      "id": 69,
+      "category": "Events, Forms and Lists",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "lists",
+        "keys"
+      ],
+      "question": "Why are keys required when rendering lists in React?",
+      "answer": "Keys help React identify which list items were added, removed or reordered. Stable keys let React preserve the correct component state and avoid unnecessary DOM operations.",
+      "keyPoints": [
+        "Keys must be unique among siblings.",
+        "Use stable IDs from data when possible.",
+        "Keys are not passed as normal props."
+      ]
+    },
+    {
+      "id": 70,
+      "category": "Events, Forms and Lists",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "lists",
+        "keys"
+      ],
+      "question": "Why should array index usually not be used as a key?",
+      "answer": "Index keys break when items are inserted, removed or reordered because the same index can refer to a different item. This can cause incorrect state preservation, input bugs and inefficient updates.",
+      "keyPoints": [
+        "Index is acceptable for static lists that never reorder.",
+        "Prefer database IDs or stable generated IDs.",
+        "Bad keys create subtle UI bugs."
+      ]
+    },
+    {
+      "id": 71,
+      "category": "Events, Forms and Lists",
+      "type": "Technical",
+      "difficulty": "Advanced",
+      "tags": [
+        "react",
+        "lists",
+        "reconciliation"
+      ],
+      "question": "How does React use keys internally during reconciliation?",
+      "answer": "React uses keys to match old and new children in a list. When keys match, React can preserve the component instance and state; when keys change or disappear, React may mount, unmount or move elements.",
+      "keyPoints": [
+        "Keys provide identity across renders.",
+        "Changing a key forces remounting.",
+        "Stable keys improve correctness more than raw speed."
+      ]
+    },
+    {
+      "id": 72,
+      "category": "Conditional Rendering",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "conditional-rendering"
+      ],
+      "question": "What are common ways to render conditionally in React?",
+      "answer": "Common approaches include if statements before return, ternary expressions inside JSX, logical AND for optional content, early returns and mapping status values to components. Choose the style that keeps the UI readable.",
+      "keyPoints": [
+        "Use ternary for either-or UI.",
+        "Use && for optional UI.",
+        "Use early return for loading, empty or error states."
+      ]
+    },
+    {
+      "id": 73,
+      "category": "Conditional Rendering",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "conditional-rendering"
+      ],
+      "question": "How do you choose between && and ternary rendering?",
+      "answer": "Use && when something should render only if a condition is true and nothing should render otherwise. Use a ternary when both true and false states have different UI.",
+      "keyPoints": [
+        "condition && <View /> is good for optional blocks.",
+        "condition ? <A /> : <B /> is clearer for alternatives.",
+        "Watch out for rendering 0 with && expressions."
+      ]
+    },
+    {
+      "id": 74,
+      "category": "Conditional Rendering",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "conditional-rendering"
+      ],
+      "question": "How would you implement switch-style rendering in React?",
+      "answer": "For multiple states, use a switch statement before the return, a status-to-component map, or small helper functions. This avoids deeply nested ternaries and makes loading, success, empty and error states easier to maintain.",
+      "keyPoints": [
+        "Avoid complex nested JSX conditions.",
+        "Keep state names explicit.",
+        "Make unreachable states obvious."
+      ]
+    },
+    {
+      "id": 75,
+      "category": "Context API and useReducer",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "context"
+      ],
+      "question": "What is the Context API?",
+      "answer": "Context API lets components read shared values without passing props through every intermediate component. It is commonly used for global-ish values such as theme, authentication state, locale and feature flags.",
+      "keyPoints": [
+        "Provider supplies the value.",
+        "Consumers read with useContext.",
+        "Context is not automatically a complete state management solution."
+      ]
+    },
+    {
+      "id": 76,
+      "category": "Context API and useReducer",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "context"
+      ],
+      "question": "Why would you use Context in a React app?",
+      "answer": "Use Context when many components need the same value and passing it through props would make the tree noisy. It improves ergonomics for app-level data that changes infrequently or has clear ownership.",
+      "keyPoints": [
+        "Good for theme, auth and locale.",
+        "Avoid using one huge context for everything.",
+        "Split contexts to reduce unnecessary consumer renders."
+      ]
+    },
+    {
+      "id": 77,
+      "category": "Context API and useReducer",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "context",
+        "redux"
+      ],
+      "question": "How do you compare Context API and Redux?",
+      "answer": "Context is a React feature for passing values through the component tree. Redux is an external state management library with predictable reducers, middleware, devtools and structured patterns for complex application state.",
+      "keyPoints": [
+        "Context avoids prop drilling.",
+        "Redux helps with complex shared state and debugging.",
+        "They can be used together."
+      ]
+    },
+    {
+      "id": 78,
+      "category": "Context API and useReducer",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "context",
+        "performance"
+      ],
+      "question": "When should Context not be used?",
+      "answer": "Avoid Context for high-frequency updates or large unrelated state objects because every consumer of a changed context value can re-render. Also avoid it when local state or composition would solve the problem more simply.",
+      "keyPoints": [
+        "Do not make Context a dumping ground.",
+        "Split providers by concern.",
+        "Use external stores for complex or frequently changing data."
+      ]
+    },
+    {
+      "id": 79,
+      "category": "Context API and useReducer",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "context"
+      ],
+      "question": "How does a Context Provider work?",
+      "answer": "A Provider wraps part of the component tree and supplies a value. Any descendant using that context can read the nearest Provider's value, and React updates consumers when that value changes.",
+      "keyPoints": [
+        "Providers can be nested.",
+        "The nearest provider wins.",
+        "Memoize provider values when reference changes cause unnecessary renders."
+      ]
+    },
+    {
+      "id": 80,
+      "category": "Context API and useReducer",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "hooks",
+        "usereducer"
+      ],
+      "question": "What is useReducer?",
+      "answer": "useReducer is a Hook for managing state through a reducer function and dispatching actions. It is useful when state transitions are complex or when the next state depends on the previous state and an action type.",
+      "keyPoints": [
+        "Reducer receives state and action.",
+        "Dispatch describes what happened.",
+        "Good for complex forms, workflows and related state."
+      ]
+    },
+    {
+      "id": 81,
+      "category": "Context API and useReducer",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "hooks",
+        "state"
+      ],
+      "question": "How do you decide between useState and useReducer?",
+      "answer": "Use useState for simple independent values. Use useReducer when state has multiple related fields, many transition types or logic that benefits from being centralized and testable.",
+      "keyPoints": [
+        "useState is simpler for small cases.",
+        "useReducer scales better for complex transitions.",
+        "Reducer logic should be pure."
+      ]
+    },
+    {
+      "id": 82,
+      "category": "Context API and useReducer",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "hooks",
+        "reducer"
+      ],
+      "question": "What is a reducer function?",
+      "answer": "A reducer is a pure function that takes the current state and an action, then returns the next state. It should not mutate state or perform side effects.",
+      "keyPoints": [
+        "Same input should produce same output.",
+        "Return new objects for changed state.",
+        "Keep async work outside the reducer."
+      ]
+    },
+    {
+      "id": 83,
+      "category": "Context API and useReducer",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "hooks",
+        "dispatch"
+      ],
+      "question": "How would you explain the dispatch flow in useReducer?",
+      "answer": "A component calls dispatch with an action object. React passes the current state and action to the reducer, the reducer returns the next state, and React re-renders the component with that new state.",
+      "keyPoints": [
+        "Dispatch describes an event or intent.",
+        "Reducer calculates next state.",
+        "This pattern makes state transitions easier to trace."
+      ]
+    },
+    {
+      "id": 84,
+      "category": "Routing - React Router",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "routing",
+        "react-router"
+      ],
+      "question": "What is React Router?",
+      "answer": "React Router is a routing library for React single-page applications. It maps URL paths to components, supports navigation without full page reloads and provides tools for route params, nested routes and protected routes.",
+      "keyPoints": [
+        "React itself does not include a router.",
+        "React Router keeps UI in sync with the URL.",
+        "Modern versions support data APIs as well as component routing."
+      ]
+    },
+    {
+      "id": 85,
+      "category": "Routing - React Router",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "routing"
+      ],
+      "question": "What is the difference between BrowserRouter and HashRouter?",
+      "answer": "BrowserRouter uses the HTML5 history API and clean URLs like /dashboard. HashRouter stores the route after #, such as /#/dashboard, which can work on static hosting when server rewrites are not configured.",
+      "keyPoints": [
+        "BrowserRouter needs server fallback to index.html.",
+        "HashRouter is easier for simple static hosting.",
+        "BrowserRouter is preferred for production apps with proper server setup."
+      ]
+    },
+    {
+      "id": 86,
+      "category": "Routing - React Router",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "routing"
+      ],
+      "question": "What are route parameters?",
+      "answer": "Route parameters are dynamic parts of a URL, such as /users/:id. Components read them to fetch or display data for a specific resource.",
+      "keyPoints": [
+        "Useful for detail pages.",
+        "Params come from the URL, so validate them.",
+        "Use hooks such as useParams in React Router."
+      ]
+    },
+    {
+      "id": 87,
+      "category": "Routing - React Router",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "routing"
+      ],
+      "question": "What are nested routes?",
+      "answer": "Nested routes let parent routes render shared layout while child routes render inside that layout. This is useful for dashboards, settings pages and sections that share navigation or data.",
+      "keyPoints": [
+        "Parent route owns common UI.",
+        "Child route renders in an outlet.",
+        "Nested routing matches natural UI hierarchy."
+      ]
+    },
+    {
+      "id": 88,
+      "category": "Routing - React Router",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "routing"
+      ],
+      "question": "What are dynamic routes?",
+      "answer": "Dynamic routes are route patterns that match variable path segments, such as product IDs or usernames. They let one component handle many similar URLs based on parameters.",
+      "keyPoints": [
+        "Common for product, user and blog detail pages.",
+        "Usually paired with data fetching.",
+        "Validate and handle missing resources."
+      ]
+    },
+    {
+      "id": 89,
+      "category": "Routing - React Router",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "routing",
+        "auth"
+      ],
+      "question": "How would you implement protected routes in React Router?",
+      "answer": "Create a wrapper route or layout that checks authentication state. If the user is allowed, render the child route; otherwise redirect to login and optionally preserve the requested destination.",
+      "keyPoints": [
+        "Do not rely only on frontend route guards for security.",
+        "Backend APIs must enforce authorization.",
+        "Show loading while auth state is being restored."
+      ]
+    },
+    {
+      "id": 90,
+      "category": "Routing - React Router",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "routing"
+      ],
+      "question": "What is the difference between Navigate and Link?",
+      "answer": "Link renders a clickable navigation element for users. Navigate performs a programmatic redirect during rendering, often after auth checks or when a route should immediately move elsewhere.",
+      "keyPoints": [
+        "Use Link for normal navigation UI.",
+        "Use navigate functions for event-driven navigation.",
+        "Use Navigate for declarative redirects."
+      ]
+    },
+    {
+      "id": 91,
+      "category": "Routing - React Router",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "routing"
+      ],
+      "question": "What is the Outlet component in React Router?",
+      "answer": "Outlet marks where a matched child route should render inside a parent route layout. It enables nested layouts without manually switching child components.",
+      "keyPoints": [
+        "Used by parent route components.",
+        "Supports shared layout and nested screens.",
+        "Similar conceptually to nested layout slots."
+      ]
+    },
+    {
+      "id": 92,
+      "category": "Routing - React Router",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "routing",
+        "lazy-loading"
+      ],
+      "question": "How do you lazy load routes in React?",
+      "answer": "Lazy load route components with dynamic import and React.lazy or the router's lazy APIs. Wrap the route area in Suspense so users see a fallback while the chunk loads.",
+      "keyPoints": [
+        "Improves initial bundle size.",
+        "Best for large pages not needed immediately.",
+        "Handle loading and error states gracefully."
+      ]
+    },
+    {
+      "id": 93,
+      "category": "State Management",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "redux",
+        "state-management"
+      ],
+      "question": "What is Redux?",
+      "answer": "Redux is a predictable state container for JavaScript apps. It stores shared application state in a centralized store and updates it through actions and reducers.",
+      "keyPoints": [
+        "State changes are explicit.",
+        "Reducers are pure functions.",
+        "Redux DevTools helps debug state changes."
+      ]
+    },
+    {
+      "id": 94,
+      "category": "State Management",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "redux",
+        "state-management"
+      ],
+      "question": "Why would a team use Redux in a React app?",
+      "answer": "A team may use Redux when state is shared across many features, transitions need to be predictable, debugging matters, or middleware is needed for async flows and side effects. It is most useful for complex client state, not every small app.",
+      "keyPoints": [
+        "Good for large shared state.",
+        "Avoid Redux for simple local UI state.",
+        "Redux Toolkit is the recommended way to write Redux today."
+      ]
+    },
+    {
+      "id": 95,
+      "category": "State Management",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "redux",
+        "store"
+      ],
+      "question": "What is the Redux store?",
+      "answer": "The store is the object that holds the current Redux state tree. Components subscribe to selected parts of the store and dispatch actions to request updates.",
+      "keyPoints": [
+        "There is usually one store per app.",
+        "Store state is read-only from components.",
+        "Reducers define how actions update state."
+      ]
+    },
+    {
+      "id": 96,
+      "category": "State Management",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "redux",
+        "reducer"
+      ],
+      "question": "What is a reducer in Redux?",
+      "answer": "A Redux reducer is a pure function that receives the previous state and an action, then returns the next state. It should not mutate inputs or perform asynchronous work.",
+      "keyPoints": [
+        "Reducers are predictable and testable.",
+        "Action type describes what happened.",
+        "Redux Toolkit uses Immer to allow convenient draft-style updates."
+      ]
+    },
+    {
+      "id": 97,
+      "category": "State Management",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "redux",
+        "actions"
+      ],
+      "question": "What are Redux actions?",
+      "answer": "Actions are plain objects that describe something that happened in the application. They usually have a type field and may include a payload with data needed by the reducer.",
+      "keyPoints": [
+        "Actions are events, not direct mutations.",
+        "Reducers react to action types.",
+        "Action creators help build actions consistently."
+      ]
+    },
+    {
+      "id": 98,
+      "category": "State Management",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "redux",
+        "dispatch"
+      ],
+      "question": "What is dispatch in Redux?",
+      "answer": "dispatch is the method used to send an action to the Redux store. The store runs reducers with that action, updates state and notifies subscribers.",
+      "keyPoints": [
+        "Components dispatch actions.",
+        "Middleware can intercept dispatched actions.",
+        "Dispatch is the start of the Redux update flow."
+      ]
+    },
+    {
+      "id": 99,
+      "category": "State Management",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "redux",
+        "redux-toolkit"
+      ],
+      "question": "Why is Redux Toolkit recommended over classic Redux setup?",
+      "answer": "Redux Toolkit reduces boilerplate, includes good defaults and prevents common mistakes. It provides utilities like configureStore, createSlice and createAsyncThunk, and it uses Immer to simplify immutable updates.",
+      "keyPoints": [
+        "Less manual action and reducer code.",
+        "Good default middleware and DevTools setup.",
+        "Officially recommended for Redux apps."
+      ]
+    },
+    {
+      "id": 100,
+      "category": "State Management",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "redux",
+        "redux-toolkit"
+      ],
+      "question": "What does createSlice do in Redux Toolkit?",
+      "answer": "createSlice generates action creators and reducer logic from a slice name, initial state and reducer functions. It keeps related Redux code together in one place.",
+      "keyPoints": [
+        "Combines action and reducer definitions.",
+        "Supports draft-style updates with Immer.",
+        "Improves maintainability of feature state."
+      ]
+    },
+    {
+      "id": 101,
+      "category": "State Management",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "redux",
+        "redux-toolkit"
+      ],
+      "question": "What does configureStore do?",
+      "answer": "configureStore creates the Redux store with sensible defaults, including reducer setup, middleware, development checks and DevTools integration. It replaces much of the older manual store configuration.",
+      "keyPoints": [
+        "Simplifies store creation.",
+        "Includes thunk middleware by default.",
+        "Supports combining multiple slice reducers."
+      ]
+    },
+    {
+      "id": 102,
+      "category": "State Management",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "redux",
+        "async"
+      ],
+      "question": "What is createAsyncThunk used for?",
+      "answer": "createAsyncThunk creates a thunk action for async work and automatically dispatches pending, fulfilled and rejected action types. It is commonly used for API calls when not using RTK Query.",
+      "keyPoints": [
+        "Handles async lifecycle states.",
+        "Reducers can respond to pending, fulfilled and rejected.",
+        "For data fetching and caching, RTK Query is often better."
+      ]
+    },
+    {
+      "id": 103,
+      "category": "State Management",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "redux",
+        "rtk-query",
+        "api"
+      ],
+      "question": "What is RTK Query?",
+      "answer": "RTK Query is Redux Toolkit's data fetching and caching solution. It generates hooks for queries and mutations, handles loading and error states, caches results and supports invalidation.",
+      "keyPoints": [
+        "Reduces manual API state code.",
+        "Good for server state in Redux apps.",
+        "Comparable in purpose to TanStack Query."
+      ]
+    },
+    {
+      "id": 104,
+      "category": "State Management",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "zustand",
+        "state-management"
+      ],
+      "question": "What is Zustand?",
+      "answer": "Zustand is a lightweight state management library for React and JavaScript apps. It uses simple stores and Hooks without the boilerplate of actions and reducers unless you choose to structure it that way.",
+      "keyPoints": [
+        "Small API surface.",
+        "Works well for client UI state.",
+        "Can be easier than Redux for medium complexity state."
+      ]
+    },
+    {
+      "id": 105,
+      "category": "State Management",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "zustand",
+        "redux"
+      ],
+      "question": "How would you compare Redux and Zustand?",
+      "answer": "Redux is more structured and includes strong tooling, middleware patterns and predictable reducer flow. Zustand is lighter and faster to set up, but teams must define their own conventions for complex apps.",
+      "keyPoints": [
+        "Redux suits large teams and complex flows.",
+        "Zustand suits simpler shared state with less boilerplate.",
+        "Both can be valid depending on project needs."
+      ]
+    },
+    {
+      "id": 106,
+      "category": "State Management",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "zustand",
+        "state-management"
+      ],
+      "question": "What are the advantages of Zustand?",
+      "answer": "Zustand is simple, lightweight and does not require provider wrapping for basic use. Components can subscribe to selected slices of state, which can reduce unnecessary re-renders when selectors are used well.",
+      "keyPoints": [
+        "Minimal setup.",
+        "Selector-based subscriptions.",
+        "Works outside React components too."
+      ]
+    },
+    {
+      "id": 107,
+      "category": "API Integration",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "api",
+        "fetch",
+        "axios"
+      ],
+      "question": "How do you compare Fetch and Axios in interviews?",
+      "answer": "Fetch is built into modern browsers and is promise-based, but it requires manual handling for JSON parsing and HTTP error statuses. Axios is a popular library with conveniences such as interceptors, request cancellation patterns, automatic JSON handling and broader configuration.",
+      "keyPoints": [
+        "Fetch has no extra dependency.",
+        "Axios has ergonomic features for large apps.",
+        "Both need proper error handling."
+      ]
+    },
+    {
+      "id": 108,
+      "category": "API Integration",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "api",
+        "react",
+        "useeffect"
+      ],
+      "question": "How do you fetch data in a React component?",
+      "answer": "For simple client-side fetching, use an effect to start the request, store loading, data and error states, and clean up or ignore stale responses. In production apps, prefer data libraries like TanStack Query, RTK Query or framework data APIs when appropriate.",
+      "keyPoints": [
+        "Do not make the effect callback itself async.",
+        "Handle loading and error states.",
+        "Avoid race conditions on fast parameter changes."
+      ]
+    },
+    {
+      "id": 109,
+      "category": "API Integration",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "api",
+        "errors"
+      ],
+      "question": "How should API errors be handled in a frontend app?",
+      "answer": "Handle API errors by distinguishing network failures, validation errors, authorization failures and unexpected server errors. Show useful messages to users, log technical details safely and provide retry or recovery options when possible.",
+      "keyPoints": [
+        "Do not expose sensitive server details.",
+        "Use consistent error UI patterns.",
+        "Centralize repeated handling with helpers or interceptors."
+      ]
+    },
+    {
+      "id": 110,
+      "category": "API Integration",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "api",
+        "loading"
+      ],
+      "question": "How do you manage loading states for API calls?",
+      "answer": "Track whether the request is loading, successful, empty or failed, and render the UI for each state. A good interview answer mentions skeletons for content-heavy screens and disabled submit buttons for mutations.",
+      "keyPoints": [
+        "Loading is not the only async state.",
+        "Avoid flicker for very fast requests if needed.",
+        "Keep loading state close to the data it represents."
+      ]
+    },
+    {
+      "id": 111,
+      "category": "API Integration",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "api",
+        "cancellation"
+      ],
+      "question": "How do you cancel API requests in React?",
+      "answer": "Use AbortController with fetch or cancellation support from your API library. In effects, abort the request during cleanup when dependencies change or the component unmounts to avoid wasted work and stale updates.",
+      "keyPoints": [
+        "Cancellation helps race conditions and resource usage.",
+        "Cleanup should abort or ignore outdated responses.",
+        "Libraries often handle this through query cancellation."
+      ]
+    },
+    {
+      "id": 112,
+      "category": "API Integration",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "api",
+        "promises",
+        "performance"
+      ],
+      "question": "How do you fetch multiple APIs efficiently?",
+      "answer": "If calls are independent, start them in parallel with Promise.all or a query library that supports parallel queries. If one call depends on another, sequence them clearly and handle partial failures based on product requirements.",
+      "keyPoints": [
+        "Parallelize independent requests.",
+        "Avoid waterfall loading when data does not depend on previous calls.",
+        "Consider caching and request deduplication."
+      ]
+    },
+    {
+      "id": 113,
+      "category": "Performance Optimization",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "performance",
+        "memo"
+      ],
+      "question": "How does React.memo help performance?",
+      "answer": "React.memo can skip re-rendering a component when its props are shallowly equal to the previous props. It helps when a component is expensive to render and receives stable props.",
+      "keyPoints": [
+        "Use for pure components.",
+        "Pair with stable references when needed.",
+        "It is not a universal performance fix."
+      ]
+    },
+    {
+      "id": 114,
+      "category": "Performance Optimization",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "performance",
+        "usememo"
+      ],
+      "question": "How does useMemo help performance?",
+      "answer": "useMemo avoids recalculating an expensive value until dependencies change. It can also keep object or array references stable for memoized children or effect dependencies.",
+      "keyPoints": [
+        "Cache expensive derived values.",
+        "Keep dependencies correct.",
+        "Avoid using it for every small expression."
+      ]
+    },
+    {
+      "id": 115,
+      "category": "Performance Optimization",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "performance",
+        "usecallback"
+      ],
+      "question": "How does useCallback help performance?",
+      "answer": "useCallback keeps a function reference stable between renders unless dependencies change. It helps when that function is passed to memoized children or used in dependency arrays where identity matters.",
+      "keyPoints": [
+        "Stabilizes callbacks, not execution speed.",
+        "Useful with React.memo.",
+        "Unnecessary use adds clutter."
+      ]
+    },
+    {
+      "id": 116,
+      "category": "Performance Optimization",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "lazy-loading",
+        "performance"
+      ],
+      "question": "What is lazy loading in React?",
+      "answer": "Lazy loading means loading code or assets only when they are needed. In React, React.lazy with dynamic import can split a component into a separate bundle chunk that loads on demand.",
+      "keyPoints": [
+        "Reduces initial bundle size.",
+        "Use Suspense fallback for loading UI.",
+        "Best for routes, modals and heavy components."
+      ]
+    },
+    {
+      "id": 117,
+      "category": "Performance Optimization",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "suspense"
+      ],
+      "question": "What is Suspense in React?",
+      "answer": "Suspense lets components declare a fallback UI while waiting for something to load, such as a lazy component or suspense-enabled data source. It makes loading states more declarative and composable.",
+      "keyPoints": [
+        "Common with React.lazy.",
+        "Used heavily by Next.js App Router for streaming boundaries.",
+        "It is not a replacement for all error handling."
+      ]
+    },
+    {
+      "id": 118,
+      "category": "Performance Optimization",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "code-splitting",
+        "performance"
+      ],
+      "question": "What is code splitting, and why is it useful?",
+      "answer": "Code splitting breaks a JavaScript bundle into smaller chunks that can be loaded when needed. It improves initial load performance because users do not download every screen's code upfront.",
+      "keyPoints": [
+        "Route-level splitting is common.",
+        "Dynamic import creates split points.",
+        "Balance chunk count with network overhead."
+      ]
+    },
+    {
+      "id": 119,
+      "category": "Performance Optimization",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "tree-shaking",
+        "bundling",
+        "performance"
+      ],
+      "question": "What is tree shaking?",
+      "answer": "Tree shaking is a build optimization that removes unused code from the final bundle. It works best with ES modules because static imports and exports are easier for bundlers to analyze.",
+      "keyPoints": [
+        "Requires production builds for full effect.",
+        "Side effects can prevent removal.",
+        "Prefer named imports from tree-shakable packages."
+      ]
+    },
+    {
+      "id": 120,
+      "category": "Performance Optimization",
+      "type": "Technical",
+      "difficulty": "Advanced",
+      "tags": [
+        "bundle",
+        "performance",
+        "advanced"
+      ],
+      "question": "How would you optimize a frontend bundle?",
+      "answer": "Analyze the bundle, remove unused dependencies, split routes, lazy load heavy components, tree shake correctly, compress assets, avoid shipping server-only code to the client and replace large libraries with smaller alternatives when justified.",
+      "keyPoints": [
+        "Start with measurement using bundle analysis.",
+        "Optimize images and fonts too, not only JavaScript.",
+        "Watch for duplicate dependencies."
+      ]
+    },
+    {
+      "id": 121,
+      "category": "Error Handling and Testing",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "error-boundaries"
+      ],
+      "question": "What are Error Boundaries in React?",
+      "answer": "Error Boundaries are components that catch rendering errors in their child component tree and show fallback UI instead of crashing the entire app. They are traditionally implemented with class components, though frameworks often provide boundary conventions.",
+      "keyPoints": [
+        "Catch render, lifecycle and constructor errors below them.",
+        "Do not catch event handler errors.",
+        "Place boundaries around risky routes or widgets."
+      ]
+    },
+    {
+      "id": 122,
+      "category": "Error Handling and Testing",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "error-boundaries"
+      ],
+      "question": "Why do Error Boundaries not catch async errors?",
+      "answer": "Error Boundaries catch errors during React rendering and lifecycle work, not arbitrary async callbacks such as setTimeout or promise handlers. Async errors must be caught where they occur and then stored in state or handled by data libraries or framework boundaries.",
+      "keyPoints": [
+        "Event handlers need try-catch or explicit error state.",
+        "Promise errors need catch handling.",
+        "Frameworks may provide route-level error files for server and render errors."
+      ]
+    },
+    {
+      "id": 123,
+      "category": "Error Handling and Testing",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "api",
+        "errors"
+      ],
+      "question": "How do you handle API errors in React UI?",
+      "answer": "Represent error state in the component or query layer, show a helpful message, let the user retry when appropriate and log technical details for debugging. Also handle authorization and validation errors differently from generic failures.",
+      "keyPoints": [
+        "Avoid blank screens on error.",
+        "Retry only when it makes sense.",
+        "Keep backend authorization as the real security layer."
+      ]
+    },
+    {
+      "id": 124,
+      "category": "Error Handling and Testing",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "testing",
+        "react-testing-library"
+      ],
+      "question": "What is React Testing Library?",
+      "answer": "React Testing Library is a testing utility focused on testing components the way users interact with them. It encourages queries by role, text and label instead of implementation details like component internals or CSS class names.",
+      "keyPoints": [
+        "Tests user-visible behavior.",
+        "Pairs commonly with Jest or Vitest.",
+        "Avoid testing private implementation details."
+      ]
+    },
+    {
+      "id": 125,
+      "category": "Error Handling and Testing",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "testing",
+        "jest"
+      ],
+      "question": "What is Jest used for in frontend testing?",
+      "answer": "Jest is a JavaScript testing framework used for unit tests, assertions, mocks and test running. In newer Vite projects, Vitest is also common because it integrates naturally with Vite.",
+      "keyPoints": [
+        "Jest provides test runner and assertion APIs.",
+        "Can mock modules and timers.",
+        "Vitest is a popular Vite-native alternative."
+      ]
+    },
+    {
+      "id": 126,
+      "category": "Error Handling and Testing",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "testing",
+        "unit-tests"
+      ],
+      "question": "What is unit testing in React?",
+      "answer": "Unit testing verifies a small piece of logic or a component in isolation. For React, that can mean testing a helper function, Hook or simple component behavior with controlled inputs.",
+      "keyPoints": [
+        "Fast and focused.",
+        "Good for pure logic and edge cases.",
+        "Do not over-mock user behavior that should be tested through integration tests."
+      ]
+    },
+    {
+      "id": 127,
+      "category": "Error Handling and Testing",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "testing",
+        "integration-tests"
+      ],
+      "question": "What is integration testing in React?",
+      "answer": "Integration testing checks how multiple components, hooks and services work together from the user's perspective. It is often more valuable than shallow unit tests because it catches wiring and state-flow bugs.",
+      "keyPoints": [
+        "Tests realistic user flows.",
+        "Use accessible queries and user events.",
+        "Mock only external boundaries such as network calls."
+      ]
+    },
+    {
+      "id": 128,
+      "category": "Error Handling and Testing",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "testing",
+        "api",
+        "mocking"
+      ],
+      "question": "How do you mock API calls in tests?",
+      "answer": "Mock API calls at the network boundary using tools such as MSW, or mock the data fetching module when appropriate. Network-level mocking keeps tests closer to real behavior because components still call the same API code.",
+      "keyPoints": [
+        "MSW is useful for browser-like and node tests.",
+        "Mock success, error and loading states.",
+        "Avoid making real network calls in automated tests."
+      ]
+    },
+    {
+      "id": 129,
+      "category": "Vite",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "vite",
+        "build-tools"
+      ],
+      "question": "What is Vite?",
+      "answer": "Vite is a modern frontend build tool and development server. It provides fast startup using native ES modules in development and optimized production builds using Rollup.",
+      "keyPoints": [
+        "Vite means fast in French.",
+        "Great developer experience with quick server start and HMR.",
+        "Works with React, Vue, Svelte and more."
+      ]
+    },
+    {
+      "id": 130,
+      "category": "Vite",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "vite",
+        "cra",
+        "performance"
+      ],
+      "question": "Why is Vite usually faster than Create React App in development?",
+      "answer": "Vite serves source files over native ES modules and pre-bundles dependencies efficiently, so it does not need to bundle the entire app before the dev server starts. CRA's webpack-based workflow historically bundled more upfront.",
+      "keyPoints": [
+        "Fast cold start.",
+        "Dependency pre-bundling improves repeated imports.",
+        "HMR updates only the changed modules."
+      ]
+    },
+    {
+      "id": 131,
+      "category": "Vite",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "vite",
+        "esm"
+      ],
+      "question": "What are ES Modules, and why do they matter to Vite?",
+      "answer": "ES Modules are the standard JavaScript module system using import and export. Vite uses native browser support for ES modules during development, which lets it serve modules on demand instead of bundling the whole app first.",
+      "keyPoints": [
+        "Static imports help tooling analyze dependencies.",
+        "Modern browsers support ESM.",
+        "Production still bundles for optimized delivery."
+      ]
+    },
+    {
+      "id": 132,
+      "category": "Vite",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "vite",
+        "hmr"
+      ],
+      "question": "What is Hot Module Replacement in Vite?",
+      "answer": "Hot Module Replacement updates changed modules in the browser without a full page reload. This keeps application state where possible and gives developers fast feedback while editing code.",
+      "keyPoints": [
+        "HMR is faster than full reloads.",
+        "Framework plugins handle most HMR details.",
+        "Some changes still require reloads."
+      ]
+    },
+    {
+      "id": 133,
+      "category": "Vite",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "vite",
+        "build"
+      ],
+      "question": "How does the Vite build process work?",
+      "answer": "In development, Vite serves ESM modules directly and transforms files on demand. In production, it bundles and optimizes the app with Rollup, producing static assets ready for deployment.",
+      "keyPoints": [
+        "Dev and production paths are intentionally different.",
+        "Production output usually goes to dist.",
+        "Plugins can transform code in both modes."
+      ]
+    },
+    {
+      "id": 134,
+      "category": "Vite",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "vite",
+        "config"
+      ],
+      "question": "What is vite.config used for?",
+      "answer": "vite.config defines Vite project configuration such as plugins, aliases, dev server options, build settings and environment behavior. React apps typically include the React plugin there.",
+      "keyPoints": [
+        "Config can be JavaScript or TypeScript.",
+        "Use resolve.alias for clean imports.",
+        "Keep config simple and documented."
+      ]
+    },
+    {
+      "id": 135,
+      "category": "Vite",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "vite",
+        "environment-variables"
+      ],
+      "question": "How do environment variables work in Vite?",
+      "answer": "Vite exposes selected environment variables through import.meta.env. Client-exposed variables must use the configured public prefix, commonly VITE_, so secrets should never be placed in client variables.",
+      "keyPoints": [
+        "Use import.meta.env.VITE_API_URL for public config.",
+        "Non-prefixed secrets are not exposed to client code by default.",
+        "Env values are statically replaced during build."
+      ]
+    },
+    {
+      "id": 136,
+      "category": "Vite",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "vite",
+        "alias"
+      ],
+      "question": "How do you configure path aliases in Vite?",
+      "answer": "Configure aliases in vite.config under resolve.alias, such as mapping @ to the src folder. In TypeScript projects, also update tsconfig paths so the editor and compiler understand the alias.",
+      "keyPoints": [
+        "Aliases improve import readability.",
+        "Keep Vite and TypeScript aliases in sync.",
+        "Avoid overly clever aliases that hide structure."
+      ]
+    },
+    {
+      "id": 137,
+      "category": "Vite",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "vite",
+        "plugins"
+      ],
+      "question": "What are Vite plugins used for?",
+      "answer": "Vite plugins extend how Vite transforms, serves and bundles code. They can add framework support, transform files, load assets, inspect bundles or integrate tools.",
+      "keyPoints": [
+        "Vite plugins are based on Rollup plugin concepts with dev-server hooks.",
+        "React support is added through a plugin.",
+        "Use well-maintained plugins for common needs."
+      ]
+    },
+    {
+      "id": 138,
+      "category": "Vite",
+      "type": "Technical",
+      "difficulty": "Advanced",
+      "tags": [
+        "vite",
+        "performance",
+        "advanced"
+      ],
+      "question": "How would you optimize a Vite production build?",
+      "answer": "Analyze output chunks, remove heavy dependencies, use dynamic imports for large routes, configure assets correctly, enable compression at hosting level and ensure libraries are tree-shakable. Avoid optimizing blindly without measuring bundle size and runtime performance.",
+      "keyPoints": [
+        "Use build analysis tools.",
+        "Lazy load heavy sections.",
+        "Check source maps, target and chunk strategy."
+      ]
+    },
+    {
+      "id": 139,
+      "category": "Next.js Fundamentals",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "nextjs",
+        "react"
+      ],
+      "question": "Why would a team choose Next.js?",
+      "answer": "Next.js adds production framework features on top of React, including routing, server rendering, static generation, server components, image optimization, metadata handling, API routes or route handlers and deployment conventions.",
+      "keyPoints": [
+        "React is a UI library; Next.js is a framework.",
+        "Useful for SEO, performance and full-stack features.",
+        "Best when routing and rendering strategy matter."
+      ]
+    },
+    {
+      "id": 140,
+      "category": "Next.js Fundamentals",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "nextjs",
+        "react"
+      ],
+      "question": "How do you compare React and Next.js?",
+      "answer": "React provides the component model for building UIs. Next.js uses React and adds framework-level decisions such as routing, rendering modes, data fetching, server code and build optimization.",
+      "keyPoints": [
+        "React can be used with Vite for SPA apps.",
+        "Next.js is opinionated and full-stack capable.",
+        "Choice depends on SEO, routing, deployment and server needs."
+      ]
+    },
+    {
+      "id": 141,
+      "category": "Next.js Fundamentals",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "nextjs",
+        "app-router",
+        "pages-router"
+      ],
+      "question": "What is the difference between App Router and Pages Router in Next.js?",
+      "answer": "Pages Router is the older file-based routing system using the pages directory. App Router is the newer system using the app directory, layouts, Server Components, nested loading and error UI, and more advanced streaming patterns.",
+      "keyPoints": [
+        "Both routers are supported.",
+        "App Router is the modern default for new apps.",
+        "Know which router the project uses before answering implementation details."
+      ]
+    },
+    {
+      "id": 142,
+      "category": "Next.js Fundamentals",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "nextjs",
+        "routing"
+      ],
+      "question": "What is file-based routing in Next.js?",
+      "answer": "File-based routing means routes are created from files and folders in the project structure. In App Router, folders define route segments and page files define routeable UI.",
+      "keyPoints": [
+        "Less manual route configuration.",
+        "Dynamic segments use bracket syntax.",
+        "Layouts can wrap route segments."
+      ]
+    },
+    {
+      "id": 143,
+      "category": "Next.js Fundamentals",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "nextjs",
+        "dynamic-routes"
+      ],
+      "question": "How do dynamic routes work in Next.js?",
+      "answer": "Dynamic routes use bracketed folder or file names to capture variable URL parts, such as [id] for a product ID. The route receives params so the page can fetch or render the correct resource.",
+      "keyPoints": [
+        "Useful for product, user and article pages.",
+        "Validate params and handle not found states.",
+        "Can be combined with static generation."
+      ]
+    },
+    {
+      "id": 144,
+      "category": "Next.js Fundamentals",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "nextjs",
+        "layouts"
+      ],
+      "question": "What are nested layouts in the Next.js App Router?",
+      "answer": "Nested layouts are layout files placed at different route segments. They wrap child routes, preserve shared UI and can keep state between navigations within the same segment.",
+      "keyPoints": [
+        "Layouts reduce duplication.",
+        "They support shared navigation and shells.",
+        "App Router layouts compose naturally by folder nesting."
+      ]
+    },
+    {
+      "id": 145,
+      "category": "Next.js Fundamentals",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "nextjs",
+        "metadata",
+        "seo"
+      ],
+      "question": "How does the Metadata API work in Next.js?",
+      "answer": "The Metadata API lets routes export static metadata or generate dynamic metadata for titles, descriptions, Open Graph images and other head tags. Next.js uses this metadata to produce the correct document head.",
+      "keyPoints": [
+        "Avoid manual head management in App Router.",
+        "generateMetadata can use params and fetched data.",
+        "Metadata improves SEO and sharing previews."
+      ]
+    },
+    {
+      "id": 146,
+      "category": "Next.js Fundamentals",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "nextjs",
+        "loading-ui",
+        "suspense"
+      ],
+      "question": "What is loading UI in the Next.js App Router?",
+      "answer": "A loading file creates instant loading UI for a route segment while server work or navigation is in progress. It is built on Suspense boundaries and helps users see feedback quickly.",
+      "keyPoints": [
+        "Use loading.js or loading.tsx in a route segment.",
+        "Pairs naturally with streaming.",
+        "Keep loading UI lightweight and meaningful."
+      ]
+    },
+    {
+      "id": 147,
+      "category": "Next.js Fundamentals",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "nextjs",
+        "errors"
+      ],
+      "question": "How do error pages work in Next.js App Router?",
+      "answer": "An error file defines an error boundary for a route segment and can show fallback UI with recovery actions. There are also not-found patterns for 404-like states and global error handling for top-level failures.",
+      "keyPoints": [
+        "Route segment error files catch rendering errors in that segment.",
+        "Provide retry or navigation options.",
+        "Use notFound for missing resources."
+      ]
+    },
+    {
+      "id": 148,
+      "category": "Rendering Strategies",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "rendering",
+        "csr"
+      ],
+      "question": "What is Client-Side Rendering, and when would you use it?",
+      "answer": "Client-Side Rendering means the browser downloads JavaScript and renders the UI on the client. It works well for highly interactive internal apps where SEO is less important and most data is user-specific.",
+      "keyPoints": [
+        "Initial HTML may be minimal.",
+        "Good for dashboards and authenticated tools.",
+        "Can have slower first content without optimization."
+      ]
+    },
+    {
+      "id": 149,
+      "category": "Rendering Strategies",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "rendering",
+        "ssr",
+        "nextjs"
+      ],
+      "question": "What is Server-Side Rendering, and when is it useful?",
+      "answer": "Server-Side Rendering generates HTML on the server for each request or dynamic render. It is useful for SEO, faster first content and pages that need fresh request-specific data.",
+      "keyPoints": [
+        "Better initial HTML for crawlers and users.",
+        "Can increase server cost and complexity.",
+        "Hydration is needed for client interactivity."
+      ]
+    },
+    {
+      "id": 150,
+      "category": "Rendering Strategies",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "rendering",
+        "ssg",
+        "nextjs"
+      ],
+      "question": "What is Static Site Generation?",
+      "answer": "Static Site Generation pre-renders pages at build time and serves static HTML. It is excellent for content that changes infrequently, such as marketing pages, docs and blogs.",
+      "keyPoints": [
+        "Very fast at runtime.",
+        "Great CDN caching story.",
+        "Requires rebuild or regeneration when content changes."
+      ]
+    },
+    {
+      "id": 151,
+      "category": "Rendering Strategies",
+      "type": "Technical",
+      "difficulty": "Advanced",
+      "tags": [
+        "rendering",
+        "isr",
+        "nextjs",
+        "advanced"
+      ],
+      "question": "What is Incremental Static Regeneration?",
+      "answer": "Incremental Static Regeneration lets static pages be updated after deployment based on a revalidation policy. It combines static performance with the ability to refresh content without rebuilding the whole site.",
+      "keyPoints": [
+        "Useful for large sites with changing content.",
+        "Serves cached static output while regeneration happens based on config.",
+        "Understand cache and revalidation behavior for your Next.js version."
+      ]
+    },
+    {
+      "id": 152,
+      "category": "Next.js Server and Client Components",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "nextjs",
+        "server-components"
+      ],
+      "question": "What are React Server Components in Next.js?",
+      "answer": "Server Components render on the server and do not ship their component JavaScript to the browser. They can access server-side resources directly and help reduce client bundle size.",
+      "keyPoints": [
+        "Default in the App Router unless marked client.",
+        "Good for data fetching and non-interactive UI.",
+        "Cannot use client-only Hooks like useState."
+      ]
+    },
+    {
+      "id": 153,
+      "category": "Next.js Server and Client Components",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "nextjs",
+        "client-components"
+      ],
+      "question": "What are Client Components in Next.js?",
+      "answer": "Client Components are components that run in the browser and can use state, effects, refs and browser APIs. They are required for interactive UI such as forms, menus and components with event handlers.",
+      "keyPoints": [
+        "Marked with use client at the file boundary.",
+        "Can be rendered initially by the server but hydrated on the client.",
+        "Keep client boundaries as small as practical."
+      ]
+    },
+    {
+      "id": 154,
+      "category": "Next.js Server and Client Components",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "nextjs",
+        "use-client"
+      ],
+      "question": "What does the use client directive mean?",
+      "answer": "The use client directive marks a module as a Client Component entry point. Everything imported by that boundary becomes part of the client bundle unless separated carefully.",
+      "keyPoints": [
+        "Place it only where interactivity is needed.",
+        "It enables Hooks and browser APIs.",
+        "Overusing it can increase bundle size."
+      ]
+    },
+    {
+      "id": 155,
+      "category": "Next.js Server and Client Components",
+      "type": "Technical",
+      "difficulty": "Advanced",
+      "tags": [
+        "nextjs",
+        "server-components",
+        "performance",
+        "advanced"
+      ],
+      "question": "Why can Server Components improve performance?",
+      "answer": "Server Components can keep data fetching and heavy non-interactive rendering on the server, reducing client JavaScript and improving initial load. They also allow closer access to backend resources without building separate client API calls for every read.",
+      "keyPoints": [
+        "Less JavaScript shipped to the browser.",
+        "Better server-side data access patterns.",
+        "Still use Client Components for interactivity."
+      ]
+    },
+    {
+      "id": 156,
+      "category": "Next.js Server and Client Components",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "nextjs",
+        "server-components",
+        "hooks"
+      ],
+      "question": "Can React Hooks be used in Server Components?",
+      "answer": "Client-only Hooks such as useState, useEffect and useRef cannot be used in Server Components because they require browser-side interactivity or lifecycle. Server-compatible patterns include async components and server data fetching, while interactive logic belongs in Client Components.",
+      "keyPoints": [
+        "Server Components are not hydrated like client components.",
+        "Use use client for interactive components.",
+        "Some React APIs are server-compatible, but browser lifecycle Hooks are not."
+      ]
+    },
+    {
+      "id": 157,
+      "category": "Next.js Data Fetching",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "nextjs",
+        "fetch",
+        "data-fetching"
+      ],
+      "question": "How is fetch used in Next.js App Router?",
+      "answer": "In App Router, fetch can be used directly in Server Components and route handlers. Next.js can integrate fetch with caching and revalidation behavior depending on options and route configuration.",
+      "keyPoints": [
+        "Server fetching avoids exposing secrets to the client.",
+        "Understand cache behavior for static, dynamic and revalidated data.",
+        "Use client fetching for browser-only interactions or live user flows."
+      ]
+    },
+    {
+      "id": 158,
+      "category": "Next.js Data Fetching",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "nextjs",
+        "server-components",
+        "async"
+      ],
+      "question": "What are async Server Components?",
+      "answer": "Async Server Components are server-rendered components that can await data before returning UI. They simplify data fetching because the component can directly retrieve data on the server without useEffect.",
+      "keyPoints": [
+        "Works in App Router server components.",
+        "Keeps data fetching close to UI.",
+        "Avoid using browser-only APIs inside them."
+      ]
+    },
+    {
+      "id": 159,
+      "category": "Next.js Data Fetching",
+      "type": "Technical",
+      "difficulty": "Advanced",
+      "tags": [
+        "nextjs",
+        "server-actions",
+        "advanced"
+      ],
+      "question": "What are Server Actions or Server Functions in Next.js?",
+      "answer": "Server Actions let client or server UI invoke server-side functions for mutations such as creating, updating or deleting data. They reduce manual API route code, but they must still enforce authentication, authorization and validation.",
+      "keyPoints": [
+        "Good for form submissions and mutations.",
+        "Treat them as public-facing server entry points.",
+        "Validate inputs and check permissions on the server."
+      ]
+    },
+    {
+      "id": 160,
+      "category": "Next.js Data Fetching",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "nextjs",
+        "route-handlers",
+        "api"
+      ],
+      "question": "What are Route Handlers in Next.js?",
+      "answer": "Route Handlers define server endpoints inside the App Router using files such as route.ts. They can handle HTTP methods like GET and POST for APIs, webhooks, authentication callbacks and custom responses.",
+      "keyPoints": [
+        "Used for server API endpoints.",
+        "Can return Response objects.",
+        "Good when you need explicit HTTP endpoints."
+      ]
+    },
+    {
+      "id": 161,
+      "category": "Next.js Data Fetching",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "nextjs",
+        "api-routes"
+      ],
+      "question": "What are API Routes in Next.js?",
+      "answer": "API Routes are server-side endpoints traditionally associated with the Pages Router. In App Router, Route Handlers serve the similar purpose. They let the Next.js app handle backend-like requests.",
+      "keyPoints": [
+        "Useful for lightweight backend endpoints.",
+        "Keep secrets on the server.",
+        "Choose Pages API routes or App Route Handlers based on router architecture."
+      ]
+    },
+    {
+      "id": 162,
+      "category": "Authentication and Deployment",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "auth",
+        "jwt"
+      ],
+      "question": "How does JWT authentication work at a high level?",
+      "answer": "JWT authentication uses a signed token that represents claims about a user. The client sends the token with requests, and the server verifies the signature and claims before authorizing access.",
+      "keyPoints": [
+        "Do not trust decoded tokens without verification on the server.",
+        "Store tokens carefully based on threat model.",
+        "Short-lived access tokens plus refresh strategy are common."
+      ]
+    },
+    {
+      "id": 163,
+      "category": "Authentication and Deployment",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "auth",
+        "oauth"
+      ],
+      "question": "What is OAuth, and why is it used?",
+      "answer": "OAuth is an authorization framework that lets users grant an application limited access through an identity provider or service without sharing passwords. It is commonly used for social login and delegated access.",
+      "keyPoints": [
+        "OAuth is about authorization; OpenID Connect adds authentication identity layer.",
+        "Use proven libraries/providers instead of hand-rolling flows.",
+        "Handle redirects, state and token security carefully."
+      ]
+    },
+    {
+      "id": 164,
+      "category": "Authentication and Deployment",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "auth",
+        "google-login"
+      ],
+      "question": "How would you implement Google Login in a frontend project?",
+      "answer": "Use a trusted auth provider or library that supports Google OAuth or OpenID Connect. The frontend starts the login flow, the provider authenticates the user, and the backend or auth service creates a secure session for the app.",
+      "keyPoints": [
+        "Avoid implementing OAuth from scratch.",
+        "Use HTTPS and secure redirect URIs.",
+        "Backend/session handling must verify provider tokens."
+      ]
+    },
+    {
+      "id": 165,
+      "category": "Authentication and Deployment",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "auth",
+        "session",
+        "jwt"
+      ],
+      "question": "How do sessions and JWTs differ?",
+      "answer": "Session-based auth usually stores session state on the server and sends a session cookie to the browser. JWT auth often stores claims in a signed token that can be verified statelessly, though refresh and revocation may still require server state.",
+      "keyPoints": [
+        "Cookies can be HttpOnly and secure.",
+        "JWTs are not automatically safer than sessions.",
+        "Choose based on architecture and security requirements."
+      ]
+    },
+    {
+      "id": 166,
+      "category": "Authentication and Deployment",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "auth",
+        "protected-routes"
+      ],
+      "question": "How do you protect routes in React or Next.js?",
+      "answer": "On the frontend, guard routes by checking auth state and redirecting unauthenticated users. On the backend or server layer, enforce authorization for every protected resource because client-side guards can be bypassed.",
+      "keyPoints": [
+        "Frontend guards improve UX, not security alone.",
+        "Server checks are mandatory.",
+        "Handle loading while auth state is unknown."
+      ]
+    },
+    {
+      "id": 167,
+      "category": "Authentication and Deployment",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "deployment",
+        "react",
+        "vite"
+      ],
+      "question": "How do you deploy a React or Vite application?",
+      "answer": "Build the app to static files, usually with npm run build, then deploy the output folder such as dist to static hosting or a CDN. Configure SPA fallback so deep links route back to index.html.",
+      "keyPoints": [
+        "Use environment variables at build time carefully.",
+        "Configure client-side routing fallback.",
+        "Test the production build locally before deploying."
+      ]
+    },
+    {
+      "id": 168,
+      "category": "Authentication and Deployment",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "deployment",
+        "nextjs"
+      ],
+      "question": "How do you deploy a Next.js application?",
+      "answer": "Next.js can be deployed to Vercel, a Node server, containers or supported hosting platforms. The deployment choice depends on whether the app uses SSR, Server Components, Route Handlers, ISR, edge runtime or static export.",
+      "keyPoints": [
+        "Vercel offers first-class Next.js support.",
+        "Static export has limitations for server features.",
+        "Know which runtime features your app uses."
+      ]
+    },
+    {
+      "id": 169,
+      "category": "Authentication and Deployment",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "deployment",
+        "environment-variables"
+      ],
+      "question": "How should environment variables be handled during deployment?",
+      "answer": "Store environment variables in the hosting provider or CI/CD secret store, not in source control. Expose only intentionally public variables to client bundles and keep private credentials on the server.",
+      "keyPoints": [
+        "Client env variables are visible to users after build.",
+        "Server env variables can hold secrets.",
+        "Use separate values for development, staging and production."
+      ]
+    },
+    {
+      "id": 170,
+      "category": "Authentication and Deployment",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "deployment",
+        "build"
+      ],
+      "question": "What is the difference between development and production builds?",
+      "answer": "Development builds prioritize fast feedback, source maps and helpful warnings. Production builds prioritize optimized output through minification, bundling, tree shaking, caching and removal of development-only checks.",
+      "keyPoints": [
+        "Always test production build behavior.",
+        "Performance differs between dev and production.",
+        "Some Strict Mode behaviors are development-only."
+      ]
+    },
+    {
+      "id": 171,
+      "category": "Authentication and Deployment",
+      "type": "HR",
+      "difficulty": "Beginner",
+      "tags": [
+        "deployment",
+        "ci-cd",
+        "hr"
+      ],
+      "question": "How would you explain CI/CD basics to an interviewer?",
+      "answer": "CI/CD automates the path from code changes to tested and deployed software. Continuous Integration runs checks such as linting, tests and builds on every change, while Continuous Delivery or Deployment prepares or releases the app to environments.",
+      "keyPoints": [
+        "CI catches problems before merge.",
+        "CD makes releases repeatable.",
+        "Frontend pipelines often include install, lint, test, build and deploy steps."
+      ]
+    },
+    {
+      "id": 172,
+      "category": "Advanced React",
+      "type": "Technical",
+      "difficulty": "Advanced",
+      "tags": [
+        "react",
+        "hoc",
+        "advanced"
+      ],
+      "question": "What is a Higher Order Component?",
+      "answer": "A Higher Order Component is a function that takes a component and returns an enhanced component. It was widely used for sharing logic before Hooks, and still appears in libraries or legacy code.",
+      "keyPoints": [
+        "HOC pattern wraps components.",
+        "Can add props, auth checks or subscriptions.",
+        "Hooks often replace custom HOCs in modern code."
+      ]
+    },
+    {
+      "id": 173,
+      "category": "Advanced React",
+      "type": "Technical",
+      "difficulty": "Advanced",
+      "tags": [
+        "react",
+        "render-props",
+        "advanced"
+      ],
+      "question": "What is the render props pattern?",
+      "answer": "Render props is a pattern where a component receives a function prop and calls it to decide what UI to render. It allows logic sharing while letting the consumer control rendering.",
+      "keyPoints": [
+        "Function as child is a common form.",
+        "Useful before Hooks for reusable behavior.",
+        "Can create nested JSX if overused."
+      ]
+    },
+    {
+      "id": 174,
+      "category": "Advanced React",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "custom-hooks"
+      ],
+      "question": "What are custom Hooks?",
+      "answer": "Custom Hooks are functions that use React Hooks to share reusable stateful logic between components. They must follow Hook rules and usually start with the word use.",
+      "keyPoints": [
+        "Extract logic, not UI.",
+        "Can use built-in Hooks inside.",
+        "Great for fetching, subscriptions, forms and browser APIs."
+      ]
+    },
+    {
+      "id": 175,
+      "category": "Advanced React",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "portals"
+      ],
+      "question": "What are React Portals?",
+      "answer": "Portals let React render children into a DOM node outside the parent component's DOM hierarchy while keeping them in the React tree. They are commonly used for modals, tooltips and overlays.",
+      "keyPoints": [
+        "Useful when CSS overflow or stacking context is a problem.",
+        "Events still follow the React tree.",
+        "Manage focus and accessibility for modals."
+      ]
+    },
+    {
+      "id": 176,
+      "category": "Advanced React",
+      "type": "Technical",
+      "difficulty": "Beginner",
+      "tags": [
+        "react",
+        "fragments"
+      ],
+      "question": "What are React Fragments?",
+      "answer": "Fragments let a component return multiple elements without adding an extra DOM wrapper. They are written as React.Fragment or shorthand empty tags.",
+      "keyPoints": [
+        "Avoid unnecessary div wrappers.",
+        "Useful in tables and layout-sensitive markup.",
+        "Keyed fragments are available with React.Fragment."
+      ]
+    },
+    {
+      "id": 177,
+      "category": "Advanced React",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "suspense"
+      ],
+      "question": "What advanced use cases does Suspense support?",
+      "answer": "Beyond lazy loading, Suspense can coordinate loading boundaries and is used by frameworks like Next.js for streaming server-rendered UI. It helps reveal parts of the page progressively as data or code becomes ready.",
+      "keyPoints": [
+        "Suspense boundaries control fallback UI.",
+        "Works strongly with Server Components in frameworks.",
+        "Use error boundaries alongside Suspense."
+      ]
+    },
+    {
+      "id": 178,
+      "category": "Advanced React",
+      "type": "Technical",
+      "difficulty": "Advanced",
+      "tags": [
+        "react",
+        "concurrent-rendering",
+        "advanced"
+      ],
+      "question": "What is concurrent rendering in React?",
+      "answer": "Concurrent rendering lets React prepare multiple versions of the UI and interrupt, pause or resume rendering work based on priority. It helps keep interfaces responsive during expensive updates.",
+      "keyPoints": [
+        "It is an implementation capability, not a separate mode developers manually toggle for everything.",
+        "Features like transitions build on it.",
+        "Render logic must stay pure because renders can be restarted."
+      ]
+    },
+    {
+      "id": 179,
+      "category": "Advanced React",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "strict-mode"
+      ],
+      "question": "What is React Strict Mode?",
+      "answer": "Strict Mode is a development-only tool that helps identify unsafe patterns by adding extra checks and warnings. It can intentionally double-invoke certain functions and effects in development to reveal side-effect bugs.",
+      "keyPoints": [
+        "Does not affect production behavior directly.",
+        "Helps catch impure rendering and missing cleanup.",
+        "Do not remove it just to hide real issues."
+      ]
+    },
+    {
+      "id": 180,
+      "category": "Advanced React",
+      "type": "Technical",
+      "difficulty": "Advanced",
+      "tags": [
+        "react",
+        "fiber",
+        "advanced"
+      ],
+      "question": "What is React Fiber?",
+      "answer": "React Fiber is React's internal architecture for representing units of work and enabling incremental rendering. It allows React to prioritize, pause and resume rendering work more flexibly than the old stack reconciler.",
+      "keyPoints": [
+        "Fiber is an internal implementation detail.",
+        "Enables scheduling and concurrent features.",
+        "Useful to know conceptually, not necessary for everyday component code."
+      ]
+    },
+    {
+      "id": 181,
+      "category": "Advanced React",
+      "type": "Technical",
+      "difficulty": "Advanced",
+      "tags": [
+        "react",
+        "hydration",
+        "nextjs"
+      ],
+      "question": "What is hydration?",
+      "answer": "Hydration is the process where React attaches event handlers and client behavior to HTML that was already rendered on the server. It makes server-rendered markup interactive in the browser.",
+      "keyPoints": [
+        "Common in SSR frameworks like Next.js.",
+        "Client render must match server HTML.",
+        "Hydration cost matters for performance."
+      ]
+    },
+    {
+      "id": 182,
+      "category": "Advanced React",
+      "type": "Technical",
+      "difficulty": "Advanced",
+      "tags": [
+        "react",
+        "hydration",
+        "nextjs"
+      ],
+      "question": "What causes hydration mismatch errors?",
+      "answer": "Hydration mismatches happen when server-rendered HTML differs from what the client renders on first load. Common causes include time-based values, random values, browser-only APIs, locale differences and conditional rendering that differs between server and client.",
+      "keyPoints": [
+        "Make first server and client render deterministic.",
+        "Move browser-only logic to effects or Client Components.",
+        "Use framework escape hatches only when truly necessary."
+      ]
+    },
+    {
+      "id": 183,
+      "category": "Advanced React",
+      "type": "Technical",
+      "difficulty": "Advanced",
+      "tags": [
+        "react",
+        "reconciliation",
+        "advanced"
+      ],
+      "question": "How would you explain the reconciliation algorithm at a senior level?",
+      "answer": "Reconciliation is React's process for converting state changes into a minimal set of UI updates using heuristics, component identity and keys. Senior candidates should connect it to state preservation, remounting behavior and performance tradeoffs.",
+      "keyPoints": [
+        "Type and key determine identity.",
+        "Reconciliation is separate from commit.",
+        "Bad keys can create correctness bugs, not just slow renders."
+      ]
+    },
+    {
+      "id": 184,
+      "category": "Advanced React",
+      "type": "Technical",
+      "difficulty": "Advanced",
+      "tags": [
+        "react",
+        "diffing",
+        "advanced"
+      ],
+      "question": "How is the diffing algorithm related to reconciliation?",
+      "answer": "Diffing is the comparison step inside reconciliation where React compares old and new element trees. Reconciliation is the broader process of deciding how to update the rendered tree based on that comparison.",
+      "keyPoints": [
+        "Diffing identifies changes.",
+        "Reconciliation decides update work.",
+        "Commit applies changes to the host environment."
+      ]
+    },
+    {
+      "id": 185,
+      "category": "Advanced React",
+      "type": "Technical",
+      "difficulty": "Intermediate",
+      "tags": [
+        "react",
+        "batching"
+      ],
+      "question": "What is batching in React?",
+      "answer": "Batching means React groups multiple state updates into one render for better performance. React 18 expanded automatic batching across more async boundaries when using the modern root API.",
+      "keyPoints": [
+        "Multiple setters can produce one render.",
+        "Batching improves performance and consistency.",
+        "Use functional updates when multiple updates depend on previous state."
+      ]
+    },
+    {
+      "id": 186,
+      "category": "Advanced React",
+      "type": "Technical",
+      "difficulty": "Advanced",
+      "tags": [
+        "react",
+        "event-loop",
+        "advanced"
+      ],
+      "question": "How does React interact with the JavaScript event loop?",
+      "answer": "React schedules rendering work around JavaScript tasks, events and async callbacks. With modern React, updates can be prioritized and batched, while long synchronous work can still block the main thread.",
+      "keyPoints": [
+        "JavaScript is still single-threaded in the main UI context.",
+        "Avoid blocking render with heavy synchronous work.",
+        "Transitions help mark non-urgent updates."
+      ]
+    },
+    {
+      "id": 187,
+      "category": "Advanced React",
+      "type": "Technical",
+      "difficulty": "Advanced",
+      "tags": [
+        "react",
+        "scheduler",
+        "advanced"
+      ],
+      "question": "What is the React Scheduler?",
+      "answer": "The Scheduler is part of React's internal system for prioritizing rendering work. It helps React decide which updates are urgent, which can wait and how to keep the UI responsive during rendering.",
+      "keyPoints": [
+        "Mostly internal but important conceptually.",
+        "Supports concurrent rendering behavior.",
+        "Developers influence priority through APIs like transitions."
+      ]
+    },
+    {
+      "id": 188,
+      "category": "Scenario-Based Questions",
+      "type": "Scenario",
+      "difficulty": "Intermediate",
+      "tags": [
+        "scenario",
+        "rendering",
+        "performance"
+      ],
+      "question": "If an interviewer asks why a component is re-rendering unnecessarily, how would you debug it?",
+      "answer": "I would first confirm the re-render with React DevTools Profiler, then inspect whether state, parent renders, context changes or unstable props are triggering it. After finding the cause, I would fix state placement, memoize only where useful or split context/providers if needed.",
+      "keyPoints": [
+        "Measure before optimizing.",
+        "Check props, state, context and parent renders.",
+        "Use React.memo, useMemo and useCallback only for proven problems."
+      ]
+    },
+    {
+      "id": 189,
+      "category": "Scenario-Based Questions",
+      "type": "Scenario",
+      "difficulty": "Advanced",
+      "tags": [
+        "scenario",
+        "performance",
+        "advanced"
+      ],
+      "question": "How would you optimize a slow React application in production?",
+      "answer": "I would profile the app to identify whether the bottleneck is JavaScript rendering, network, bundle size, images, backend latency or layout work. Then I would apply targeted fixes such as code splitting, memoization, virtualization, caching, image optimization and better data fetching.",
+      "keyPoints": [
+        "Start with profiling, not guesses.",
+        "Separate initial load from interaction performance.",
+        "Verify improvements with metrics after changes."
+      ]
+    },
+    {
+      "id": 190,
+      "category": "Scenario-Based Questions",
+      "type": "Scenario",
+      "difficulty": "Advanced",
+      "tags": [
+        "scenario",
+        "forms",
+        "advanced"
+      ],
+      "question": "How would you handle a form with 100+ fields?",
+      "answer": "I would avoid storing every keystroke in one large parent state if it causes performance issues. I would use a form library such as React Hook Form, split the form into sections, validate with a schema, virtualize or lazy render sections if needed and save drafts carefully.",
+      "keyPoints": [
+        "Use field-level subscriptions when possible.",
+        "Schema validation keeps rules maintainable.",
+        "Design UX with sections, autosave and clear errors."
+      ]
+    },
+    {
+      "id": 191,
+      "category": "Scenario-Based Questions",
+      "type": "Scenario",
+      "difficulty": "Intermediate",
+      "tags": [
+        "scenario",
+        "auth"
+      ],
+      "question": "How would you implement authentication in a React application?",
+      "answer": "I would choose a proven auth approach, store session state securely, protect routes for UX and enforce authorization on the backend. The frontend would handle login, logout, token/session refresh, loading state and redirecting users based on permissions.",
+      "keyPoints": [
+        "Do not rely on frontend checks for security.",
+        "Prefer HttpOnly secure cookies for many web apps.",
+        "Handle expired sessions gracefully."
+      ]
+    },
+    {
+      "id": 192,
+      "category": "Scenario-Based Questions",
+      "type": "Scenario",
+      "difficulty": "Intermediate",
+      "tags": [
+        "scenario",
+        "state-management"
+      ],
+      "question": "How would you share state across unrelated components?",
+      "answer": "First I would check if the state can be lifted to a common parent or passed through composition. If many unrelated components need it, I would consider Context for simple app-level state or a store such as Redux, Zustand or query cache depending on whether it is client state or server state.",
+      "keyPoints": [
+        "Choose the smallest suitable state scope.",
+        "Server state belongs in query/cache tools.",
+        "Avoid global state for everything."
+      ]
+    },
+    {
+      "id": 193,
+      "category": "Scenario-Based Questions",
+      "type": "Scenario",
+      "difficulty": "Intermediate",
+      "tags": [
+        "scenario",
+        "api",
+        "performance"
+      ],
+      "question": "How would you fetch multiple APIs efficiently?",
+      "answer": "For independent calls, I would run them in parallel and render combined loading/error states. For dependent calls, I would sequence them deliberately. I would also cache repeated data, deduplicate requests and avoid waterfalls where possible.",
+      "keyPoints": [
+        "Use Promise.all or query libraries for parallel calls.",
+        "Think about partial failure behavior.",
+        "Cache and prefetch where it improves UX."
+      ]
+    },
+    {
+      "id": 194,
+      "category": "Scenario-Based Questions",
+      "type": "Scenario",
+      "difficulty": "Advanced",
+      "tags": [
+        "scenario",
+        "infinite-scroll",
+        "advanced"
+      ],
+      "question": "How would you build infinite scrolling?",
+      "answer": "I would use paginated or cursor-based APIs, load the next page when a sentinel enters the viewport using IntersectionObserver, show loading and end states, deduplicate items and preserve scroll performance with virtualization for large lists.",
+      "keyPoints": [
+        "Cursor pagination is often safer than offset pagination.",
+        "IntersectionObserver avoids manual scroll math.",
+        "Virtualize very long lists."
+      ]
+    },
+    {
+      "id": 195,
+      "category": "Scenario-Based Questions",
+      "type": "Scenario",
+      "difficulty": "Intermediate",
+      "tags": [
+        "scenario",
+        "pagination"
+      ],
+      "question": "How would you implement pagination?",
+      "answer": "I would decide between page-number, offset or cursor pagination based on the API and product needs. The UI should store current page or cursor, fetch data with loading and error states, preserve filters in the URL when useful and disable invalid navigation.",
+      "keyPoints": [
+        "Cursor pagination handles changing data better.",
+        "URL state improves shareability.",
+        "Cache previous pages for smoother navigation."
+      ]
+    },
+    {
+      "id": 196,
+      "category": "Scenario-Based Questions",
+      "type": "Scenario",
+      "difficulty": "Intermediate",
+      "tags": [
+        "scenario",
+        "search",
+        "debounce"
+      ],
+      "question": "How would you implement search with debounce?",
+      "answer": "I would keep the input value responsive immediately, then debounce the query used for API requests so the app waits briefly after typing stops. I would cancel or ignore stale requests and show loading or empty states clearly.",
+      "keyPoints": [
+        "Separate raw input from debounced query.",
+        "Abort stale requests when possible.",
+        "Tune debounce delay for UX, commonly around 250 to 500 ms."
+      ]
+    },
+    {
+      "id": 197,
+      "category": "Scenario-Based Questions",
+      "type": "Scenario",
+      "difficulty": "Advanced",
+      "tags": [
+        "scenario",
+        "api",
+        "performance",
+        "advanced"
+      ],
+      "question": "How would you optimize API requests in a frontend app?",
+      "answer": "I would reduce unnecessary calls through caching, deduplication, debouncing, pagination, prefetching and proper dependency management. I would also use HTTP caching headers, avoid over-fetching fields and batch requests when backend support exists.",
+      "keyPoints": [
+        "Cache server state with query tools.",
+        "Avoid request waterfalls.",
+        "Coordinate frontend and backend for best results."
+      ]
+    },
+    {
+      "id": 198,
+      "category": "Scenario-Based Questions",
+      "type": "Scenario",
+      "difficulty": "Intermediate",
+      "tags": [
+        "scenario",
+        "rendering",
+        "performance"
+      ],
+      "question": "How would you prevent unnecessary renders?",
+      "answer": "I would keep state close to where it is used, avoid changing context values unnecessarily, split heavy components, use stable keys, memoize expensive calculations and use React.memo for expensive pure children with stable props.",
+      "keyPoints": [
+        "State placement is often more important than memoization.",
+        "Avoid creating new provider values every render.",
+        "Use profiler to confirm the benefit."
+      ]
+    },
+    {
+      "id": 199,
+      "category": "Scenario-Based Questions",
+      "type": "Scenario",
+      "difficulty": "Intermediate",
+      "tags": [
+        "scenario",
+        "seo",
+        "nextjs"
+      ],
+      "question": "How would you improve SEO in a React application?",
+      "answer": "For SEO-heavy pages, I would use server rendering or static generation through a framework like Next.js, add correct metadata, structured data, semantic HTML, accessible links, optimized performance and crawlable content.",
+      "keyPoints": [
+        "CSR-only pages can be weaker for SEO-sensitive content.",
+        "Metadata and Open Graph matter.",
+        "Performance and accessibility also affect discoverability."
+      ]
+    },
+    {
+      "id": 200,
+      "category": "Scenario-Based Questions",
+      "type": "Scenario",
+      "difficulty": "Intermediate",
+      "tags": [
+        "scenario",
+        "nextjs",
+        "vite",
+        "architecture"
+      ],
+      "question": "Why would you choose Next.js over React with Vite?",
+      "answer": "I would choose Next.js when the project needs framework features such as file-based routing, SSR, SSG, ISR, Server Components, metadata, backend route handlers or SEO-friendly rendering. I would choose React with Vite for simpler SPAs, internal tools or apps where client-side rendering is enough.",
+      "keyPoints": [
+        "Next.js is better for full-stack and SEO-focused apps.",
+        "Vite is excellent for fast SPA development.",
+        "The right choice depends on rendering, routing, deployment and team needs."
+      ]
+    }
+  ]
+};
