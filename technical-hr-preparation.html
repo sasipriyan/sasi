@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Technical HR Interview Prep | Sasipriyan</title>
+  <link rel="stylesheet" href="technical-hr-styles.css?v=1">
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__inner">
+      <a class="back-link" href="index.html">&lt;- Back to preparation hub</a>
+      <p class="eyebrow">Technical HR Interview Prep</p>
+      <h1>Professional answers for resume, projects and technical HR rounds</h1>
+      <p class="hero__copy">
+        HR-ready responses for the exact question list: self introduction, resume walkthrough,
+        MERN/backend fundamentals, SafeTrack, AI agent, vulnerability management, WebRTC,
+        Docker, Kubernetes, CI/CD, Samsung PRISM research, system design, DSA and behavior.
+      </p>
+      <div class="hero__stats" aria-label="Question bank stats">
+        <span><strong id="totalCount">243</strong> questions</span>
+        <span><strong>HR</strong> + technical HR</span>
+        <span><strong>Projects</strong> + resume deep dive</span>
+        <span><strong>Top 25</strong> priority mode</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="focus" aria-labelledby="focus-title">
+    <div class="focus__header">
+      <div>
+        <h2 id="focus-title">Study These First</h2>
+        <p>These areas give the strongest return in technical HR and first-round developer interviews.</p>
+      </div>
+      <button id="priorityOnly" class="ghost-button" type="button">Show priority answers</button>
+    </div>
+    <ul id="focusTopics" class="focus__grid"></ul>
+  </section>
+
+  <main>
+    <section class="toolbar" aria-label="Study controls">
+      <label class="search">
+        <span class="visually-hidden">Search questions</span>
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="11" cy="11" r="7"></circle>
+          <path d="m20 20-4-4"></path>
+        </svg>
+        <input id="searchInput" type="search" placeholder="Search question, answer, project, topic or tag">
+      </label>
+      <div class="filters" aria-label="Filter questions">
+        <button class="filter is-active" type="button" data-filter="all">All</button>
+        <button class="filter" type="button" data-filter="HR">HR</button>
+        <button class="filter" type="button" data-filter="Project">Project</button>
+        <button class="filter" type="button" data-filter="Technical">Technical</button>
+        <button class="filter" type="button" data-filter="System Design">System Design</button>
+        <button class="filter" type="button" data-filter="Behavioral">Behavioral</button>
+      </div>
+    </section>
+
+    <section class="progress" aria-label="Study progress">
+      <div class="progress__bar"><span id="progressFill"></span></div>
+      <p><strong id="doneCount">0</strong> completed of <strong id="doneTotal">243</strong></p>
+    </section>
+
+    <section class="layout">
+      <aside class="sidebar" aria-label="Technical HR categories">
+        <h2>Topics</h2>
+        <nav id="categoryNav"></nav>
+      </aside>
+
+      <section class="questions" aria-live="polite">
+        <div class="questions__topline">
+          <p id="visibleCount">Loading technical HR answers...</p>
+          <button id="expandAll" class="ghost-button" type="button">Expand all visible</button>
+        </div>
+        <div id="questionList"></div>
+        <div id="emptyState" class="empty" hidden>
+          <h2>No matching answers</h2>
+          <p>Try a broader search term or switch the filter back to All.</p>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <button id="backTop" class="back-top" type="button" aria-label="Back to top">^</button>
+
+  <footer>
+    <p>
+      Data source: <code>technical-hr-questions.json</code>. Offline fallback:
+      <code>technical-hr-questions-data.js</code>.
+    </p>
+  </footer>
+
+  <script src="technical-hr-questions-data.js"></script>
+  <script>
+    const state = {
+      questions: [],
+      visible: [],
+      filter: 'all',
+      query: '',
+      priorityMode: false,
+      expandedAll: false,
+      done: JSON.parse(localStorage.getItem('technicalHrPrepDone') || '{}')
+    };
+
+    const list = document.getElementById('questionList');
+    const nav = document.getElementById('categoryNav');
+    const searchInput = document.getElementById('searchInput');
+    const visibleCount = document.getElementById('visibleCount');
+    const emptyState = document.getElementById('emptyState');
+    const progressFill = document.getElementById('progressFill');
+    const doneCount = document.getElementById('doneCount');
+    const doneTotal = document.getElementById('doneTotal');
+    const totalCount = document.getElementById('totalCount');
+    const expandAll = document.getElementById('expandAll');
+    const backTop = document.getElementById('backTop');
+    const priorityOnly = document.getElementById('priorityOnly');
+    const focusTopics = document.getElementById('focusTopics');
+
+    async function init() {
+      try {
+        const data = await loadQuestionBank();
+        state.questions = data.questions;
+        state.visible = state.questions;
+        totalCount.textContent = state.questions.length;
+        doneTotal.textContent = state.questions.length;
+        renderFocusTopics(data.metadata.focusTopics || []);
+        renderCategories();
+        render();
+      } catch (error) {
+        list.innerHTML = `<div class="load-error">
+          <h2>Could not load the Technical HR question bank</h2>
+          <p>Make sure <code>technical-hr-questions-data.js</code> is in the same folder as this HTML file.</p>
+        </div>`;
+        visibleCount.textContent = 'Question bank not loaded';
+      }
+    }
+
+    async function loadQuestionBank() {
+      if (location.protocol !== 'file:') {
+        try {
+          const response = await fetch('technical-hr-questions.json', { cache: 'no-store' });
+          if (response.ok) return response.json();
+        } catch (error) {
+          // Static fallback is used below for direct file opening.
+        }
+      }
+
+      if (window.TECHNICAL_HR_PREP_DATA?.questions?.length) return window.TECHNICAL_HR_PREP_DATA;
+      throw new Error('Technical HR question bank unavailable');
+    }
+
+    function renderFocusTopics(topics) {
+      focusTopics.innerHTML = topics.map((topic) => `<li>${escapeHtml(topic)}</li>`).join('');
+    }
+
+    function renderCategories() {
+      const counts = new Map();
+      state.questions.forEach((item) => counts.set(item.category, (counts.get(item.category) || 0) + 1));
+      nav.innerHTML = Array.from(counts.entries()).map(([category, count]) => `
+        <a href="#${slug(category)}">
+          <span>${escapeHtml(category)}</span>
+          <strong>${count}</strong>
+        </a>
+      `).join('');
+    }
+
+    function render() {
+      applyFilters();
+      renderQuestions();
+      updateProgress();
+    }
+
+    function applyFilters() {
+      const q = state.query.toLowerCase();
+      state.visible = state.questions.filter((item) => {
+        const haystack = [
+          item.question,
+          item.answer,
+          item.category,
+          item.type,
+          item.difficulty,
+          item.tags.join(' '),
+          item.keyPoints.join(' ')
+        ].join(' ').toLowerCase();
+        const filterMatch = state.filter === 'all'
+          || item.type === state.filter
+          || item.difficulty === state.filter
+          || item.category === state.filter
+          || item.tags.includes(state.filter.toLowerCase())
+          || haystack.includes(state.filter.toLowerCase());
+        const searchMatch = !q || haystack.includes(q);
+        const priorityMatch = !state.priorityMode || item.priority;
+        return filterMatch && searchMatch && priorityMatch;
+      });
+    }
+
+    function renderQuestions() {
+      const grouped = new Map();
+      state.visible.forEach((item) => {
+        if (!grouped.has(item.category)) grouped.set(item.category, []);
+        grouped.get(item.category).push(item);
+      });
+
+      const priorityLabel = state.priorityMode ? ' priority' : '';
+      visibleCount.textContent = `${state.visible.length} of ${state.questions.length}${priorityLabel} answers shown`;
+      emptyState.hidden = state.visible.length !== 0;
+      list.innerHTML = Array.from(grouped.entries()).map(([category, items]) => `
+        <section class="category" id="${slug(category)}">
+          <div class="category__heading">
+            <h2>${escapeHtml(category)}</h2>
+            <span>${items.length} answers</span>
+          </div>
+          ${items.map(questionTemplate).join('')}
+        </section>
+      `).join('');
+    }
+
+    function questionTemplate(item) {
+      const isDone = Boolean(state.done[item.id]);
+      const open = state.expandedAll ? ' open' : '';
+      const priorityPill = item.priority ? '<span class="pill pill--priority">Priority</span>' : '';
+      return `
+        <article class="qa-card${isDone ? ' is-done' : ''}${item.priority ? ' is-priority' : ''}" data-id="${item.id}">
+          <details${open}>
+            <summary>
+              <span class="number">Q${item.id}</span>
+              <span class="question-text">${escapeHtml(item.question)}</span>
+              <span class="pills">
+                <span class="pill">${escapeHtml(item.type)}</span>
+                <span class="pill pill--soft">${escapeHtml(item.difficulty)}</span>
+                ${priorityPill}
+              </span>
+            </summary>
+            <div class="answer">
+              <p>${escapeHtml(item.answer)}</p>
+              <h3>Interview points</h3>
+              <ul>
+                ${item.keyPoints.map((point) => `<li>${escapeHtml(point)}</li>`).join('')}
+              </ul>
+              <label class="done">
+                <input type="checkbox" data-done="${item.id}" ${isDone ? 'checked' : ''}>
+                <span>Mark this answer as prepared</span>
+              </label>
+            </div>
+          </details>
+        </article>
+      `;
+    }
+
+    function updateProgress() {
+      const validDone = Object.keys(state.done).filter((id) => state.questions.some((q) => String(q.id) === String(id)));
+      const percent = state.questions.length ? (validDone.length / state.questions.length) * 100 : 0;
+      doneCount.textContent = validDone.length;
+      progressFill.style.width = `${percent}%`;
+    }
+
+    function slug(value) {
+      return value.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+    }
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"']/g, (char) => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        '"': '&quot;',
+        "'": '&#039;'
+      })[char]);
+    }
+
+    searchInput.addEventListener('input', (event) => {
+      state.query = event.target.value.trim();
+      state.expandedAll = false;
+      expandAll.textContent = 'Expand all visible';
+      render();
+    });
+
+    document.querySelectorAll('.filter').forEach((button) => {
+      button.addEventListener('click', () => {
+        document.querySelectorAll('.filter').forEach((item) => item.classList.remove('is-active'));
+        button.classList.add('is-active');
+        state.filter = button.dataset.filter;
+        state.expandedAll = false;
+        expandAll.textContent = 'Expand all visible';
+        render();
+      });
+    });
+
+    priorityOnly.addEventListener('click', () => {
+      state.priorityMode = !state.priorityMode;
+      priorityOnly.textContent = state.priorityMode ? 'Show all answers' : 'Show priority answers';
+      render();
+    });
+
+    expandAll.addEventListener('click', () => {
+      state.expandedAll = !state.expandedAll;
+      expandAll.textContent = state.expandedAll ? 'Collapse all visible' : 'Expand all visible';
+      renderQuestions();
+    });
+
+    list.addEventListener('change', (event) => {
+      const id = event.target.dataset.done;
+      if (!id) return;
+      if (event.target.checked) state.done[id] = true;
+      else delete state.done[id];
+      localStorage.setItem('technicalHrPrepDone', JSON.stringify(state.done));
+      event.target.closest('.qa-card').classList.toggle('is-done', event.target.checked);
+      updateProgress();
+    });
+
+    backTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+    window.addEventListener('scroll', () => backTop.classList.toggle('is-visible', window.scrollY > 500));
+
+    init();
+  </script>
+</body>
+</html>

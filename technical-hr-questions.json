@@ -1,0 +1,4244 @@
+{
+  "metadata": {
+    "title": "Technical HR Interview Preparation",
+    "owner": "Sasipriyan A",
+    "total": 243,
+    "updated": "2026-07-06",
+    "description": "Professional HR-ready answers for technical HR, resume deep dives, projects, system design, DSA and behavioral rounds.",
+    "focusTopics": [
+      "Self introduction and resume walkthrough",
+      "SafeTrack architecture, GPS, geofencing and security",
+      "AI Task Automation Agent with OAuth, Gmail API, Calendar API and LLMs",
+      "Sales Analytics Platform with WebRTC and LLM insights",
+      "Samsung PRISM machine unlearning research",
+      "Backend fundamentals: event loop, JWT, REST, MongoDB indexing",
+      "Docker, Kubernetes, CI/CD and system design basics"
+    ]
+  },
+  "questions": [
+    {
+      "id": 1,
+      "category": "Resume Introduction",
+      "type": "HR",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "intro",
+        "hr"
+      ],
+      "question": "Tell me about yourself.",
+      "answer": "I am Sasipriyan, an M.Tech CSE student at VIT Chennai and a full-stack developer focused on MERN stack, backend architecture, REST APIs, authentication, AI integrations and scalable systems. I have built practical systems that combine backend engineering with real use cases, including SafeTrack for child safety, an AI Task Automation Agent, a vulnerability management system and a WebRTC-based sales analytics platform. My strength is taking a problem from requirement to architecture, API design, database modeling and implementation. I am looking for a software engineering or backend-focused role where I can contribute to production systems and keep growing technically.",
+      "keyPoints": [
+        "Start with education, then skills, then projects.",
+        "Mention backend, MERN, AI integration and real project impact.",
+        "End with the role you want and how you can contribute."
+      ]
+    },
+    {
+      "id": 2,
+      "category": "Resume Introduction",
+      "type": "HR",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "resume",
+        "hr"
+      ],
+      "question": "Walk me through your resume.",
+      "answer": "I would explain my resume in a flow: education, core skills, internship or project experience, achievements and research. I am pursuing M.Tech CSE at VIT Chennai after B.Tech IT. Technically, I work mainly with React, Node.js, Express, MongoDB, REST APIs, authentication, Docker, Kubernetes and CI/CD basics. Then I would highlight my projects: SafeTrack, AI Task Automation Agent, Sales Analytics Platform, Vulnerability Management System and Samsung PRISM machine unlearning research. I would close by connecting these experiences to the role: I enjoy backend development, scalable system design and solving practical problems.",
+      "keyPoints": [
+        "Keep the walkthrough structured.",
+        "Do not read every line of the resume.",
+        "Connect each project to the target role."
+      ]
+    },
+    {
+      "id": 3,
+      "category": "Resume Introduction",
+      "type": "HR",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "education",
+        "hr"
+      ],
+      "question": "Why M.Tech after B.Tech?",
+      "answer": "I chose M.Tech because I wanted deeper technical depth, better exposure to research and stronger opportunities to work on advanced engineering problems. I did not treat it as only an academic extension. During M.Tech I focused on projects, research, internships and practical implementation. It helped me improve in areas like system design, AI research, backend architecture and disciplined problem solving.",
+      "keyPoints": [
+        "Show purpose, not confusion.",
+        "Mention research and advanced coursework.",
+        "Connect M.Tech to stronger software engineering capability."
+      ]
+    },
+    {
+      "id": 4,
+      "category": "Resume Introduction",
+      "type": "HR",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "career",
+        "hr"
+      ],
+      "question": "Why software engineering?",
+      "answer": "Software engineering suits me because I enjoy converting real-world problems into structured, working systems. I like the mix of logic, design, debugging and impact. In my projects, I have worked on safety, automation, analytics and vulnerability management, and each one showed me how software can solve meaningful problems at scale.",
+      "keyPoints": [
+        "Talk about problem solving and impact.",
+        "Use projects as proof.",
+        "Avoid saying only that coding is interesting."
+      ]
+    },
+    {
+      "id": 5,
+      "category": "Resume Introduction",
+      "type": "HR",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "backend",
+        "career"
+      ],
+      "question": "Why backend development?",
+      "answer": "I like backend development because it is where the core logic, data flow, security and scalability of an application are designed. Frontend creates the user experience, but backend decides how reliable, secure and maintainable the system is. I enjoy API design, database modeling, authentication, async processing and integration with external services such as Gmail, Calendar, CVE/NVD and LLM APIs.",
+      "keyPoints": [
+        "Mention APIs, databases, auth and scaling.",
+        "Show that backend is a conscious preference.",
+        "Connect to your projects."
+      ]
+    },
+    {
+      "id": 6,
+      "category": "Resume Introduction",
+      "type": "HR",
+      "difficulty": "Must Prepare",
+      "priority": false,
+      "tags": [
+        "career",
+        "hr"
+      ],
+      "question": "What kind of role are you looking for?",
+      "answer": "I am looking for a software engineering role where I can work on backend or full-stack development with strong engineering practices. I would prefer a role involving REST APIs, databases, authentication, integrations, cloud or scalable systems. I am also open to learning the company stack because my projects show I can pick up new technologies and apply them quickly.",
+      "keyPoints": [
+        "Be specific but flexible.",
+        "Mention backend/full-stack fit.",
+        "Show learning attitude."
+      ]
+    },
+    {
+      "id": 7,
+      "category": "Resume Introduction",
+      "type": "HR",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "strengths",
+        "hr"
+      ],
+      "question": "What are your strengths?",
+      "answer": "My main strengths are structured problem solving, ownership and fast learning. When I build a project, I think through API structure, database design, security, error handling and deployment instead of only making a demo work. I also learn new technologies quickly; WebRTC, OAuth 2.0, LLM APIs, CVE/NVD automation and machine unlearning were all technologies I learned and applied through projects.",
+      "keyPoints": [
+        "Use evidence, not adjectives only.",
+        "Mention ownership and structured thinking.",
+        "Tie strengths to project outcomes."
+      ]
+    },
+    {
+      "id": 8,
+      "category": "Resume Introduction",
+      "type": "HR",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "weakness",
+        "hr"
+      ],
+      "question": "What is your weakness?",
+      "answer": "One weakness I have worked on is that I sometimes spend extra time trying to make the structure perfect before moving forward. Hackathons taught me to balance quality with delivery. Now I first build a clean working version, validate the flow, and then improve the structure step by step. That has made me faster without compromising maintainability.",
+      "keyPoints": [
+        "Pick a real but manageable weakness.",
+        "Show improvement.",
+        "Avoid weaknesses that damage trust."
+      ]
+    },
+    {
+      "id": 9,
+      "category": "Resume Introduction",
+      "type": "HR",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "hr",
+        "closing"
+      ],
+      "question": "Why should we hire you?",
+      "answer": "You should hire me because I bring a practical full-stack foundation with strong backend interest, project ownership and a proven ability to learn quickly. I have built systems involving REST APIs, authentication, MongoDB, WebRTC, LLM integration, OAuth, vulnerability automation, Docker and Kubernetes basics. I may be a fresher, but I have already handled real engineering problems through projects, hackathons and research. I can contribute with discipline, learn your stack quickly and grow into a reliable engineer for the team.",
+      "keyPoints": [
+        "Connect skills to company needs.",
+        "Mention fresher plus practical experience.",
+        "End with contribution and growth."
+      ]
+    },
+    {
+      "id": 10,
+      "category": "Resume Introduction",
+      "type": "HR",
+      "difficulty": "Must Prepare",
+      "priority": false,
+      "tags": [
+        "hr",
+        "differentiation"
+      ],
+      "question": "What differentiates you from other candidates?",
+      "answer": "My differentiation is the combination of full-stack implementation, backend thinking, AI integration and research exposure. I have not limited myself to one type of project. I built safety, automation, analytics and security-focused systems, and I also worked on Samsung PRISM machine unlearning research. That gives me both practical engineering ability and curiosity for deeper technical problems.",
+      "keyPoints": [
+        "Show range with focus.",
+        "Mention research plus implementation.",
+        "Avoid comparing negatively with others."
+      ]
+    },
+    {
+      "id": 11,
+      "category": "Resume Introduction",
+      "type": "HR",
+      "difficulty": "Must Prepare",
+      "priority": false,
+      "tags": [
+        "journey",
+        "hr"
+      ],
+      "question": "Explain your technical journey.",
+      "answer": "My technical journey started with web development and the MERN stack. As I built more projects, I moved from UI-focused work to backend architecture, API design, authentication and database modeling. Then I added integrations such as OAuth, Gmail API, Calendar API, WebRTC, LLM APIs and CVE/NVD data. Recently, through Samsung PRISM, I also explored machine unlearning and speech models. So my journey has moved from building features to designing systems with security, scalability and intelligence in mind.",
+      "keyPoints": [
+        "Show progression.",
+        "Mention technologies in order.",
+        "End with current focus."
+      ]
+    },
+    {
+      "id": 12,
+      "category": "General Technical HR",
+      "type": "Technical HR",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "mern",
+        "backend"
+      ],
+      "question": "Which technology are you strongest in?",
+      "answer": "I am strongest in the MERN stack, especially Node.js, Express, MongoDB and REST API design. I am comfortable building backend routes, middleware, authentication flow, database schemas and integrations with external APIs. React is also a strong area for me, but my deeper interest is in the backend logic and system design behind the application.",
+      "keyPoints": [
+        "Name one strongest area.",
+        "Support it with what you can build.",
+        "Do not list too many unrelated tools."
+      ]
+    },
+    {
+      "id": 13,
+      "category": "General Technical HR",
+      "type": "Technical HR",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "react",
+        "angular"
+      ],
+      "question": "React or Angular? Why?",
+      "answer": "For my projects I prefer React because it is lightweight, component-based and flexible. It lets me build UI quickly while choosing libraries based on project needs. Angular is a complete framework with strong structure, which is useful for large enterprise teams. But for my MERN projects, React fits well because it integrates cleanly with Node.js APIs and has a strong ecosystem.",
+      "keyPoints": [
+        "Respect both technologies.",
+        "Explain project fit.",
+        "Mention component-based development."
+      ]
+    },
+    {
+      "id": 14,
+      "category": "General Technical HR",
+      "type": "Technical HR",
+      "difficulty": "Common",
+      "priority": true,
+      "tags": [
+        "mongodb",
+        "mysql",
+        "database"
+      ],
+      "question": "MongoDB or MySQL?",
+      "answer": "I choose based on the data model. MongoDB is good when data is document-oriented, flexible or evolving, such as user profiles, call logs, task records and vulnerability reports. MySQL is better when relationships are strict, schema is stable and complex joins or transactions are important. In my MERN projects, MongoDB was a good fit because the data flowed naturally as JSON between frontend, backend and database.",
+      "keyPoints": [
+        "Do not say one is always better.",
+        "Mention document vs relational data.",
+        "Connect MongoDB to your projects."
+      ]
+    },
+    {
+      "id": 15,
+      "category": "General Technical HR",
+      "type": "Technical HR",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "java",
+        "python"
+      ],
+      "question": "Java or Python?",
+      "answer": "I would use Java when the focus is enterprise backend development, strong typing, OOP structure and large-scale maintainable systems. I would use Python for scripting, automation, data processing, AI/ML and research work. For DSA, Java is useful because of its strict structure and collections. For my machine unlearning research, Python is more suitable because of PyTorch and Hugging Face support.",
+      "keyPoints": [
+        "Choose by use case.",
+        "Mention Java for backend/DSA.",
+        "Mention Python for AI/research."
+      ]
+    },
+    {
+      "id": 16,
+      "category": "General Technical HR",
+      "type": "Technical HR",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "dsa",
+        "java"
+      ],
+      "question": "Which language do you use for DSA?",
+      "answer": "I prefer Java for DSA because it has strong typing, clear OOP structure and useful collections like HashMap, ArrayList, PriorityQueue and Stack. It also forces me to think clearly about data types and edge cases. For quick scripting or AI-related tasks, I use Python, but for interview DSA I am comfortable with Java.",
+      "keyPoints": [
+        "Mention one primary language.",
+        "Explain why.",
+        "Do not sound undecided."
+      ]
+    },
+    {
+      "id": 17,
+      "category": "General Technical HR",
+      "type": "Project",
+      "difficulty": "Common",
+      "priority": true,
+      "tags": [
+        "safetrack",
+        "project"
+      ],
+      "question": "What is your favorite project?",
+      "answer": "My favorite project is SafeTrack because it solves a meaningful real-world safety problem. It combines location tracking, guardian-child architecture, SOS alerts, authentication, geofencing and secure handling of sensitive data. It is not just technically interesting; it also has social impact, which makes it a strong project to explain in interviews.",
+      "keyPoints": [
+        "Pick one project confidently.",
+        "Explain problem and impact.",
+        "Mention technical depth."
+      ]
+    },
+    {
+      "id": 18,
+      "category": "General Technical HR",
+      "type": "Project",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "sales",
+        "webrtc",
+        "llm"
+      ],
+      "question": "Which project was the most difficult?",
+      "answer": "The Sales Call Analytics Platform was the most difficult because it combined real-time communication through WebRTC with LLM-based summarization and analytics. WebRTC required signaling, peer connection handling and network considerations, while LLM integration required structured prompts and async processing. The challenge was keeping real-time calling smooth while still producing useful post-call insights.",
+      "keyPoints": [
+        "Mention technical complexity.",
+        "Explain how you solved it.",
+        "Show calm problem solving."
+      ]
+    },
+    {
+      "id": 19,
+      "category": "General Technical HR",
+      "type": "Project",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "sales",
+        "hackathon"
+      ],
+      "question": "Which project are you most proud of?",
+      "answer": "I am most proud of the Sales Analytics Platform because it won First Prize at HackCrate and was fully functional within a short deadline. I contributed to backend architecture, WebRTC signaling, MongoDB schema design and LLM summary integration. It proved that I can build and present a practical system under pressure.",
+      "keyPoints": [
+        "Use achievement as proof.",
+        "Mention individual contribution.",
+        "State the result."
+      ]
+    },
+    {
+      "id": 20,
+      "category": "General Technical HR",
+      "type": "Project",
+      "difficulty": "Scenario",
+      "priority": false,
+      "tags": [
+        "safetrack",
+        "improvement"
+      ],
+      "question": "If I ask you to rebuild one project, what would you improve?",
+      "answer": "If I rebuilt SafeTrack, I would improve it in three areas: scalability, battery efficiency and privacy. I would optimize location update frequency based on movement, use queues or event-driven processing for alerts, and add stronger encryption and audit logs for location access. I would also improve geofence accuracy by handling GPS noise and adding better retry behavior for offline conditions.",
+      "keyPoints": [
+        "Choose improvements that show maturity.",
+        "Mention performance, security and reliability.",
+        "Do not criticize your project harshly."
+      ]
+    },
+    {
+      "id": 21,
+      "category": "Frontend Technical HR",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "react"
+      ],
+      "question": "Explain React lifecycle.",
+      "answer": "React lifecycle means the stages a component goes through: mounting, updating and unmounting. In functional components, hooks handle lifecycle behavior. useEffect can run after initial render, after dependencies change, or during cleanup when a component unmounts. In interviews, I explain it as: render UI, run side effects, update when state or props change, and clean up subscriptions or timers.",
+      "keyPoints": [
+        "Mount, update, unmount.",
+        "Mention hooks for functional components.",
+        "Explain cleanup."
+      ]
+    },
+    {
+      "id": 22,
+      "category": "Frontend Technical HR",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "react"
+      ],
+      "question": "Virtual DOM?",
+      "answer": "The Virtual DOM is an in-memory representation of the UI. When state changes, React creates a new virtual tree, compares it with the previous tree and updates only the necessary parts of the real DOM. This improves developer productivity and avoids manual DOM manipulation.",
+      "keyPoints": [
+        "In-memory UI tree.",
+        "Compare previous and new state.",
+        "Update only changed DOM parts."
+      ]
+    },
+    {
+      "id": 23,
+      "category": "Frontend Technical HR",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "react"
+      ],
+      "question": "Reconciliation?",
+      "answer": "Reconciliation is React's process of comparing the previous virtual DOM with the new one and deciding what needs to change in the real DOM. React uses heuristics and keys in lists to identify stable elements. Good keys help React update lists efficiently and avoid unnecessary re-renders.",
+      "keyPoints": [
+        "Diffing process.",
+        "Keys help list updates.",
+        "Avoid unnecessary DOM work."
+      ]
+    },
+    {
+      "id": 24,
+      "category": "Frontend Technical HR",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "react",
+        "hooks"
+      ],
+      "question": "useEffect?",
+      "answer": "useEffect is used for side effects in React components, such as API calls, subscriptions, timers and manually syncing with external systems. It runs after render. The dependency array controls when it runs, and the cleanup function prevents memory leaks.",
+      "keyPoints": [
+        "Used for side effects.",
+        "Dependency array controls execution.",
+        "Cleanup prevents leaks."
+      ]
+    },
+    {
+      "id": 25,
+      "category": "Frontend Technical HR",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "react",
+        "hooks"
+      ],
+      "question": "useMemo?",
+      "answer": "useMemo memoizes the result of an expensive calculation so React does not recompute it on every render unless dependencies change. I use it when recalculation is costly or when a derived value is passed to optimized child components.",
+      "keyPoints": [
+        "Memoizes computed value.",
+        "Use only when it prevents real work.",
+        "Depends on dependency array."
+      ]
+    },
+    {
+      "id": 26,
+      "category": "Frontend Technical HR",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "react",
+        "hooks"
+      ],
+      "question": "useCallback?",
+      "answer": "useCallback memoizes a function reference between renders. It is useful when passing callbacks to memoized child components or when a function is a dependency of another hook. It should be used thoughtfully because unnecessary memoization can make code more complex.",
+      "keyPoints": [
+        "Memoizes function reference.",
+        "Useful with memoized children.",
+        "Avoid overuse."
+      ]
+    },
+    {
+      "id": 27,
+      "category": "Frontend Technical HR",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "react"
+      ],
+      "question": "Context API?",
+      "answer": "Context API lets React share data across components without passing props through every level. It is suitable for global or semi-global data like theme, authenticated user or locale. For frequently changing complex state, I would consider a dedicated state management library.",
+      "keyPoints": [
+        "Avoids prop drilling.",
+        "Good for app-wide data.",
+        "Not always ideal for high-frequency state."
+      ]
+    },
+    {
+      "id": 28,
+      "category": "Frontend Technical HR",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "react",
+        "redux"
+      ],
+      "question": "Redux vs Context?",
+      "answer": "Context is built into React and is good for simple shared values. Redux is better for large applications with complex state transitions, predictable debugging, middleware and centralized state flow. I would use Context for small to medium shared state and Redux when state becomes complex across many features.",
+      "keyPoints": [
+        "Context for simple shared data.",
+        "Redux for complex predictable state.",
+        "Choose based on scale."
+      ]
+    },
+    {
+      "id": 29,
+      "category": "Frontend Technical HR",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "react"
+      ],
+      "question": "State vs Props?",
+      "answer": "State is data owned and managed inside a component. Props are data passed from a parent component to a child. State can change within the component, while props should be treated as read-only by the receiving component.",
+      "keyPoints": [
+        "State is internal.",
+        "Props come from parent.",
+        "Props are read-only to child."
+      ]
+    },
+    {
+      "id": 30,
+      "category": "Frontend Technical HR",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "react",
+        "angular"
+      ],
+      "question": "Why React over Angular?",
+      "answer": "For my projects, React gives faster development, flexible architecture and a large ecosystem. Angular is powerful for enterprise applications where the team wants a complete framework with built-in structure. Since most of my projects use MERN stack and custom backend APIs, React gave me the flexibility I needed.",
+      "keyPoints": [
+        "React is flexible.",
+        "Angular is structured.",
+        "Choose based on project needs."
+      ]
+    },
+    {
+      "id": 31,
+      "category": "Frontend Technical HR",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "react",
+        "forms"
+      ],
+      "question": "Controlled components?",
+      "answer": "A controlled component is a form input whose value is controlled by React state. The input value comes from state, and every change updates that state through an onChange handler. This makes validation, conditional UI and form submission easier to manage.",
+      "keyPoints": [
+        "Input value comes from React state.",
+        "onChange updates state.",
+        "Useful for validation."
+      ]
+    },
+    {
+      "id": 32,
+      "category": "Frontend Technical HR",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "react",
+        "routing"
+      ],
+      "question": "How routing works?",
+      "answer": "Client-side routing maps URL paths to components without reloading the full page. In React, libraries like React Router listen to URL changes and render the matching component. For protected routes, I check authentication before rendering the page or redirect to login.",
+      "keyPoints": [
+        "URL path maps to component.",
+        "No full page reload.",
+        "Protected routes check auth."
+      ]
+    },
+    {
+      "id": 33,
+      "category": "Frontend Technical HR",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "react",
+        "performance"
+      ],
+      "question": "Lazy loading?",
+      "answer": "Lazy loading means loading a component or resource only when it is needed. In React, React.lazy and Suspense can split components into separate bundles. This reduces initial load time, especially for large pages that users may not open immediately.",
+      "keyPoints": [
+        "Load only when needed.",
+        "Improves initial performance.",
+        "Use Suspense fallback."
+      ]
+    },
+    {
+      "id": 34,
+      "category": "Frontend Technical HR",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "frontend",
+        "performance"
+      ],
+      "question": "Code splitting?",
+      "answer": "Code splitting breaks the JavaScript bundle into smaller chunks. Instead of shipping the entire application at once, the browser downloads only the code needed for the current route or feature. This improves page load performance and user experience.",
+      "keyPoints": [
+        "Smaller bundles.",
+        "Route or feature level loading.",
+        "Improves performance."
+      ]
+    },
+    {
+      "id": 35,
+      "category": "Backend Technical HR",
+      "type": "Technical",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "node",
+        "backend"
+      ],
+      "question": "What happens when a request reaches Node.js?",
+      "answer": "When a request reaches a Node.js server, the HTTP server receives it, Express matches it to middleware and routes, and the handler executes application logic. If the handler performs I/O like database queries or external API calls, Node delegates that work asynchronously while the event loop remains free to handle other requests. When the async operation completes, the callback or promise resolves and the response is sent.",
+      "keyPoints": [
+        "HTTP server receives request.",
+        "Middleware and route handler process it.",
+        "Async I/O keeps Node responsive."
+      ]
+    },
+    {
+      "id": 36,
+      "category": "Backend Technical HR",
+      "type": "Technical",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "node",
+        "event-loop"
+      ],
+      "question": "Event loop?",
+      "answer": "The event loop is the mechanism that lets Node.js handle many concurrent operations on a single main thread. CPU-light JavaScript runs on the main thread, while async I/O is handled by the OS or libuv. When the operation completes, its callback is queued and executed by the event loop. This is why Node is strong for I/O-heavy applications.",
+      "keyPoints": [
+        "Single main JS thread.",
+        "Async I/O is delegated.",
+        "Best for I/O-heavy workloads."
+      ]
+    },
+    {
+      "id": 37,
+      "category": "Backend Technical HR",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "node"
+      ],
+      "question": "Single thread architecture?",
+      "answer": "Node.js runs JavaScript on a single main thread, which avoids many shared-memory issues. However, it can still handle many clients because I/O is non-blocking. CPU-heavy work can block the event loop, so for heavy computation I would use worker threads, background jobs or separate services.",
+      "keyPoints": [
+        "One main JS thread.",
+        "Non-blocking I/O provides concurrency.",
+        "CPU-heavy tasks need workers."
+      ]
+    },
+    {
+      "id": 38,
+      "category": "Backend Technical HR",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "node"
+      ],
+      "question": "Worker threads?",
+      "answer": "Worker threads in Node.js allow CPU-intensive JavaScript work to run in separate threads. They are useful for tasks like image processing, encryption-heavy work or large computations. I would not use them for normal database calls because async I/O already handles that efficiently.",
+      "keyPoints": [
+        "Separate threads for CPU-heavy work.",
+        "Avoid blocking event loop.",
+        "Not needed for normal I/O."
+      ]
+    },
+    {
+      "id": 39,
+      "category": "Backend Technical HR",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "node"
+      ],
+      "question": "Streams?",
+      "answer": "Streams process data in chunks instead of loading everything into memory. They are useful for large files, uploads, downloads and real-time data pipelines. In Node.js, streams improve memory efficiency and allow backpressure handling when the consumer is slower than the producer.",
+      "keyPoints": [
+        "Chunk-based processing.",
+        "Memory efficient.",
+        "Supports backpressure."
+      ]
+    },
+    {
+      "id": 40,
+      "category": "Backend Technical HR",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "express"
+      ],
+      "question": "Middleware?",
+      "answer": "Middleware is a function that runs between the request and final route handler. In Express, middleware is used for logging, authentication, validation, parsing request bodies, error handling and rate limiting. It keeps cross-cutting logic reusable and organized.",
+      "keyPoints": [
+        "Runs before route handler.",
+        "Used for auth, logging, validation.",
+        "Improves code organization."
+      ]
+    },
+    {
+      "id": 41,
+      "category": "Backend Technical HR",
+      "type": "Technical",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "auth"
+      ],
+      "question": "Authentication flow?",
+      "answer": "A typical authentication flow starts with the user submitting credentials. The backend validates them, compares the password with a hashed password in the database, and then creates a session or JWT. For protected routes, middleware verifies the token or session and attaches the user identity to the request before allowing access.",
+      "keyPoints": [
+        "Never store plain passwords.",
+        "Use sessions or JWT.",
+        "Protect routes with auth middleware."
+      ]
+    },
+    {
+      "id": 42,
+      "category": "Backend Technical HR",
+      "type": "Technical",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "auth",
+        "jwt"
+      ],
+      "question": "JWT?",
+      "answer": "JWT stands for JSON Web Token. It is a signed token containing claims like user id, role and expiry. The server signs it with a secret or private key, and later verifies it for protected routes. JWT is useful for stateless APIs, but it must be stored securely and should have expiry and refresh strategy.",
+      "keyPoints": [
+        "Signed token, not encrypted by default.",
+        "Useful for stateless APIs.",
+        "Use expiry and secure storage."
+      ]
+    },
+    {
+      "id": 43,
+      "category": "Backend Technical HR",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "auth"
+      ],
+      "question": "Sessions vs JWT?",
+      "answer": "Sessions store login state on the server and usually keep only a session id in the browser cookie. JWT stores signed user claims in the token, so the server can verify without database lookup. Sessions are easier to revoke centrally, while JWT is useful for stateless APIs and distributed services. The right choice depends on security and scaling needs.",
+      "keyPoints": [
+        "Sessions are server-side.",
+        "JWT is stateless signed token.",
+        "Revocation is easier with sessions."
+      ]
+    },
+    {
+      "id": 44,
+      "category": "Backend Technical HR",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "web",
+        "security"
+      ],
+      "question": "Cookies?",
+      "answer": "Cookies are small pieces of data stored by the browser and sent automatically with matching requests. They are often used for session ids or refresh tokens. For security, sensitive cookies should use HttpOnly, Secure and SameSite settings to reduce XSS and CSRF risk.",
+      "keyPoints": [
+        "Browser sends cookies automatically.",
+        "Use HttpOnly and Secure.",
+        "SameSite helps reduce CSRF."
+      ]
+    },
+    {
+      "id": 45,
+      "category": "Backend Technical HR",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "security",
+        "api"
+      ],
+      "question": "CORS?",
+      "answer": "CORS is a browser security mechanism that controls whether a frontend from one origin can call an API on another origin. The backend must explicitly allow trusted origins, methods and headers. In production, I avoid wildcard origins for authenticated APIs and configure CORS only for known clients.",
+      "keyPoints": [
+        "Browser-enforced security.",
+        "Backend sends allow headers.",
+        "Avoid wildcard for auth APIs."
+      ]
+    },
+    {
+      "id": 46,
+      "category": "Backend Technical HR",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "security",
+        "api"
+      ],
+      "question": "Rate limiting?",
+      "answer": "Rate limiting restricts how many requests a user, IP or token can make within a time window. It protects APIs from abuse, brute force login attempts and accidental overload. I would apply stricter limits to login, OTP and expensive endpoints, and use Redis for distributed rate limiting.",
+      "keyPoints": [
+        "Protects from abuse.",
+        "Important for auth endpoints.",
+        "Redis helps in distributed systems."
+      ]
+    },
+    {
+      "id": 47,
+      "category": "Backend Technical HR",
+      "type": "Technical",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "rest",
+        "api"
+      ],
+      "question": "REST principles?",
+      "answer": "REST APIs should use resources, HTTP methods and stateless request handling. URLs represent nouns like /users or /orders, and methods represent actions such as GET, POST, PUT, PATCH and DELETE. Responses should use proper status codes, consistent JSON structure, validation, pagination and authentication where required.",
+      "keyPoints": [
+        "Resource-based URLs.",
+        "Use HTTP methods correctly.",
+        "Stateless and consistent responses."
+      ]
+    },
+    {
+      "id": 48,
+      "category": "Backend Technical HR",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "rest"
+      ],
+      "question": "PUT vs PATCH?",
+      "answer": "PUT usually replaces the full resource, while PATCH updates part of a resource. If I update an entire user profile, PUT is suitable. If I only update a phone number or status field, PATCH is better. Both should validate input and return clear status codes.",
+      "keyPoints": [
+        "PUT replaces full resource.",
+        "PATCH partially updates.",
+        "Validate both."
+      ]
+    },
+    {
+      "id": 49,
+      "category": "Backend Technical HR",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "api",
+        "database"
+      ],
+      "question": "Pagination implementation?",
+      "answer": "Pagination limits how many records are returned at once. For simple lists, I can use page and limit with skip and limit in MongoDB. For large datasets, cursor-based pagination is better because it is more stable and efficient. The API should return metadata like total count, current page or next cursor.",
+      "keyPoints": [
+        "Limit response size.",
+        "Offset pagination is simple.",
+        "Cursor pagination scales better."
+      ]
+    },
+    {
+      "id": 50,
+      "category": "Backend Technical HR",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "api",
+        "upload"
+      ],
+      "question": "File upload implementation?",
+      "answer": "For file uploads, the frontend sends multipart/form-data. The backend validates file type and size, stores the file in cloud storage or disk, and saves metadata in the database. I would avoid trusting the original file name, scan where required, and use signed URLs for secure access.",
+      "keyPoints": [
+        "Use multipart/form-data.",
+        "Validate size and type.",
+        "Store metadata separately."
+      ]
+    },
+    {
+      "id": 51,
+      "category": "Backend Technical HR",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "api"
+      ],
+      "question": "API versioning?",
+      "answer": "API versioning allows changes without breaking existing clients. Common approaches are URL versioning like /api/v1/users or header-based versioning. I prefer simple URL versioning for public APIs because it is visible and easy to debug. Breaking changes should go into a new version, while backward-compatible changes can stay in the same version.",
+      "keyPoints": [
+        "Prevents breaking clients.",
+        "URL versioning is clear.",
+        "Use new versions for breaking changes."
+      ]
+    },
+    {
+      "id": 52,
+      "category": "Backend Technical HR",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "architecture"
+      ],
+      "question": "Microservices?",
+      "answer": "Microservices split an application into small independently deployable services, each owning a specific business capability. They improve independent scaling and team ownership, but add complexity in communication, observability, deployment and data consistency. I would choose microservices only when the system scale and team structure justify it.",
+      "keyPoints": [
+        "Independent services.",
+        "Scale and deploy separately.",
+        "Adds operational complexity."
+      ]
+    },
+    {
+      "id": 53,
+      "category": "Backend Technical HR",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "architecture"
+      ],
+      "question": "Monolith?",
+      "answer": "A monolith keeps the application in one deployable codebase. It is simpler to develop, test and deploy initially, especially for small teams or early products. A well-structured modular monolith is often the best starting point, and services can be extracted later when scaling or team boundaries require it.",
+      "keyPoints": [
+        "Single deployable app.",
+        "Good starting point.",
+        "Can be modular and clean."
+      ]
+    },
+    {
+      "id": 54,
+      "category": "Database Technical HR",
+      "type": "Technical",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "database"
+      ],
+      "question": "SQL vs NoSQL?",
+      "answer": "SQL databases use structured tables, schemas and relationships, and are strong for transactions and joins. NoSQL databases like MongoDB use flexible document models and scale well for evolving data structures. I choose SQL for highly relational, transaction-heavy systems and NoSQL for flexible, document-oriented data that changes frequently.",
+      "keyPoints": [
+        "SQL is relational and schema-driven.",
+        "NoSQL is flexible and document/key/value oriented.",
+        "Choose by data model and consistency needs."
+      ]
+    },
+    {
+      "id": 55,
+      "category": "Database Technical HR",
+      "type": "Technical",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "mongodb"
+      ],
+      "question": "Why MongoDB?",
+      "answer": "MongoDB fits my MERN projects because it stores JSON-like documents, which map naturally to JavaScript objects. It is flexible for evolving project requirements, supports indexing and aggregation, and works well for data like user profiles, location logs, call records, task records and vulnerability reports.",
+      "keyPoints": [
+        "Natural fit with Node.js JSON.",
+        "Flexible schema.",
+        "Good for project data models."
+      ]
+    },
+    {
+      "id": 56,
+      "category": "Database Technical HR",
+      "type": "Technical",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "database",
+        "mongodb"
+      ],
+      "question": "Indexing?",
+      "answer": "Indexing improves query performance by creating a data structure that helps the database find records faster without scanning the entire collection or table. The tradeoff is extra storage and slower writes because indexes must be updated. I would index fields used frequently in filters, sorting and joins or lookups.",
+      "keyPoints": [
+        "Speeds reads.",
+        "Costs storage and write overhead.",
+        "Index query-heavy fields."
+      ]
+    },
+    {
+      "id": 57,
+      "category": "Database Technical HR",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "mongodb"
+      ],
+      "question": "Aggregation pipeline?",
+      "answer": "MongoDB aggregation pipeline processes documents through stages like match, group, project, sort and lookup. It is useful for analytics and reporting, such as grouping sales calls by employee, calculating dashboard metrics or summarizing vulnerability counts by severity.",
+      "keyPoints": [
+        "Stage-based processing.",
+        "Useful for analytics.",
+        "Common stages: match, group, project, sort."
+      ]
+    },
+    {
+      "id": 58,
+      "category": "Database Technical HR",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "mongodb"
+      ],
+      "question": "Transactions in MongoDB?",
+      "answer": "MongoDB supports multi-document transactions when operations across multiple documents must succeed or fail together. They provide ACID guarantees, but they add overhead. I would use transactions for critical workflows like payment or inventory consistency, but avoid them when a single document update is enough.",
+      "keyPoints": [
+        "Multi-document ACID support.",
+        "Use for critical consistency.",
+        "Avoid unnecessary overhead."
+      ]
+    },
+    {
+      "id": 59,
+      "category": "Database Technical HR",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "database",
+        "scaling"
+      ],
+      "question": "Sharding?",
+      "answer": "Sharding horizontally splits data across multiple servers based on a shard key. It helps scale write and storage capacity for very large datasets. The most important decision is choosing a good shard key to distribute traffic evenly and avoid hotspots.",
+      "keyPoints": [
+        "Horizontal partitioning.",
+        "Scales storage and writes.",
+        "Shard key selection is critical."
+      ]
+    },
+    {
+      "id": 60,
+      "category": "Database Technical HR",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "database"
+      ],
+      "question": "Replication?",
+      "answer": "Replication keeps copies of data across multiple database nodes. It improves availability and disaster recovery. In MongoDB, a replica set has a primary node for writes and secondary nodes that replicate data and can be promoted if the primary fails.",
+      "keyPoints": [
+        "Copies data across nodes.",
+        "Improves availability.",
+        "Primary-secondary failover."
+      ]
+    },
+    {
+      "id": 61,
+      "category": "Database Technical HR",
+      "type": "Technical",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "database"
+      ],
+      "question": "ACID?",
+      "answer": "ACID stands for Atomicity, Consistency, Isolation and Durability. Atomicity means all or nothing, consistency means rules remain valid, isolation means concurrent transactions do not interfere incorrectly, and durability means committed data survives crashes. It is important wherever data correctness matters.",
+      "keyPoints": [
+        "Atomicity: all or nothing.",
+        "Isolation: concurrent safety.",
+        "Durability: committed data persists."
+      ]
+    },
+    {
+      "id": 62,
+      "category": "Database Technical HR",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "system-design"
+      ],
+      "question": "CAP theorem?",
+      "answer": "CAP theorem says a distributed system can fully guarantee only two of Consistency, Availability and Partition tolerance during a network partition. Since partitions can happen in distributed systems, the practical tradeoff is often between consistency and availability. System design depends on whether stale data is acceptable.",
+      "keyPoints": [
+        "Consistency, Availability, Partition tolerance.",
+        "Network partitions force tradeoffs.",
+        "Business requirements decide preference."
+      ]
+    },
+    {
+      "id": 63,
+      "category": "Database Technical HR",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "database"
+      ],
+      "question": "Database normalization?",
+      "answer": "Normalization organizes relational data to reduce duplication and improve consistency. It splits data into related tables and uses keys to connect them. For example, customer data should not be repeated in every order row; orders should reference a customer id.",
+      "keyPoints": [
+        "Reduces redundancy.",
+        "Improves consistency.",
+        "Uses related tables and keys."
+      ]
+    },
+    {
+      "id": 64,
+      "category": "Database Technical HR",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "sql"
+      ],
+      "question": "Joins?",
+      "answer": "Joins combine rows from multiple relational tables based on related columns. INNER JOIN returns matching rows, LEFT JOIN returns all rows from the left table plus matches, RIGHT JOIN does the reverse, and FULL OUTER JOIN returns all rows from both sides. Joins are one of the strengths of SQL databases.",
+      "keyPoints": [
+        "Combines related tables.",
+        "Inner and left joins are most common.",
+        "Useful for relational data."
+      ]
+    },
+    {
+      "id": 65,
+      "category": "SafeTrack Questions",
+      "type": "Project",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "safetrack"
+      ],
+      "question": "Explain SafeTrack.",
+      "answer": "SafeTrack is a child safety and location monitoring system. It connects a guardian account with a child device or child account, tracks location with permission, supports geofencing and triggers SOS alerts during emergencies. The goal is to give guardians timely visibility and alerts while handling child location data securely.",
+      "keyPoints": [
+        "State problem, users and core flow.",
+        "Mention location, geofence and SOS.",
+        "Emphasize privacy and security."
+      ]
+    },
+    {
+      "id": 66,
+      "category": "SafeTrack Questions",
+      "type": "Project",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "safetrack"
+      ],
+      "question": "What problem does it solve?",
+      "answer": "It solves the problem of guardians not having timely location visibility or emergency alerts for children when they are outside safe areas. Instead of relying only on manual calls, SafeTrack provides location updates, geofence alerts and SOS communication in one system.",
+      "keyPoints": [
+        "Child safety problem.",
+        "Timely alerts.",
+        "Location plus emergency workflow."
+      ]
+    },
+    {
+      "id": 67,
+      "category": "SafeTrack Questions",
+      "type": "Project",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "safetrack"
+      ],
+      "question": "Who are the users?",
+      "answer": "The main users are guardians and children. Guardians manage safe zones, view authorized location updates and receive emergency alerts. Children use the child-side flow to share location and trigger SOS when needed. Admins may also exist for monitoring abuse, support and system-level management.",
+      "keyPoints": [
+        "Guardian.",
+        "Child.",
+        "Optional admin/support role."
+      ]
+    },
+    {
+      "id": 68,
+      "category": "SafeTrack Questions",
+      "type": "Project",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "safetrack"
+      ],
+      "question": "Guardian architecture?",
+      "answer": "The guardian side handles authentication, linking with child accounts, creating safe zones, viewing location history and receiving alerts. From the backend perspective, guardian APIs should enforce authorization so a guardian can only access linked child data. The UI should be simple, alert-focused and privacy aware.",
+      "keyPoints": [
+        "Auth and child linking.",
+        "Geofence management.",
+        "Strict authorization."
+      ]
+    },
+    {
+      "id": 69,
+      "category": "SafeTrack Questions",
+      "type": "Project",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "safetrack"
+      ],
+      "question": "Child architecture?",
+      "answer": "The child side focuses on secure identity, background location updates, SOS trigger and minimal interaction. It should send location at controlled intervals, reduce battery usage, retry when offline and avoid exposing sensitive controls. The backend validates that updates come from the correct authenticated child device.",
+      "keyPoints": [
+        "Background location updates.",
+        "SOS trigger.",
+        "Battery and offline handling."
+      ]
+    },
+    {
+      "id": 70,
+      "category": "SafeTrack Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "gps"
+      ],
+      "question": "How GPS works?",
+      "answer": "GPS works by receiving signals from multiple satellites and calculating the device position using trilateration. The device estimates distance from satellites based on signal timing. In mobile apps, GPS may be combined with Wi-Fi, cell towers and sensors to improve speed and accuracy.",
+      "keyPoints": [
+        "Satellite signals.",
+        "Trilateration.",
+        "Assisted GPS improves mobile accuracy."
+      ]
+    },
+    {
+      "id": 71,
+      "category": "SafeTrack Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "gps"
+      ],
+      "question": "Accuracy of GPS?",
+      "answer": "GPS accuracy depends on environment, satellite visibility, device hardware and signal interference. Open outdoor areas are more accurate, while indoors, dense buildings or bad weather can reduce accuracy. In SafeTrack, I would show accuracy radius and avoid triggering geofence alerts from a single noisy reading.",
+      "keyPoints": [
+        "Accuracy varies by environment.",
+        "Indoor/urban areas are less accurate.",
+        "Use accuracy radius and filtering."
+      ]
+    },
+    {
+      "id": 72,
+      "category": "SafeTrack Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "gps",
+        "battery"
+      ],
+      "question": "How frequently location updates occur?",
+      "answer": "Location frequency should depend on risk and movement. For normal mode, updates can be less frequent to save battery. During active trip, geofence boundary or SOS mode, updates should be more frequent. I would make it configurable and adaptive instead of sending location every second all the time.",
+      "keyPoints": [
+        "Adaptive frequency.",
+        "More frequent in emergency.",
+        "Balance accuracy and battery."
+      ]
+    },
+    {
+      "id": 73,
+      "category": "SafeTrack Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "gps",
+        "battery"
+      ],
+      "question": "How to reduce battery consumption?",
+      "answer": "Battery can be reduced by adaptive update intervals, using significant location change APIs, lowering GPS frequency when stationary, batching updates, stopping tracking when not needed and using geofence events instead of constant polling. During SOS mode, accuracy can be prioritized over battery.",
+      "keyPoints": [
+        "Adaptive intervals.",
+        "Detect stationary state.",
+        "Use geofence/significant-change APIs."
+      ]
+    },
+    {
+      "id": 74,
+      "category": "SafeTrack Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": true,
+      "tags": [
+        "geofence"
+      ],
+      "question": "How geofencing works?",
+      "answer": "Geofencing defines a virtual boundary around a location. The system compares the child's current coordinates with the safe zone center and radius. If the calculated distance crosses the boundary, it triggers an entry or exit event and notifies the guardian.",
+      "keyPoints": [
+        "Virtual boundary.",
+        "Compare current location with radius.",
+        "Trigger entry/exit alerts."
+      ]
+    },
+    {
+      "id": 75,
+      "category": "SafeTrack Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "geofence"
+      ],
+      "question": "Radius calculations?",
+      "answer": "For small distances, the app can calculate distance between two latitude-longitude points and compare it with the configured radius. The safe zone is usually stored as center latitude, center longitude and radius in meters. GPS accuracy should be considered before triggering alerts.",
+      "keyPoints": [
+        "Store center and radius.",
+        "Calculate distance to current point.",
+        "Account for GPS noise."
+      ]
+    },
+    {
+      "id": 76,
+      "category": "SafeTrack Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": true,
+      "tags": [
+        "geofence",
+        "math"
+      ],
+      "question": "Haversine formula?",
+      "answer": "The Haversine formula calculates the great-circle distance between two points on Earth using latitude and longitude. It is useful for geofencing because Earth is not flat. In SafeTrack, I would use it to compare the child's location with a safe zone center.",
+      "keyPoints": [
+        "Calculates distance on Earth surface.",
+        "Uses lat/long.",
+        "Useful for geofencing radius checks."
+      ]
+    },
+    {
+      "id": 77,
+      "category": "SafeTrack Questions",
+      "type": "Project",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "safetrack",
+        "notification"
+      ],
+      "question": "How SOS works?",
+      "answer": "SOS is an emergency flow where the child triggers an alert that immediately notifies linked guardians with current location, time and status. The backend stores the SOS event, sends push notifications, and may keep increasing location update frequency until the emergency is resolved.",
+      "keyPoints": [
+        "Child triggers event.",
+        "Guardian receives location and alert.",
+        "Backend stores emergency event."
+      ]
+    },
+    {
+      "id": 78,
+      "category": "SafeTrack Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "notification"
+      ],
+      "question": "Push notification implementation?",
+      "answer": "Push notifications can be implemented using Firebase Cloud Messaging or a similar service. The child or backend creates an alert event, the server identifies guardian device tokens, sends the notification payload and stores delivery status. Sensitive details should be minimal in the notification body.",
+      "keyPoints": [
+        "Use FCM/APNs.",
+        "Store device tokens securely.",
+        "Send minimal sensitive data."
+      ]
+    },
+    {
+      "id": 79,
+      "category": "SafeTrack Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "offline",
+        "safetrack"
+      ],
+      "question": "Offline support?",
+      "answer": "For offline support, the app can store location events locally with timestamps and sync when the network returns. SOS can be queued and retried aggressively. The UI should clearly show offline status, and the backend should handle late-arriving events without corrupting location history.",
+      "keyPoints": [
+        "Local queue with timestamps.",
+        "Retry sync.",
+        "Show offline status."
+      ]
+    },
+    {
+      "id": 80,
+      "category": "SafeTrack Questions",
+      "type": "Project",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "safetrack"
+      ],
+      "question": "Emergency contact mechanism?",
+      "answer": "Emergency contacts are linked to the child through guardian-approved relationships. During SOS, the system sends alerts to those contacts based on priority and availability. The backend must verify authorization so only approved contacts receive sensitive child location information.",
+      "keyPoints": [
+        "Approved contacts only.",
+        "Priority-based alerts.",
+        "Authorization is critical."
+      ]
+    },
+    {
+      "id": 81,
+      "category": "SafeTrack Questions",
+      "type": "Scenario",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "scaling",
+        "safetrack"
+      ],
+      "question": "1,000 users?",
+      "answer": "For 1,000 users, a single well-structured Node.js backend with MongoDB indexing, background jobs for notifications and proper monitoring can handle the system. I would focus on clean API design, rate limiting, efficient location writes and reliable notification retries.",
+      "keyPoints": [
+        "Single backend can work.",
+        "Index user and location fields.",
+        "Use background jobs for alerts."
+      ]
+    },
+    {
+      "id": 82,
+      "category": "SafeTrack Questions",
+      "type": "Scenario",
+      "difficulty": "Advanced",
+      "priority": false,
+      "tags": [
+        "scaling",
+        "safetrack"
+      ],
+      "question": "100,000 users?",
+      "answer": "For 100,000 users, I would scale horizontally with multiple Node.js instances behind a load balancer, use Redis for caching and pub/sub, queue alert workloads, optimize location storage with time-based partitioning or TTL policies, and separate real-time notification services. Observability, rate limits and database indexing become critical.",
+      "keyPoints": [
+        "Horizontal scaling.",
+        "Queues and Redis.",
+        "Partition/time-series location data."
+      ]
+    },
+    {
+      "id": 83,
+      "category": "SafeTrack Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "database",
+        "safetrack"
+      ],
+      "question": "Database schema?",
+      "answer": "Core collections or tables would include users, guardian-child links, devices, locations, geofences, SOS events, notifications and audit logs. Location records should store child id, coordinates, accuracy, timestamp and source. Sensitive access should be tracked through audit logs.",
+      "keyPoints": [
+        "Users and relationships.",
+        "Locations and geofences.",
+        "SOS, notifications and audit logs."
+      ]
+    },
+    {
+      "id": 84,
+      "category": "SafeTrack Questions",
+      "type": "Scenario",
+      "difficulty": "Advanced",
+      "priority": false,
+      "tags": [
+        "websocket",
+        "scaling"
+      ],
+      "question": "WebSocket scaling?",
+      "answer": "WebSocket scaling requires sticky sessions or a shared pub/sub layer like Redis because clients may connect to different server instances. For SafeTrack, location or alert events can be published to Redis channels, and whichever server holds the guardian connection can deliver the update.",
+      "keyPoints": [
+        "Use Redis pub/sub.",
+        "Handle multi-instance connections.",
+        "Consider sticky sessions."
+      ]
+    },
+    {
+      "id": 85,
+      "category": "SafeTrack Questions",
+      "type": "Security",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "security",
+        "safetrack"
+      ],
+      "question": "How do you secure child location data?",
+      "answer": "I would secure child location data with strong authentication, strict guardian-child authorization, HTTPS in transit, encryption at rest, minimal retention, audit logs and role-based access. Only linked guardians should access location data, and the system should avoid exposing precise location unless necessary.",
+      "keyPoints": [
+        "Authentication and authorization.",
+        "Encrypt in transit and at rest.",
+        "Audit and minimize retention."
+      ]
+    },
+    {
+      "id": 86,
+      "category": "SafeTrack Questions",
+      "type": "Security",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "security"
+      ],
+      "question": "Encryption?",
+      "answer": "Encryption in transit means using HTTPS/TLS so location data cannot be read on the network. Encryption at rest means protecting stored data in the database or disk. For highly sensitive fields, application-level encryption can also be used so even database access does not directly reveal the data.",
+      "keyPoints": [
+        "TLS for transit.",
+        "Database/disk encryption at rest.",
+        "Application-level encryption for sensitive fields."
+      ]
+    },
+    {
+      "id": 87,
+      "category": "SafeTrack Questions",
+      "type": "Security",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "auth",
+        "safetrack"
+      ],
+      "question": "Authentication?",
+      "answer": "Authentication verifies who the user is. In SafeTrack, guardians and child devices must log in or register securely. I would use hashed passwords or OAuth where appropriate, JWT/session tokens, refresh token rotation and device binding for child devices.",
+      "keyPoints": [
+        "Verifies identity.",
+        "Use secure token strategy.",
+        "Bind child device where possible."
+      ]
+    },
+    {
+      "id": 88,
+      "category": "SafeTrack Questions",
+      "type": "Security",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "auth",
+        "safetrack"
+      ],
+      "question": "Authorization?",
+      "answer": "Authorization verifies what an authenticated user is allowed to access. In SafeTrack, a guardian should only access children linked to their account. Every location, SOS and geofence API must check relationship permissions, not just whether the user is logged in.",
+      "keyPoints": [
+        "Auth is who you are.",
+        "Authorization is what you can access.",
+        "Check permissions on every sensitive API."
+      ]
+    },
+    {
+      "id": 89,
+      "category": "AI Task Automation Agent",
+      "type": "Project",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "ai-agent",
+        "architecture"
+      ],
+      "question": "Explain architecture.",
+      "answer": "The AI Task Automation Agent has a React frontend, Node.js/Express backend, OAuth 2.0 authentication with Google, Gmail API for reading permitted emails, an LLM/NLP layer for extracting tasks, Google Calendar API for event creation and MongoDB for user/task metadata. The backend coordinates the secure flow and avoids storing the user's Google password.",
+      "keyPoints": [
+        "React frontend and Node backend.",
+        "OAuth connects Gmail/Calendar.",
+        "LLM extracts tasks and Calendar API schedules them."
+      ]
+    },
+    {
+      "id": 90,
+      "category": "AI Task Automation Agent",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": true,
+      "tags": [
+        "gmail",
+        "oauth"
+      ],
+      "question": "How Gmail API works?",
+      "answer": "Gmail API lets an authorized application read or manage Gmail data through Google-approved scopes. After OAuth consent, the app receives an access token and calls Gmail endpoints to list messages, fetch message details and process email content. The app should request only the minimum scopes needed.",
+      "keyPoints": [
+        "Requires OAuth consent.",
+        "Uses access token and scopes.",
+        "Fetch list then message details."
+      ]
+    },
+    {
+      "id": 91,
+      "category": "AI Task Automation Agent",
+      "type": "Technical",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "oauth"
+      ],
+      "question": "OAuth flow?",
+      "answer": "OAuth flow starts when the user clicks sign in with Google. The app redirects to Google with requested scopes. After consent, Google returns an authorization code to the callback URL. The backend exchanges that code for access and refresh tokens, stores tokens securely and uses the access token to call Gmail or Calendar APIs.",
+      "keyPoints": [
+        "Redirect to Google.",
+        "Authorization code exchange.",
+        "Access token plus refresh token."
+      ]
+    },
+    {
+      "id": 92,
+      "category": "AI Task Automation Agent",
+      "type": "Security",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "oauth",
+        "security"
+      ],
+      "question": "Refresh tokens?",
+      "answer": "Refresh tokens are long-lived tokens used to obtain new access tokens when the current access token expires. They must be stored securely because they provide continued access. I would encrypt them, rotate them where supported and revoke them when the user disconnects the integration.",
+      "keyPoints": [
+        "Long-lived token.",
+        "Used to renew access tokens.",
+        "Store securely and revoke on disconnect."
+      ]
+    },
+    {
+      "id": 93,
+      "category": "AI Task Automation Agent",
+      "type": "Security",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "oauth"
+      ],
+      "question": "Access tokens?",
+      "answer": "Access tokens are short-lived credentials used to call APIs on behalf of the user. They should have limited scopes and expiry. If an access token leaks, the damage is limited compared with a password, but it still must be protected.",
+      "keyPoints": [
+        "Short-lived API credential.",
+        "Scoped permissions.",
+        "Protect in backend storage."
+      ]
+    },
+    {
+      "id": 94,
+      "category": "AI Task Automation Agent",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "calendar"
+      ],
+      "question": "Calendar API integration?",
+      "answer": "Calendar API integration uses the authorized access token to create calendar events. The backend builds event payloads with title, date, time, description and reminders. Before creating an event, it should check for duplicates and conflicts so the user does not get repeated or overlapping events.",
+      "keyPoints": [
+        "Use OAuth token.",
+        "Create structured event payload.",
+        "Check duplicates and conflicts."
+      ]
+    },
+    {
+      "id": 95,
+      "category": "AI Task Automation Agent",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "llm",
+        "ai-agent"
+      ],
+      "question": "How tasks are extracted?",
+      "answer": "Tasks are extracted by processing email subject and body through an NLP or LLM layer. The prompt asks for structured output such as task title, deadline, priority and source email id. The backend validates the extracted JSON before saving or scheduling it.",
+      "keyPoints": [
+        "Parse subject/body.",
+        "LLM returns structured task fields.",
+        "Validate before scheduling."
+      ]
+    },
+    {
+      "id": 96,
+      "category": "AI Task Automation Agent",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "llm"
+      ],
+      "question": "Which LLM?",
+      "answer": "The architecture is LLM-provider independent. I can use a reliable hosted LLM API for extraction and summarization, with prompts that force structured JSON output. In an interview, I would explain the design rather than depending on one model name: the key is low-temperature, schema-based output and validation.",
+      "keyPoints": [
+        "Design can be model-agnostic.",
+        "Use structured JSON output.",
+        "Validate model response."
+      ]
+    },
+    {
+      "id": 97,
+      "category": "AI Task Automation Agent",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": true,
+      "tags": [
+        "llm"
+      ],
+      "question": "Prompt engineering?",
+      "answer": "Prompt engineering means writing instructions that make the LLM output reliable and useful. For this project, I would give the model a clear role, the email text, extraction rules, date handling instructions and a strict JSON schema. This reduces ambiguity and makes backend parsing safer.",
+      "keyPoints": [
+        "Clear role and task.",
+        "Strict output schema.",
+        "Examples improve consistency."
+      ]
+    },
+    {
+      "id": 98,
+      "category": "AI Task Automation Agent",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "llm"
+      ],
+      "question": "Hallucinations?",
+      "answer": "Hallucination means the model generates information not present in the source. For task extraction, I would reduce hallucination by asking the model to extract only explicit or strongly implied tasks, return null for missing fields, include confidence score and validate output before calendar creation.",
+      "keyPoints": [
+        "Do not invent missing details.",
+        "Use confidence and validation.",
+        "Human confirmation for uncertain tasks."
+      ]
+    },
+    {
+      "id": 99,
+      "category": "AI Task Automation Agent",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "llm"
+      ],
+      "question": "Token limits?",
+      "answer": "Token limits define how much input and output the model can process in one request. Long email threads may exceed this, so I would trim quoted replies, summarize history, process only relevant parts or chunk the content. The system should also limit output size with a strict schema.",
+      "keyPoints": [
+        "Models have context limits.",
+        "Trim or chunk long emails.",
+        "Use strict output schema."
+      ]
+    },
+    {
+      "id": 100,
+      "category": "AI Task Automation Agent",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "llm"
+      ],
+      "question": "Context window?",
+      "answer": "The context window is the maximum amount of text the LLM can consider at once. If the email thread is too long, the model may miss details or reject the request. I would preprocess emails to keep sender, latest message, dates and relevant body content.",
+      "keyPoints": [
+        "Maximum input/output span.",
+        "Preprocess long messages.",
+        "Keep only task-relevant content."
+      ]
+    },
+    {
+      "id": 101,
+      "category": "AI Task Automation Agent",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "llm"
+      ],
+      "question": "Function calling?",
+      "answer": "Function calling lets the model return structured arguments for predefined functions, such as createTask or createCalendarEvent. It improves reliability because the model does not directly perform actions; the backend validates the function arguments and then executes the real API call.",
+      "keyPoints": [
+        "Model returns structured function args.",
+        "Backend validates and executes.",
+        "Safer than free-form text."
+      ]
+    },
+    {
+      "id": 102,
+      "category": "AI Task Automation Agent",
+      "type": "Scenario",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "calendar"
+      ],
+      "question": "Scheduling conflicts?",
+      "answer": "For scheduling conflicts, the backend should query the user's calendar availability before creating an event. If the slot overlaps, the system can suggest alternative times or mark it for user confirmation. I would not silently schedule conflicting tasks.",
+      "keyPoints": [
+        "Check calendar before scheduling.",
+        "Suggest alternatives.",
+        "Ask confirmation for conflicts."
+      ]
+    },
+    {
+      "id": 103,
+      "category": "AI Task Automation Agent",
+      "type": "Scenario",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "calendar",
+        "api"
+      ],
+      "question": "Duplicate event prevention?",
+      "answer": "Duplicate prevention can use the source email id, extracted task signature and calendar event metadata. Before creating a new event, the backend checks whether the same email/task was already processed. Idempotency keys are useful so retries do not create duplicate events.",
+      "keyPoints": [
+        "Use source email id.",
+        "Store processed task signature.",
+        "Idempotency prevents retry duplicates."
+      ]
+    },
+    {
+      "id": 104,
+      "category": "AI Task Automation Agent",
+      "type": "Scenario",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "gmail",
+        "reliability"
+      ],
+      "question": "Suppose Gmail API fails. What happens?",
+      "answer": "If Gmail API fails, the system should not lose state or create partial results. It should log the failure, return a user-friendly status, retry transient errors with backoff and pause processing for permission errors until the user reconnects Google. Existing scheduled tasks should remain unaffected.",
+      "keyPoints": [
+        "Detect transient vs auth errors.",
+        "Retry with backoff.",
+        "Do not create partial duplicate actions."
+      ]
+    },
+    {
+      "id": 105,
+      "category": "AI Task Automation Agent",
+      "type": "Scenario",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "reliability"
+      ],
+      "question": "How would you retry requests?",
+      "answer": "I would retry only safe transient failures like 429 or 5xx using exponential backoff with jitter. For non-retryable errors like invalid permissions, I would stop and ask the user to reconnect. Retry jobs should use idempotency keys to prevent duplicate calendar events.",
+      "keyPoints": [
+        "Retry transient errors.",
+        "Use exponential backoff with jitter.",
+        "Use idempotency."
+      ]
+    },
+    {
+      "id": 106,
+      "category": "AI Task Automation Agent",
+      "type": "Scenario",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "rate-limit"
+      ],
+      "question": "Rate limiting strategy?",
+      "answer": "I would respect Google API quota limits, throttle requests per user, cache already processed email ids and use background queues. If quota is reached, the job should pause and resume later instead of repeatedly failing. Login and public APIs should also have security rate limits.",
+      "keyPoints": [
+        "Respect provider quotas.",
+        "Throttle per user.",
+        "Use queues and caching."
+      ]
+    },
+    {
+      "id": 107,
+      "category": "Vulnerability Management System",
+      "type": "Technical",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "security",
+        "cve"
+      ],
+      "question": "What is CVE?",
+      "answer": "CVE stands for Common Vulnerabilities and Exposures. It is a standardized identifier for publicly known security vulnerabilities, such as CVE-2026-xxxx. CVE helps teams refer to the same vulnerability consistently across tools, advisories and patch workflows.",
+      "keyPoints": [
+        "Standard vulnerability id.",
+        "Used across tools and advisories.",
+        "Helps tracking and remediation."
+      ]
+    },
+    {
+      "id": 108,
+      "category": "Vulnerability Management System",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "security",
+        "nvd"
+      ],
+      "question": "What is NVD?",
+      "answer": "NVD is the National Vulnerability Database. It enriches CVE records with metadata such as severity, CVSS score, affected products, descriptions and references. A vulnerability management system can use NVD data to prioritize patching.",
+      "keyPoints": [
+        "Database of vulnerability details.",
+        "Adds CVSS and product metadata.",
+        "Useful for prioritization."
+      ]
+    },
+    {
+      "id": 109,
+      "category": "Vulnerability Management System",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "security"
+      ],
+      "question": "CVSS score?",
+      "answer": "CVSS is the Common Vulnerability Scoring System. It gives a numerical severity score based on exploitability and impact. Higher scores mean higher risk. Teams use CVSS with business context to prioritize patching, but they should not rely on score alone.",
+      "keyPoints": [
+        "Numerical severity score.",
+        "Considers impact and exploitability.",
+        "Use with business context."
+      ]
+    },
+    {
+      "id": 110,
+      "category": "Vulnerability Management System",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "security"
+      ],
+      "question": "Severity levels?",
+      "answer": "Severity levels usually map CVSS scores into Low, Medium, High and Critical. Critical vulnerabilities need urgent action, especially if they are remotely exploitable or affect internet-facing systems. Priority also depends on asset importance and exploit availability.",
+      "keyPoints": [
+        "Low to Critical.",
+        "Critical needs urgent action.",
+        "Context matters."
+      ]
+    },
+    {
+      "id": 111,
+      "category": "Vulnerability Management System",
+      "type": "Project",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "security",
+        "patching"
+      ],
+      "question": "Patch deployment?",
+      "answer": "Patch deployment means identifying vulnerable software, selecting the correct update, testing it and applying it safely. In my project, the system used automation around package updates and tracked patch status. In production, I would add staging, approvals, rollback and detailed logs.",
+      "keyPoints": [
+        "Identify vulnerable software.",
+        "Apply tested update.",
+        "Track status and logs."
+      ]
+    },
+    {
+      "id": 112,
+      "category": "Vulnerability Management System",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "winget"
+      ],
+      "question": "WinGet?",
+      "answer": "WinGet is the Windows Package Manager. It can install, upgrade and manage software packages through command-line automation. In the vulnerability project, WinGet can help update outdated Windows applications once a vulnerable version is detected.",
+      "keyPoints": [
+        "Windows package manager.",
+        "Automates install/upgrade.",
+        "Useful for patching workflows."
+      ]
+    },
+    {
+      "id": 113,
+      "category": "Vulnerability Management System",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "security"
+      ],
+      "question": "Vulnerability scanning?",
+      "answer": "Vulnerability scanning checks systems, applications or dependencies for known weaknesses. It compares installed versions, configurations or packages against vulnerability databases. The output should be prioritized, deduplicated and converted into actionable remediation steps.",
+      "keyPoints": [
+        "Find known weaknesses.",
+        "Compare versions/configurations.",
+        "Turn findings into remediation."
+      ]
+    },
+    {
+      "id": 114,
+      "category": "Vulnerability Management System",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "security",
+        "dependencies"
+      ],
+      "question": "Dependency scanning?",
+      "answer": "Dependency scanning checks third-party libraries used by an application against known vulnerabilities. For Node.js projects, tools can scan package-lock files and npm packages. It is important because many attacks come through vulnerable dependencies rather than custom code.",
+      "keyPoints": [
+        "Scans third-party packages.",
+        "Uses lock files and vulnerability DBs.",
+        "Important for supply chain security."
+      ]
+    },
+    {
+      "id": 115,
+      "category": "Vulnerability Management System",
+      "type": "Scenario",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "linux",
+        "patching"
+      ],
+      "question": "How would Linux patching work?",
+      "answer": "For Linux, patching can use package managers like apt, yum or dnf depending on the distribution. The system would detect installed package versions, compare with vulnerability data, run approved updates, restart services where needed and log results. For servers, maintenance windows and rollback plans are important.",
+      "keyPoints": [
+        "Use distro package manager.",
+        "Compare installed versions.",
+        "Plan restart and rollback."
+      ]
+    },
+    {
+      "id": 116,
+      "category": "Vulnerability Management System",
+      "type": "Scenario",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "reliability"
+      ],
+      "question": "Rollback mechanism?",
+      "answer": "Rollback means returning to the previous stable version if a patch causes issues. It can use restore points, package version pinning, backups, container image rollback or blue-green deployment. Every automated patch should log what changed so rollback is traceable.",
+      "keyPoints": [
+        "Keep previous stable state.",
+        "Use backups or versioned packages/images.",
+        "Log changes."
+      ]
+    },
+    {
+      "id": 117,
+      "category": "Vulnerability Management System",
+      "type": "Project",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "logging"
+      ],
+      "question": "Logging?",
+      "answer": "Logging records scan results, patch attempts, errors, approvals and user actions. Good logs help debugging, audit compliance and incident response. Logs should include timestamps, asset id, vulnerability id, action taken and result, without exposing secrets.",
+      "keyPoints": [
+        "Timestamp and asset id.",
+        "Action and result.",
+        "Avoid logging secrets."
+      ]
+    },
+    {
+      "id": 118,
+      "category": "Vulnerability Management System",
+      "type": "Project",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "alerting"
+      ],
+      "question": "Alerting?",
+      "answer": "Alerting notifies the right people when critical vulnerabilities, failed patches or risky assets are detected. Alerts should be prioritized to avoid noise. Critical internet-facing issues should trigger immediate alerts, while lower severity items can go to dashboard or scheduled reports.",
+      "keyPoints": [
+        "Prioritize alerts.",
+        "Critical issues need immediate notification.",
+        "Avoid alert fatigue."
+      ]
+    },
+    {
+      "id": 119,
+      "category": "Sales Analytics Platform",
+      "type": "Project",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "sales",
+        "webrtc"
+      ],
+      "question": "Explain architecture.",
+      "answer": "The Sales Analytics Platform uses a React dashboard, Node.js/Express backend, MongoDB for users/leads/calls, a WebRTC signaling layer for in-app calls and an LLM integration for post-call summaries. The real-time calling flow and AI summary flow run asynchronously so call quality is not blocked by AI processing.",
+      "keyPoints": [
+        "React dashboard.",
+        "Node backend plus MongoDB.",
+        "WebRTC for calls and LLM for summaries."
+      ]
+    },
+    {
+      "id": 120,
+      "category": "Sales Analytics Platform",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "webrtc"
+      ],
+      "question": "Why WebRTC?",
+      "answer": "WebRTC is suitable because it enables real-time audio/video communication directly in the browser with low latency. For a sales calling platform, users can call inside the app instead of switching tools, and the system can log call metadata for analytics.",
+      "keyPoints": [
+        "Browser-based real-time communication.",
+        "Low latency.",
+        "Fits in-app calling."
+      ]
+    },
+    {
+      "id": 121,
+      "category": "Sales Analytics Platform",
+      "type": "Technical",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "webrtc"
+      ],
+      "question": "How WebRTC works?",
+      "answer": "WebRTC establishes peer-to-peer media communication. A signaling server exchanges offer/answer SDP and ICE candidates between peers. After negotiation, browsers try to connect directly using STUN for public address discovery or TURN relay if direct connection fails. Media then flows with low latency.",
+      "keyPoints": [
+        "Signaling exchanges SDP.",
+        "ICE candidates find path.",
+        "STUN/TURN help connectivity."
+      ]
+    },
+    {
+      "id": 122,
+      "category": "Sales Analytics Platform",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "webrtc"
+      ],
+      "question": "STUN server?",
+      "answer": "A STUN server helps a device discover its public IP and port as seen from the internet. WebRTC uses this information as part of ICE candidate gathering so peers can attempt direct connectivity through NAT.",
+      "keyPoints": [
+        "Discovers public address.",
+        "Helps NAT traversal.",
+        "Used in ICE gathering."
+      ]
+    },
+    {
+      "id": 123,
+      "category": "Sales Analytics Platform",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "webrtc"
+      ],
+      "question": "TURN server?",
+      "answer": "A TURN server relays media when peer-to-peer connection is not possible due to restrictive NAT or firewall. TURN improves reliability but costs bandwidth because media flows through the relay server.",
+      "keyPoints": [
+        "Relays media when direct connection fails.",
+        "Improves reliability.",
+        "Costs server bandwidth."
+      ]
+    },
+    {
+      "id": 124,
+      "category": "Sales Analytics Platform",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "webrtc"
+      ],
+      "question": "ICE candidates?",
+      "answer": "ICE candidates are possible network paths that WebRTC peers can use to connect. They can be local, server-reflexive through STUN or relay candidates through TURN. WebRTC tests candidates and selects the best working path.",
+      "keyPoints": [
+        "Possible connection paths.",
+        "Gathered from local/STUN/TURN.",
+        "Best candidate pair is selected."
+      ]
+    },
+    {
+      "id": 125,
+      "category": "Sales Analytics Platform",
+      "type": "Project",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "webrtc",
+        "security"
+      ],
+      "question": "Call recording?",
+      "answer": "Call recording should be handled carefully with consent. Technically, media streams can be recorded in the browser or server-side depending on architecture. The system should store recordings securely, attach metadata, restrict access and follow legal consent requirements.",
+      "keyPoints": [
+        "Consent is mandatory.",
+        "Store securely.",
+        "Restrict access and attach metadata."
+      ]
+    },
+    {
+      "id": 126,
+      "category": "Sales Analytics Platform",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "analytics"
+      ],
+      "question": "Analytics pipeline?",
+      "answer": "The analytics pipeline starts with call metadata and transcript or summary data. The backend stores call duration, rep id, lead id, outcome and AI-generated insights. Aggregation queries then power dashboard metrics like conversion rate, follow-up count, sentiment and performance trends.",
+      "keyPoints": [
+        "Collect call metadata.",
+        "Process summary/transcript.",
+        "Aggregate dashboard metrics."
+      ]
+    },
+    {
+      "id": 127,
+      "category": "Sales Analytics Platform",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "llm",
+        "sales"
+      ],
+      "question": "LLM insights generation?",
+      "answer": "LLM insights are generated by sending the call transcript or structured notes to a model with a strict prompt. The prompt asks for summary, customer intent, objections, follow-up actions and sentiment in JSON format. The backend validates the output before saving it.",
+      "keyPoints": [
+        "Use structured prompt.",
+        "Extract summary/actions/sentiment.",
+        "Validate JSON output."
+      ]
+    },
+    {
+      "id": 128,
+      "category": "Sales Analytics Platform",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "speech"
+      ],
+      "question": "Speech-to-text?",
+      "answer": "Speech-to-text converts call audio into text using an ASR service or model. The transcript can then be searched, summarized or analyzed by an LLM. Accuracy depends on audio quality, accents, background noise and speaker separation.",
+      "keyPoints": [
+        "Converts audio to transcript.",
+        "Input for LLM analytics.",
+        "Accuracy depends on audio quality."
+      ]
+    },
+    {
+      "id": 129,
+      "category": "Sales Analytics Platform",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "analytics",
+        "llm"
+      ],
+      "question": "Sentiment analysis?",
+      "answer": "Sentiment analysis estimates whether a conversation is positive, neutral or negative. In sales analytics, it helps managers understand lead quality and customer mood. I would treat it as an assistive metric, not an absolute judgment, because tone and context can be complex.",
+      "keyPoints": [
+        "Classifies customer mood.",
+        "Useful for sales insights.",
+        "Should be interpreted carefully."
+      ]
+    },
+    {
+      "id": 130,
+      "category": "Sales Analytics Platform",
+      "type": "Project",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "dashboard"
+      ],
+      "question": "Dashboard metrics?",
+      "answer": "Useful dashboard metrics include total calls, average call duration, conversion rate, follow-up pending, lead status, rep performance, sentiment distribution and common objections. Managers need metrics that support coaching and decision making, not just raw counts.",
+      "keyPoints": [
+        "Calls and duration.",
+        "Conversion and follow-ups.",
+        "Rep performance and sentiment."
+      ]
+    },
+    {
+      "id": 131,
+      "category": "Docker Questions",
+      "type": "Technical",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "docker"
+      ],
+      "question": "What is Docker?",
+      "answer": "Docker is a containerization platform that packages an application with its dependencies into a portable container. It helps ensure the app runs consistently across developer machines, test environments and production. Containers are lighter than virtual machines because they share the host OS kernel.",
+      "keyPoints": [
+        "Packages app and dependencies.",
+        "Consistent environments.",
+        "Lighter than VMs."
+      ]
+    },
+    {
+      "id": 132,
+      "category": "Docker Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "docker"
+      ],
+      "question": "Difference between VM and Docker?",
+      "answer": "A VM virtualizes the full operating system with its own kernel, making it heavier but strongly isolated. Docker containers share the host kernel and isolate processes, making them faster and lighter. VMs are useful for full OS isolation, while containers are ideal for packaging and deploying applications.",
+      "keyPoints": [
+        "VM has full guest OS.",
+        "Container shares host kernel.",
+        "Containers are lightweight."
+      ]
+    },
+    {
+      "id": 133,
+      "category": "Docker Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "docker"
+      ],
+      "question": "Dockerfile?",
+      "answer": "A Dockerfile is a script of instructions to build a Docker image. It defines the base image, working directory, dependencies, copied files, exposed ports and startup command. A clean Dockerfile makes deployments repeatable.",
+      "keyPoints": [
+        "Instructions to build image.",
+        "Defines dependencies and command.",
+        "Makes deployment repeatable."
+      ]
+    },
+    {
+      "id": 134,
+      "category": "Docker Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "docker"
+      ],
+      "question": "Image vs Container?",
+      "answer": "An image is a read-only template containing the application and dependencies. A container is a running instance of that image. In simple terms, image is the blueprint and container is the live process created from it.",
+      "keyPoints": [
+        "Image is template.",
+        "Container is running instance.",
+        "One image can run many containers."
+      ]
+    },
+    {
+      "id": 135,
+      "category": "Docker Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "docker"
+      ],
+      "question": "Docker volumes?",
+      "answer": "Docker volumes persist data outside the container lifecycle. If a container is deleted, data in a volume can remain. Volumes are used for databases, uploaded files and any state that should survive container recreation.",
+      "keyPoints": [
+        "Persistent storage.",
+        "Survives container removal.",
+        "Useful for databases/files."
+      ]
+    },
+    {
+      "id": 136,
+      "category": "Docker Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "docker"
+      ],
+      "question": "Docker network?",
+      "answer": "Docker networking allows containers to communicate with each other and the host. In Docker Compose, services can reach each other by service name on the same network. This is useful for connecting a backend container to a database container.",
+      "keyPoints": [
+        "Containers communicate through networks.",
+        "Compose services use service names.",
+        "Isolates app network."
+      ]
+    },
+    {
+      "id": 137,
+      "category": "Docker Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "docker"
+      ],
+      "question": "Docker Compose?",
+      "answer": "Docker Compose defines and runs multiple containers using a YAML file. For a MERN app, it can start frontend, backend and MongoDB together with networks, ports and volumes configured. It simplifies local development and testing.",
+      "keyPoints": [
+        "Multi-container setup.",
+        "YAML configuration.",
+        "Useful for MERN development."
+      ]
+    },
+    {
+      "id": 138,
+      "category": "Docker Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "docker"
+      ],
+      "question": "Multi-stage builds?",
+      "answer": "Multi-stage builds use separate build and runtime stages in a Dockerfile. For example, build React assets in one stage and copy only final output into a lightweight server image. This reduces image size and removes unnecessary build tools from production.",
+      "keyPoints": [
+        "Separate build/runtime stages.",
+        "Smaller final image.",
+        "Improves security and performance."
+      ]
+    },
+    {
+      "id": 139,
+      "category": "Docker Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "docker"
+      ],
+      "question": "Docker layers?",
+      "answer": "Docker images are built in layers, where each instruction creates a cached layer. If earlier layers do not change, Docker reuses them to speed up builds. Good Dockerfiles copy dependency files before source code so dependency installation can be cached.",
+      "keyPoints": [
+        "Each instruction creates layer.",
+        "Layers are cached.",
+        "Order affects build speed."
+      ]
+    },
+    {
+      "id": 140,
+      "category": "Docker Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "docker"
+      ],
+      "question": "COPY vs ADD?",
+      "answer": "COPY copies files from the build context into the image. ADD can also copy files but has extra features like extracting local tar files and supporting remote URLs. In most cases, COPY is preferred because it is explicit and predictable.",
+      "keyPoints": [
+        "COPY is simple file copy.",
+        "ADD has extra behavior.",
+        "Prefer COPY for clarity."
+      ]
+    },
+    {
+      "id": 141,
+      "category": "Docker Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "docker"
+      ],
+      "question": "CMD vs ENTRYPOINT?",
+      "answer": "CMD provides the default command or arguments for a container. ENTRYPOINT defines the main executable that should always run. They can be used together, where ENTRYPOINT sets the command and CMD provides default arguments.",
+      "keyPoints": [
+        "CMD is default command/args.",
+        "ENTRYPOINT is fixed executable.",
+        "Can be combined."
+      ]
+    },
+    {
+      "id": 142,
+      "category": "Docker Questions",
+      "type": "Scenario",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "docker",
+        "mern"
+      ],
+      "question": "Dockerize a MERN application.",
+      "answer": "I would create separate Dockerfiles for frontend and backend, use environment variables for API URLs and secrets, and use Docker Compose to run frontend, backend and MongoDB together. The backend would connect to MongoDB using the Compose service name. For production, I would build optimized frontend assets and avoid storing secrets inside images.",
+      "keyPoints": [
+        "Frontend, backend and MongoDB services.",
+        "Use env vars.",
+        "Optimize production images."
+      ]
+    },
+    {
+      "id": 143,
+      "category": "Kubernetes Questions",
+      "type": "Technical",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "kubernetes"
+      ],
+      "question": "What is Kubernetes?",
+      "answer": "Kubernetes is a container orchestration platform. It automates deploying, scaling, networking and recovering containerized applications. Instead of manually running containers, we define the desired state and Kubernetes keeps the system close to that state.",
+      "keyPoints": [
+        "Orchestrates containers.",
+        "Automates scaling and recovery.",
+        "Desired-state model."
+      ]
+    },
+    {
+      "id": 144,
+      "category": "Kubernetes Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "kubernetes"
+      ],
+      "question": "Pod?",
+      "answer": "A Pod is the smallest deployable unit in Kubernetes. It usually contains one application container, but can contain closely related sidecar containers. Containers inside a pod share network namespace and can communicate through localhost.",
+      "keyPoints": [
+        "Smallest deployable unit.",
+        "Usually one container.",
+        "Shared network inside pod."
+      ]
+    },
+    {
+      "id": 145,
+      "category": "Kubernetes Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "kubernetes"
+      ],
+      "question": "Deployment?",
+      "answer": "A Deployment manages stateless application pods and ensures the desired number of replicas are running. It supports rolling updates and rollbacks. For a Node.js backend, I would usually deploy it through a Deployment.",
+      "keyPoints": [
+        "Manages replicas.",
+        "Supports rolling updates.",
+        "Good for stateless apps."
+      ]
+    },
+    {
+      "id": 146,
+      "category": "Kubernetes Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "kubernetes"
+      ],
+      "question": "ReplicaSet?",
+      "answer": "A ReplicaSet ensures a specified number of pod replicas are running. Deployments manage ReplicaSets behind the scenes. If a pod fails, the ReplicaSet creates another pod to maintain the desired count.",
+      "keyPoints": [
+        "Maintains replica count.",
+        "Creates replacement pods.",
+        "Usually managed by Deployment."
+      ]
+    },
+    {
+      "id": 147,
+      "category": "Kubernetes Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "kubernetes"
+      ],
+      "question": "Service?",
+      "answer": "A Kubernetes Service exposes a stable network endpoint for a group of pods. Since pod IPs can change, services route traffic to matching pods using labels. Common service types include ClusterIP, NodePort and LoadBalancer.",
+      "keyPoints": [
+        "Stable endpoint.",
+        "Routes by labels.",
+        "ClusterIP, NodePort, LoadBalancer."
+      ]
+    },
+    {
+      "id": 148,
+      "category": "Kubernetes Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "kubernetes"
+      ],
+      "question": "Ingress?",
+      "answer": "Ingress manages external HTTP/HTTPS access to services inside the cluster. It can provide host-based routing, path-based routing and TLS termination. It is commonly used to expose web applications through a single entry point.",
+      "keyPoints": [
+        "External HTTP routing.",
+        "Host/path based rules.",
+        "Can handle TLS."
+      ]
+    },
+    {
+      "id": 149,
+      "category": "Kubernetes Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "kubernetes"
+      ],
+      "question": "Namespace?",
+      "answer": "A namespace logically separates resources inside a Kubernetes cluster. It is useful for environments like dev, staging and production, or for separating teams. It also helps apply resource quotas and access control.",
+      "keyPoints": [
+        "Logical separation.",
+        "Useful for environments/teams.",
+        "Supports quotas and access control."
+      ]
+    },
+    {
+      "id": 150,
+      "category": "Kubernetes Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "kubernetes"
+      ],
+      "question": "ConfigMap?",
+      "answer": "A ConfigMap stores non-sensitive configuration such as app mode, API URLs or feature flags. Pods can consume ConfigMaps as environment variables or mounted files. It separates configuration from container images.",
+      "keyPoints": [
+        "Stores non-sensitive config.",
+        "Inject as env or files.",
+        "Keeps image reusable."
+      ]
+    },
+    {
+      "id": 151,
+      "category": "Kubernetes Questions",
+      "type": "Security",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "kubernetes",
+        "security"
+      ],
+      "question": "Secret?",
+      "answer": "A Secret stores sensitive configuration such as passwords, tokens and keys. Pods can consume secrets as environment variables or files. Secrets should still be handled carefully with RBAC, encryption at rest and limited access.",
+      "keyPoints": [
+        "Stores sensitive values.",
+        "Use RBAC and encryption.",
+        "Avoid hardcoding secrets."
+      ]
+    },
+    {
+      "id": 152,
+      "category": "Kubernetes Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "kubernetes"
+      ],
+      "question": "Autoscaling?",
+      "answer": "Autoscaling adjusts resources based on load. Horizontal Pod Autoscaler increases or decreases pod count based on metrics like CPU, memory or custom metrics. This helps handle traffic spikes without manually scaling.",
+      "keyPoints": [
+        "HPA changes pod count.",
+        "Uses metrics.",
+        "Handles traffic spikes."
+      ]
+    },
+    {
+      "id": 153,
+      "category": "Kubernetes Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "kubernetes"
+      ],
+      "question": "Load balancing?",
+      "answer": "Kubernetes load balancing distributes traffic across healthy pod replicas through Services. External load balancers or ingress controllers can route outside traffic into the cluster. Readiness probes help ensure traffic goes only to ready pods.",
+      "keyPoints": [
+        "Distributes traffic across pods.",
+        "Services and ingress help.",
+        "Readiness probes protect users."
+      ]
+    },
+    {
+      "id": 154,
+      "category": "Kubernetes Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "kubernetes"
+      ],
+      "question": "Rolling update?",
+      "answer": "A rolling update gradually replaces old pods with new pods without downtime. Kubernetes starts new pods, waits for readiness, and then terminates old ones. It is safer than stopping everything and deploying at once.",
+      "keyPoints": [
+        "Gradual replacement.",
+        "Readiness before traffic.",
+        "Reduces downtime."
+      ]
+    },
+    {
+      "id": 155,
+      "category": "Kubernetes Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "kubernetes"
+      ],
+      "question": "Rolling rollback?",
+      "answer": "A rolling rollback returns a Deployment to a previous stable revision if the new version fails. Kubernetes keeps rollout history, so the team can quickly recover. Monitoring and health checks help decide when rollback is needed.",
+      "keyPoints": [
+        "Return to previous revision.",
+        "Useful after failed deployment.",
+        "Requires monitoring."
+      ]
+    },
+    {
+      "id": 156,
+      "category": "CI/CD Questions",
+      "type": "Technical",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "cicd"
+      ],
+      "question": "Explain CI/CD.",
+      "answer": "CI/CD means Continuous Integration and Continuous Delivery or Deployment. CI automatically builds and tests code when developers push changes. CD automates release steps so tested code can be deployed reliably. The goal is faster delivery with fewer manual errors.",
+      "keyPoints": [
+        "CI builds and tests.",
+        "CD releases/deploys.",
+        "Reduces manual errors."
+      ]
+    },
+    {
+      "id": 157,
+      "category": "CI/CD Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "jenkins"
+      ],
+      "question": "Jenkins pipeline?",
+      "answer": "A Jenkins pipeline defines automated stages such as checkout, install dependencies, build, test, package and deploy. It is usually written in a Jenkinsfile. Pipelines make the release process repeatable and visible to the team.",
+      "keyPoints": [
+        "Jenkinsfile defines stages.",
+        "Build/test/deploy automation.",
+        "Repeatable release process."
+      ]
+    },
+    {
+      "id": 158,
+      "category": "CI/CD Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "github-actions"
+      ],
+      "question": "GitHub Actions?",
+      "answer": "GitHub Actions is a CI/CD tool integrated with GitHub. Workflows are written in YAML and triggered by events like push or pull request. It can run tests, build Docker images, scan code and deploy applications.",
+      "keyPoints": [
+        "YAML workflows.",
+        "Triggered by repo events.",
+        "Build/test/deploy automation."
+      ]
+    },
+    {
+      "id": 159,
+      "category": "CI/CD Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "cicd"
+      ],
+      "question": "Build stages?",
+      "answer": "Build stages usually include checkout, dependency installation, linting, compilation or bundling, tests, artifact creation and deployment. Separating stages helps identify where failures happen and prevents bad code from reaching production.",
+      "keyPoints": [
+        "Checkout and install.",
+        "Build and test.",
+        "Artifact and deploy."
+      ]
+    },
+    {
+      "id": 160,
+      "category": "CI/CD Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "testing",
+        "cicd"
+      ],
+      "question": "Testing stage?",
+      "answer": "The testing stage runs unit tests, integration tests, lint checks and sometimes security scans. It acts as a quality gate before deployment. If tests fail, the pipeline should stop and report the issue clearly.",
+      "keyPoints": [
+        "Quality gate.",
+        "Run unit/integration/lint/security checks.",
+        "Stop pipeline on failure."
+      ]
+    },
+    {
+      "id": 161,
+      "category": "CI/CD Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "deployment"
+      ],
+      "question": "Deployment stage?",
+      "answer": "The deployment stage releases the tested build to an environment such as staging or production. It should use environment variables, secret management, health checks and rollback strategy. Production deployments should be traceable to a commit.",
+      "keyPoints": [
+        "Release tested artifact.",
+        "Use secrets and env config.",
+        "Health checks and rollback."
+      ]
+    },
+    {
+      "id": 162,
+      "category": "CI/CD Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "deployment"
+      ],
+      "question": "Blue-green deployment?",
+      "answer": "Blue-green deployment maintains two environments: current live and new version. Traffic is switched to the new environment after validation. If issues occur, traffic can quickly switch back to the old environment.",
+      "keyPoints": [
+        "Two environments.",
+        "Switch traffic after validation.",
+        "Fast rollback."
+      ]
+    },
+    {
+      "id": 163,
+      "category": "CI/CD Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "deployment"
+      ],
+      "question": "Canary deployment?",
+      "answer": "Canary deployment releases a new version to a small percentage of users first. Metrics and errors are monitored, and traffic is gradually increased if the version is healthy. It reduces blast radius for risky changes.",
+      "keyPoints": [
+        "Small initial rollout.",
+        "Monitor metrics.",
+        "Gradually increase traffic."
+      ]
+    },
+    {
+      "id": 164,
+      "category": "Research Internship Questions",
+      "type": "Research",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "machine-unlearning",
+        "samsung"
+      ],
+      "question": "What is Machine Unlearning?",
+      "answer": "Machine unlearning is the process of making a trained model forget specific data, user information or classes without retraining the entire model from scratch. In my Samsung PRISM research, the focus is speaker identity removal in keyword spotting or speech systems while preserving performance for remaining speakers.",
+      "keyPoints": [
+        "Selective forgetting.",
+        "Avoid full retraining.",
+        "Important for privacy and compliance."
+      ]
+    },
+    {
+      "id": 165,
+      "category": "Research Internship Questions",
+      "type": "Research",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "machine-unlearning"
+      ],
+      "question": "Why machine unlearning?",
+      "answer": "Machine unlearning is important because users and regulations may require data deletion even after a model has already learned from that data. Full retraining is expensive, so unlearning aims to remove influence efficiently while preserving model utility.",
+      "keyPoints": [
+        "Supports deletion rights.",
+        "Full retraining is costly.",
+        "Balances forgetting and utility."
+      ]
+    },
+    {
+      "id": 166,
+      "category": "Research Internship Questions",
+      "type": "Research",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "machine-unlearning"
+      ],
+      "question": "Difference between retraining and unlearning?",
+      "answer": "Retraining means training the model again from scratch without the data to be removed. It is clean but expensive. Unlearning tries to remove the influence of specific data from an already trained model with much less compute, while keeping performance close to the original model.",
+      "keyPoints": [
+        "Retraining is clean but costly.",
+        "Unlearning is targeted and efficient.",
+        "Measure forgetting and retained utility."
+      ]
+    },
+    {
+      "id": 167,
+      "category": "Research Internship Questions",
+      "type": "Research",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "speech",
+        "wav2vec2"
+      ],
+      "question": "Wav2Vec2?",
+      "answer": "Wav2Vec2 is a self-supervised speech representation model. It learns useful audio features from raw speech and can be fine-tuned for speech tasks such as recognition, keyword spotting or speaker-related classification. It is useful because it reduces the need for huge labeled speech datasets.",
+      "keyPoints": [
+        "Self-supervised speech model.",
+        "Learns audio representations.",
+        "Can be fine-tuned for speech tasks."
+      ]
+    },
+    {
+      "id": 168,
+      "category": "Research Internship Questions",
+      "type": "Research",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "machine-unlearning"
+      ],
+      "question": "Knowledge Distillation?",
+      "answer": "Knowledge distillation trains a smaller or updated student model to mimic a teacher model. In unlearning, it can help retain useful knowledge for non-forgotten classes while reducing influence of the target data. The challenge is balancing forgetting with performance retention.",
+      "keyPoints": [
+        "Teacher-student training.",
+        "Retain useful knowledge.",
+        "Balance forgetting and utility."
+      ]
+    },
+    {
+      "id": 169,
+      "category": "Research Internship Questions",
+      "type": "Research",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "machine-unlearning"
+      ],
+      "question": "SISA?",
+      "answer": "SISA stands for Sharded, Isolated, Sliced and Aggregated training. The training data is split into shards and slices, so if data must be forgotten, only affected shards need retraining instead of the entire model. It is an unlearning-friendly training strategy.",
+      "keyPoints": [
+        "Shard data.",
+        "Retrain only affected parts.",
+        "Reduces unlearning cost."
+      ]
+    },
+    {
+      "id": 170,
+      "category": "Research Internship Questions",
+      "type": "Research",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "machine-unlearning"
+      ],
+      "question": "Gradient Ascent?",
+      "answer": "Gradient ascent can be used for unlearning by updating model weights in a direction that increases loss on the data to be forgotten. The idea is to make the model perform poorly on the target data. It must be controlled carefully so it does not damage overall model performance.",
+      "keyPoints": [
+        "Increase loss on forget data.",
+        "Moves model away from target patterns.",
+        "Can hurt utility if uncontrolled."
+      ]
+    },
+    {
+      "id": 171,
+      "category": "Research Internship Questions",
+      "type": "Research",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "machine-unlearning"
+      ],
+      "question": "Weight Editing?",
+      "answer": "Weight editing modifies selected model parameters to reduce the influence of target data without full retraining. It is efficient but difficult because neural network knowledge is distributed across many weights. Evaluation is needed to prove it forgot the target without damaging the rest.",
+      "keyPoints": [
+        "Direct parameter modification.",
+        "Efficient but delicate.",
+        "Needs strong evaluation."
+      ]
+    },
+    {
+      "id": 172,
+      "category": "Research Internship Questions",
+      "type": "Research",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "speech",
+        "privacy"
+      ],
+      "question": "Speaker identity removal?",
+      "answer": "Speaker identity removal means making the model forget or stop recognizing a specific speaker while retaining performance for other speakers or keywords. In privacy-sensitive speech systems, this helps honor deletion requests without rebuilding the whole model from zero.",
+      "keyPoints": [
+        "Forget one speaker.",
+        "Preserve other speakers/keywords.",
+        "Useful for privacy."
+      ]
+    },
+    {
+      "id": 173,
+      "category": "Research Internship Questions",
+      "type": "Research",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "privacy"
+      ],
+      "question": "Privacy preservation?",
+      "answer": "Privacy preservation means limiting how much personal information a model stores or reveals. In speech, voice identity can be sensitive. Machine unlearning helps by removing a speaker's learned influence when requested, reducing long-term privacy risk.",
+      "keyPoints": [
+        "Voice is sensitive biometric data.",
+        "Reduce retained personal influence.",
+        "Support user deletion rights."
+      ]
+    },
+    {
+      "id": 174,
+      "category": "Research Internship Questions",
+      "type": "Research",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "machine-unlearning"
+      ],
+      "question": "Evaluation metrics?",
+      "answer": "Evaluation should measure both forgetting and utility. Forgetting can be measured by accuracy drop on the forgotten speaker or membership inference resistance. Utility is measured by accuracy on remaining speakers or keywords. A good unlearning method forgets target data while keeping non-target performance high.",
+      "keyPoints": [
+        "Forgetting metrics.",
+        "Utility retention metrics.",
+        "Compare with retraining baseline."
+      ]
+    },
+    {
+      "id": 175,
+      "category": "Research Internship Questions",
+      "type": "Research",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "machine-unlearning"
+      ],
+      "question": "Accuracy after unlearning?",
+      "answer": "After unlearning, accuracy on the forgotten speaker should drop significantly, while accuracy on remaining speakers should stay close to the original model. The goal is not simply lowering total accuracy; the goal is targeted forgetting with minimal collateral damage.",
+      "keyPoints": [
+        "Target accuracy should drop.",
+        "Retained data accuracy should stay high.",
+        "Avoid broad performance damage."
+      ]
+    },
+    {
+      "id": 176,
+      "category": "Research Internship Questions",
+      "type": "Research",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "machine-unlearning"
+      ],
+      "question": "Challenges?",
+      "answer": "The main challenges are proving the data is actually forgotten, avoiding accuracy loss on retained classes, handling noisy speech data and comparing unlearning methods fairly. Another challenge is that neural networks store information in distributed ways, so removing one influence cleanly is difficult.",
+      "keyPoints": [
+        "Proof of forgetting.",
+        "Utility retention.",
+        "Noise and distributed representations."
+      ]
+    },
+    {
+      "id": 177,
+      "category": "Research Internship Questions",
+      "type": "Research",
+      "difficulty": "Advanced",
+      "priority": true,
+      "tags": [
+        "machine-unlearning"
+      ],
+      "question": "How do you prove that data has been forgotten?",
+      "answer": "You cannot prove it only by saying accuracy dropped. You need multiple checks: compare with a retrained-from-scratch model, test performance on forgotten and retained data, run membership inference or privacy attacks, and analyze whether the model still responds strongly to the forgotten speaker. The best answer is evidence-based, not absolute.",
+      "keyPoints": [
+        "Use retraining baseline.",
+        "Test forgotten and retained data.",
+        "Use privacy attack evaluation."
+      ]
+    },
+    {
+      "id": 178,
+      "category": "Research Internship Questions",
+      "type": "Research",
+      "difficulty": "Advanced",
+      "priority": true,
+      "tags": [
+        "gdpr",
+        "privacy"
+      ],
+      "question": "Why is machine unlearning important for GDPR?",
+      "answer": "GDPR includes rights around personal data deletion. If a model has learned from a user's data, deleting only the raw record may not be enough. Machine unlearning provides a technical path to reduce or remove that user's influence from the model without full retraining every time.",
+      "keyPoints": [
+        "Supports right to erasure.",
+        "Models can retain influence of data.",
+        "Avoid expensive full retraining."
+      ]
+    },
+    {
+      "id": 179,
+      "category": "System Design Questions",
+      "type": "System Design",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "system-design"
+      ],
+      "question": "Design WhatsApp.",
+      "answer": "At high level, I would design clients, API gateway, authentication service, chat service, message queue, WebSocket servers, media storage and databases. Messages should be stored with delivery status, pushed through WebSockets when users are online and queued for offline users. Scaling needs partitioning by conversation/user, caching and strong security.",
+      "keyPoints": [
+        "WebSocket real-time messaging.",
+        "Queue offline delivery.",
+        "Store messages and delivery status."
+      ]
+    },
+    {
+      "id": 180,
+      "category": "System Design Questions",
+      "type": "System Design",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "system-design"
+      ],
+      "question": "Design URL shortener.",
+      "answer": "A URL shortener needs APIs to create and redirect short links. The backend generates a unique short code, stores long URL mapping, and redirects users when the short URL is hit. For scale, use caching for popular links, database indexing on short code, analytics logging and collision-safe id generation.",
+      "keyPoints": [
+        "Create short code.",
+        "Redirect by lookup.",
+        "Cache popular links."
+      ]
+    },
+    {
+      "id": 181,
+      "category": "System Design Questions",
+      "type": "System Design",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "system-design"
+      ],
+      "question": "Design Uber.",
+      "answer": "Uber design includes rider app, driver app, location service, matching service, trip service, pricing, payments and notifications. Real-time driver locations need geospatial indexing and streaming. Matching should consider distance, availability and ETA, while the system must handle high traffic and reliability.",
+      "keyPoints": [
+        "Rider/driver services.",
+        "Real-time geolocation.",
+        "Matching and trip lifecycle."
+      ]
+    },
+    {
+      "id": 182,
+      "category": "System Design Questions",
+      "type": "System Design",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "system-design"
+      ],
+      "question": "Design Google Drive.",
+      "answer": "Google Drive design needs file upload/download, metadata service, object storage, permissions, sharing, versioning and search. Large files should use chunked uploads. Metadata goes to a database, file content goes to object storage, and access control must be checked for every file operation.",
+      "keyPoints": [
+        "Object storage for files.",
+        "Database for metadata.",
+        "Permissions and versioning."
+      ]
+    },
+    {
+      "id": 183,
+      "category": "System Design Questions",
+      "type": "System Design",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "system-design"
+      ],
+      "question": "Design notification system.",
+      "answer": "A notification system should accept events, store notification records, choose channels like push/email/SMS, use queues for delivery and track status. It should support retries, templates, user preferences, priority and rate limits to avoid spam.",
+      "keyPoints": [
+        "Event intake.",
+        "Queue-based delivery.",
+        "Preferences, retries and status tracking."
+      ]
+    },
+    {
+      "id": 184,
+      "category": "System Design Questions",
+      "type": "System Design",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "system-design"
+      ],
+      "question": "Design chat application.",
+      "answer": "A chat app needs authentication, conversation service, message service, WebSocket gateway, message database and notification service. Online users receive messages through WebSockets, offline users receive push notifications, and messages are stored with timestamps and delivery/read status.",
+      "keyPoints": [
+        "Auth and conversations.",
+        "WebSocket delivery.",
+        "Offline push and message status."
+      ]
+    },
+    {
+      "id": 185,
+      "category": "System Design Questions",
+      "type": "System Design",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "system-design"
+      ],
+      "question": "Design food delivery system.",
+      "answer": "Food delivery design includes customer app, restaurant service, menu service, order service, delivery partner service, payment service and notification service. The system tracks order lifecycle from placed to accepted, prepared, picked up and delivered. Real-time delivery tracking can use location updates and WebSockets.",
+      "keyPoints": [
+        "Order lifecycle.",
+        "Restaurant and delivery partner services.",
+        "Payments and notifications."
+      ]
+    },
+    {
+      "id": 186,
+      "category": "System Design Questions",
+      "type": "System Design",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "system-design",
+        "gps"
+      ],
+      "question": "Design GPS tracking system.",
+      "answer": "A GPS tracking system collects location updates from devices, validates and stores them, triggers geofence rules and streams updates to authorized viewers. It needs adaptive update frequency, time-series storage, indexing by user/device/time, queues for alerts and strong authorization for sensitive location data.",
+      "keyPoints": [
+        "Location ingestion.",
+        "Geofence and alerts.",
+        "Time-series storage and authorization."
+      ]
+    },
+    {
+      "id": 187,
+      "category": "System Design Questions",
+      "type": "System Design",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "system-design",
+        "safetrack"
+      ],
+      "question": "Design SafeTrack.",
+      "answer": "For SafeTrack, I would design guardian and child apps, auth service, location ingestion API, geofence service, SOS service, notification service, MongoDB/time-series storage and WebSocket or push notification delivery. Critical requirements are privacy, authorization, battery efficiency, offline retry and reliable emergency alerts.",
+      "keyPoints": [
+        "Guardian-child model.",
+        "Location, geofence, SOS and notifications.",
+        "Privacy and reliability are core."
+      ]
+    },
+    {
+      "id": 188,
+      "category": "System Design Questions",
+      "type": "System Design",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "system-design",
+        "database"
+      ],
+      "question": "Database design",
+      "answer": "In system design, database design starts from access patterns. I identify entities, relationships, query frequency, consistency needs and data growth. Then I choose SQL or NoSQL, define indexes, partitioning, retention and backup strategy.",
+      "keyPoints": [
+        "Start from access patterns.",
+        "Choose SQL/NoSQL by data model.",
+        "Plan indexes and growth."
+      ]
+    },
+    {
+      "id": 189,
+      "category": "System Design Questions",
+      "type": "System Design",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "system-design",
+        "api"
+      ],
+      "question": "APIs",
+      "answer": "For APIs, I define resources, request/response schema, status codes, validation, authentication, pagination and error format. Good APIs are predictable, versioned and documented. In interviews, I explain core endpoints before going into scaling.",
+      "keyPoints": [
+        "Resource design.",
+        "Validation and status codes.",
+        "Versioning and docs."
+      ]
+    },
+    {
+      "id": 190,
+      "category": "System Design Questions",
+      "type": "System Design",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "system-design"
+      ],
+      "question": "Scaling",
+      "answer": "Scaling means handling more traffic or data without failure. Common techniques include horizontal scaling, load balancing, caching, database indexing, queues, partitioning and async processing. I first remove bottlenecks before adding complexity.",
+      "keyPoints": [
+        "Horizontal scaling.",
+        "Caching and queues.",
+        "Database optimization."
+      ]
+    },
+    {
+      "id": 191,
+      "category": "System Design Questions",
+      "type": "System Design",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "system-design",
+        "cache"
+      ],
+      "question": "Cache",
+      "answer": "Cache stores frequently accessed data closer to the application to reduce latency and database load. Redis is commonly used. Good cache design needs TTL, invalidation strategy and fallback to the source database on cache miss.",
+      "keyPoints": [
+        "Reduces latency.",
+        "TTL and invalidation matter.",
+        "Fallback on cache miss."
+      ]
+    },
+    {
+      "id": 192,
+      "category": "System Design Questions",
+      "type": "System Design",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "redis"
+      ],
+      "question": "Redis",
+      "answer": "Redis is an in-memory data store used for caching, sessions, rate limiting, queues and pub/sub. It is fast because data is stored in memory. In my designs, I would use Redis for token/session caching, distributed rate limits or WebSocket pub/sub.",
+      "keyPoints": [
+        "In-memory store.",
+        "Cache/session/rate limit/pubsub.",
+        "Very low latency."
+      ]
+    },
+    {
+      "id": 193,
+      "category": "System Design Questions",
+      "type": "System Design",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "system-design"
+      ],
+      "question": "Load balancer",
+      "answer": "A load balancer distributes incoming traffic across multiple backend instances. It improves availability and scalability. It can perform health checks and stop sending traffic to unhealthy servers.",
+      "keyPoints": [
+        "Distributes traffic.",
+        "Improves availability.",
+        "Uses health checks."
+      ]
+    },
+    {
+      "id": 194,
+      "category": "System Design Questions",
+      "type": "System Design",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "system-design",
+        "queue"
+      ],
+      "question": "Message queues",
+      "answer": "Message queues decouple services and process work asynchronously. They are useful for emails, notifications, file processing, AI summarization and retryable tasks. A queue improves reliability because work is not lost if a worker is temporarily busy or down.",
+      "keyPoints": [
+        "Decouples services.",
+        "Handles async work.",
+        "Supports retry and reliability."
+      ]
+    },
+    {
+      "id": 195,
+      "category": "OOP Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "oop"
+      ],
+      "question": "Four pillars of OOP?",
+      "answer": "The four pillars are encapsulation, abstraction, inheritance and polymorphism. Encapsulation protects data, abstraction hides complexity, inheritance reuses behavior and polymorphism allows the same interface to behave differently based on implementation.",
+      "keyPoints": [
+        "Encapsulation.",
+        "Abstraction.",
+        "Inheritance and polymorphism."
+      ]
+    },
+    {
+      "id": 196,
+      "category": "OOP Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "oop"
+      ],
+      "question": "Abstraction?",
+      "answer": "Abstraction means exposing only essential behavior while hiding implementation details. For example, a payment interface can expose pay() while different payment providers implement it internally. It reduces complexity for the caller.",
+      "keyPoints": [
+        "Hide implementation details.",
+        "Expose essential interface.",
+        "Reduces complexity."
+      ]
+    },
+    {
+      "id": 197,
+      "category": "OOP Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "oop"
+      ],
+      "question": "Encapsulation?",
+      "answer": "Encapsulation bundles data and methods together and controls access to internal state. For example, a class can keep balance private and expose deposit or withdraw methods. This protects data from invalid external modification.",
+      "keyPoints": [
+        "Bundle data and behavior.",
+        "Control access.",
+        "Protect object state."
+      ]
+    },
+    {
+      "id": 198,
+      "category": "OOP Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "oop"
+      ],
+      "question": "Polymorphism?",
+      "answer": "Polymorphism means one interface can have multiple implementations. For example, a draw() method can behave differently for Circle and Rectangle. It helps write flexible code that depends on abstraction rather than concrete classes.",
+      "keyPoints": [
+        "Same interface, different behavior.",
+        "Supports flexibility.",
+        "Implemented through overloading/overriding."
+      ]
+    },
+    {
+      "id": 199,
+      "category": "OOP Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "oop"
+      ],
+      "question": "Inheritance?",
+      "answer": "Inheritance lets a child class reuse and extend behavior from a parent class. It supports code reuse, but should be used carefully. If the relationship is not truly \"is-a\", composition may be better.",
+      "keyPoints": [
+        "Child reuses parent behavior.",
+        "Represents is-a relationship.",
+        "Do not overuse."
+      ]
+    },
+    {
+      "id": 200,
+      "category": "OOP Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "oop"
+      ],
+      "question": "Interface vs Abstract Class?",
+      "answer": "An interface defines a contract that classes implement, often for capabilities. An abstract class can provide shared state and partial implementation. I use interfaces for behavior contracts and abstract classes when related classes share common base logic.",
+      "keyPoints": [
+        "Interface is contract.",
+        "Abstract class can share implementation.",
+        "Choose based on relationship."
+      ]
+    },
+    {
+      "id": 201,
+      "category": "OOP Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "oop"
+      ],
+      "question": "Method overloading?",
+      "answer": "Method overloading means having the same method name with different parameter lists in the same class. It is resolved at compile time. For example, add(int, int) and add(double, double).",
+      "keyPoints": [
+        "Same name, different parameters.",
+        "Same class.",
+        "Compile-time polymorphism."
+      ]
+    },
+    {
+      "id": 202,
+      "category": "OOP Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "oop"
+      ],
+      "question": "Method overriding?",
+      "answer": "Method overriding means a child class provides its own implementation of a parent method with the same signature. It is resolved at runtime based on the actual object type. It enables runtime polymorphism.",
+      "keyPoints": [
+        "Child redefines parent method.",
+        "Same signature.",
+        "Runtime polymorphism."
+      ]
+    },
+    {
+      "id": 203,
+      "category": "OOP Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "oop"
+      ],
+      "question": "Composition?",
+      "answer": "Composition means building a class using objects of other classes instead of inheriting from them. It represents a has-a relationship. It is often more flexible than inheritance because components can be changed independently.",
+      "keyPoints": [
+        "Has-a relationship.",
+        "Build from components.",
+        "Often more flexible than inheritance."
+      ]
+    },
+    {
+      "id": 204,
+      "category": "OOP Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "oop"
+      ],
+      "question": "Association?",
+      "answer": "Association is a general relationship between two classes where one object uses or knows about another. For example, a Teacher associated with Students. It does not necessarily imply ownership.",
+      "keyPoints": [
+        "General relationship.",
+        "No strict ownership.",
+        "Objects can exist independently."
+      ]
+    },
+    {
+      "id": 205,
+      "category": "OOP Questions",
+      "type": "Technical",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "oop"
+      ],
+      "question": "Aggregation?",
+      "answer": "Aggregation is a weak has-a relationship where the child can exist independently of the parent. For example, a Department has Professors, but professors can exist even if the department changes.",
+      "keyPoints": [
+        "Weak has-a.",
+        "Child can exist independently.",
+        "Less ownership than composition."
+      ]
+    },
+    {
+      "id": 206,
+      "category": "DSA Questions",
+      "type": "DSA",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "dsa"
+      ],
+      "question": "Reverse linked list",
+      "answer": "Use three pointers: previous, current and next. Iterate through the list, store current.next, reverse current.next to previous, move previous to current and current to next. At the end, previous becomes the new head.",
+      "keyPoints": [
+        "Three-pointer technique.",
+        "O(n) time.",
+        "O(1) extra space."
+      ]
+    },
+    {
+      "id": 207,
+      "category": "DSA Questions",
+      "type": "DSA",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "dsa"
+      ],
+      "question": "Two Sum",
+      "answer": "Use a HashMap to store numbers seen so far and their indices. For each number, compute target minus current number and check if it already exists in the map. This reduces brute force O(n^2) to O(n).",
+      "keyPoints": [
+        "HashMap for complements.",
+        "O(n) time.",
+        "Return pair indices/values."
+      ]
+    },
+    {
+      "id": 208,
+      "category": "DSA Questions",
+      "type": "DSA",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "dsa"
+      ],
+      "question": "LRU Cache",
+      "answer": "LRU Cache can be implemented with a HashMap plus doubly linked list. The map gives O(1) access to nodes, and the list maintains recent usage order. On get or put, move the item to the front; when capacity exceeds, remove the least recently used item from the tail.",
+      "keyPoints": [
+        "HashMap plus doubly linked list.",
+        "O(1) get/put.",
+        "Evict least recently used."
+      ]
+    },
+    {
+      "id": 209,
+      "category": "DSA Questions",
+      "type": "DSA",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "dsa"
+      ],
+      "question": "Binary Search",
+      "answer": "Binary search works on sorted data by repeatedly checking the middle element and eliminating half of the search space. It runs in O(log n). It is useful for exact search and boundary problems like first true or lower bound.",
+      "keyPoints": [
+        "Requires sorted/searchable monotonic space.",
+        "O(log n).",
+        "Careful with boundaries."
+      ]
+    },
+    {
+      "id": 210,
+      "category": "DSA Questions",
+      "type": "DSA",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "dsa"
+      ],
+      "question": "Merge intervals",
+      "answer": "Sort intervals by start time, then iterate and merge when the current interval overlaps the previous one. If it does not overlap, add it as a new interval. Sorting dominates the complexity at O(n log n).",
+      "keyPoints": [
+        "Sort by start.",
+        "Merge overlaps.",
+        "O(n log n)."
+      ]
+    },
+    {
+      "id": 211,
+      "category": "DSA Questions",
+      "type": "DSA",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "dsa",
+        "graph"
+      ],
+      "question": "BFS",
+      "answer": "BFS uses a queue and explores nodes level by level. It is useful for shortest path in unweighted graphs, level order traversal and finding minimum steps. Mark visited nodes to avoid cycles.",
+      "keyPoints": [
+        "Queue-based.",
+        "Level order.",
+        "Shortest path in unweighted graphs."
+      ]
+    },
+    {
+      "id": 212,
+      "category": "DSA Questions",
+      "type": "DSA",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "dsa",
+        "graph"
+      ],
+      "question": "DFS",
+      "answer": "DFS explores as deep as possible before backtracking. It can be implemented recursively or with a stack. It is useful for connected components, cycle detection, topological sorting and path exploration.",
+      "keyPoints": [
+        "Stack/recursion.",
+        "Deep exploration.",
+        "Useful for graph traversal."
+      ]
+    },
+    {
+      "id": 213,
+      "category": "DSA Questions",
+      "type": "DSA",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "dsa",
+        "graph"
+      ],
+      "question": "Topological sort",
+      "answer": "Topological sort orders nodes in a directed acyclic graph so every dependency comes before the dependent node. It can be done using DFS or Kahn's algorithm with indegrees. It is useful for course scheduling and build systems.",
+      "keyPoints": [
+        "Only for DAG.",
+        "Dependency order.",
+        "DFS or Kahn algorithm."
+      ]
+    },
+    {
+      "id": 214,
+      "category": "DSA Questions",
+      "type": "DSA",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "dsa"
+      ],
+      "question": "Sliding Window",
+      "answer": "Sliding window maintains a range over an array or string and moves the boundaries to avoid reprocessing. It is useful for subarray or substring problems, such as maximum sum of size k or longest substring without repeating characters.",
+      "keyPoints": [
+        "Maintain moving range.",
+        "O(n) for many substring/subarray problems.",
+        "Fixed or variable window."
+      ]
+    },
+    {
+      "id": 215,
+      "category": "DSA Questions",
+      "type": "DSA",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "dsa"
+      ],
+      "question": "Kadane",
+      "answer": "Kadane's algorithm finds the maximum subarray sum in O(n). At each index, decide whether to extend the previous subarray or start fresh from the current element. Track the best sum seen so far.",
+      "keyPoints": [
+        "Maximum subarray sum.",
+        "O(n) time.",
+        "Extend or restart decision."
+      ]
+    },
+    {
+      "id": 216,
+      "category": "DSA Questions",
+      "type": "DSA",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "dsa"
+      ],
+      "question": "Heap",
+      "answer": "A heap is a priority queue data structure. Min-heap gives the smallest element first, max-heap gives the largest. It is useful for top k elements, scheduling, merging sorted lists and shortest path algorithms.",
+      "keyPoints": [
+        "Priority queue.",
+        "Min or max element access.",
+        "Useful for top k and scheduling."
+      ]
+    },
+    {
+      "id": 217,
+      "category": "DSA Questions",
+      "type": "DSA",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "dsa"
+      ],
+      "question": "Trie",
+      "answer": "A Trie is a prefix tree used for strings. Each path represents characters, making prefix search efficient. It is useful for autocomplete, dictionary search and word prefix problems.",
+      "keyPoints": [
+        "Prefix tree.",
+        "Efficient prefix search.",
+        "Useful for autocomplete."
+      ]
+    },
+    {
+      "id": 218,
+      "category": "DSA Questions",
+      "type": "DSA",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "dsa",
+        "graph"
+      ],
+      "question": "Graph shortest path",
+      "answer": "For unweighted graphs, BFS gives shortest path. For weighted graphs with non-negative weights, Dijkstra is commonly used with a priority queue. If negative edges exist, Bellman-Ford may be needed.",
+      "keyPoints": [
+        "BFS for unweighted.",
+        "Dijkstra for non-negative weights.",
+        "Bellman-Ford for negative edges."
+      ]
+    },
+    {
+      "id": 219,
+      "category": "DSA Questions",
+      "type": "DSA",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "dsa",
+        "dp"
+      ],
+      "question": "Dynamic Programming basics",
+      "answer": "Dynamic programming is used when a problem has overlapping subproblems and optimal substructure. We store previous results using memoization or tabulation to avoid repeated computation. Common examples include Fibonacci, knapsack, longest common subsequence and grid path problems.",
+      "keyPoints": [
+        "Overlapping subproblems.",
+        "Optimal substructure.",
+        "Memoization or tabulation."
+      ]
+    },
+    {
+      "id": 220,
+      "category": "Behavioral Questions",
+      "type": "Behavioral",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "behavioral"
+      ],
+      "question": "Tell me about a conflict in a team.",
+      "answer": "In a team conflict, I would first understand the technical disagreement clearly instead of making it personal. During project work, if there is disagreement on approach, I prefer comparing options based on time, reliability and demo requirements. I communicate calmly, suggest a small proof of concept if needed, and align the team on the decision that best serves the project.",
+      "keyPoints": [
+        "Use calm communication.",
+        "Compare options objectively.",
+        "Focus on project outcome."
+      ]
+    },
+    {
+      "id": 221,
+      "category": "Behavioral Questions",
+      "type": "Behavioral",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "behavioral"
+      ],
+      "question": "Describe a failure.",
+      "answer": "A failure I learned from was spending too much time perfecting structure early in a project. It slowed initial progress. I learned to first build a clean working version, validate the flow and then improve architecture. This helped me perform better in hackathons where delivery time is strict.",
+      "keyPoints": [
+        "Own the mistake.",
+        "Explain lesson learned.",
+        "Show changed behavior."
+      ]
+    },
+    {
+      "id": 222,
+      "category": "Behavioral Questions",
+      "type": "Behavioral",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "hackathon",
+        "behavioral"
+      ],
+      "question": "Tight deadline experience?",
+      "answer": "The HackCrate Hackathon was a tight deadline experience. We had to build a working Sales Call Analytics Platform in a short time. I prioritized backend API flow, WebRTC signaling and LLM summary integration. By breaking the work into clear parts and focusing on demo-critical features first, we delivered a working system and won First Prize.",
+      "keyPoints": [
+        "Use HackCrate story.",
+        "Mention prioritization.",
+        "State result."
+      ]
+    },
+    {
+      "id": 223,
+      "category": "Behavioral Questions",
+      "type": "Behavioral",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "behavioral",
+        "sales"
+      ],
+      "question": "Biggest challenge?",
+      "answer": "My biggest challenge was integrating real-time WebRTC calling with AI-based call summarization in the Sales Analytics Platform. The risk was latency and complexity. I separated the real-time call flow from post-call AI processing so the call experience stayed smooth while summaries were generated asynchronously.",
+      "keyPoints": [
+        "Technical challenge.",
+        "Action taken.",
+        "Positive result."
+      ]
+    },
+    {
+      "id": 224,
+      "category": "Behavioral Questions",
+      "type": "Behavioral",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "leadership"
+      ],
+      "question": "Leadership example?",
+      "answer": "A leadership example is during hackathon work, where I took ownership of backend architecture and integration planning. I helped split responsibilities, defined API contracts and ensured the real-time and AI parts connected properly. Leadership for me is not only giving instructions; it is creating clarity and removing blockers.",
+      "keyPoints": [
+        "Ownership.",
+        "Clarity for team.",
+        "Remove blockers."
+      ]
+    },
+    {
+      "id": 225,
+      "category": "Behavioral Questions",
+      "type": "Behavioral",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "hackathon",
+        "sales"
+      ],
+      "question": "How did you win HackCrate?",
+      "answer": "We won HackCrate because we solved a practical business problem with a working implementation, not just a concept. Our Sales Analytics Platform included in-app WebRTC calling, lead management, call logging and AI-generated summaries. My contribution was mainly backend architecture, WebRTC signaling and LLM integration.",
+      "keyPoints": [
+        "Real problem.",
+        "Working implementation.",
+        "Clear individual contribution."
+      ]
+    },
+    {
+      "id": 226,
+      "category": "Behavioral Questions",
+      "type": "Behavioral",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "behavioral"
+      ],
+      "question": "What was your contribution?",
+      "answer": "My contribution was designing backend flow, building APIs, handling integration points and ensuring the system worked end to end. Depending on the project, this included authentication, MongoDB schemas, WebRTC signaling, OAuth integration, LLM prompts or vulnerability automation. I usually take ownership of the backend and integration-heavy parts.",
+      "keyPoints": [
+        "Backend ownership.",
+        "APIs and integrations.",
+        "End-to-end responsibility."
+      ]
+    },
+    {
+      "id": 227,
+      "category": "Behavioral Questions",
+      "type": "Behavioral",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "behavioral"
+      ],
+      "question": "Team size?",
+      "answer": "For team projects and hackathons, I worked in small teams where responsibilities had to be clear. I usually handled backend and integrations while coordinating API contracts with frontend teammates. Small teams taught me to communicate quickly and take ownership without waiting for detailed instructions.",
+      "keyPoints": [
+        "Small team collaboration.",
+        "Backend/integration role.",
+        "Clear communication."
+      ]
+    },
+    {
+      "id": 228,
+      "category": "Behavioral Questions",
+      "type": "Behavioral",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "behavioral"
+      ],
+      "question": "What would your teammates say about you?",
+      "answer": "My teammates would say I am dependable, calm under pressure and strong at structuring technical work. They would also say I take ownership of difficult integration parts and help convert ideas into a working system. I try to communicate clearly so frontend, backend and demo flow stay aligned.",
+      "keyPoints": [
+        "Dependable.",
+        "Calm under pressure.",
+        "Strong ownership."
+      ]
+    },
+    {
+      "id": 229,
+      "category": "Resume-Specific Questions",
+      "type": "Technical HR",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "mern"
+      ],
+      "question": "Why did you choose MERN stack?",
+      "answer": "I chose MERN because it allows JavaScript across the full stack, which improves development speed and consistency. React handles UI, Node and Express handle APIs, and MongoDB stores JSON-like data naturally. For my projects with evolving schemas and quick iteration, MERN was practical and productive.",
+      "keyPoints": [
+        "One language across stack.",
+        "React + Node + MongoDB fit.",
+        "Good for rapid full-stack development."
+      ]
+    },
+    {
+      "id": 230,
+      "category": "Resume-Specific Questions",
+      "type": "Technical HR",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "rest"
+      ],
+      "question": "Explain REST API design principles.",
+      "answer": "REST API design should use resource-based URLs, correct HTTP methods, stateless requests, proper status codes, validation, pagination and consistent error responses. Authentication and authorization should be enforced through middleware. APIs should be versioned when breaking changes are introduced.",
+      "keyPoints": [
+        "Resources and HTTP methods.",
+        "Stateless and consistent.",
+        "Validation, auth and versioning."
+      ]
+    },
+    {
+      "id": 231,
+      "category": "Resume-Specific Questions",
+      "type": "Technical HR",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "react",
+        "performance"
+      ],
+      "question": "How do you optimize React applications?",
+      "answer": "I optimize React apps by reducing unnecessary renders, splitting code by route, memoizing expensive calculations, lazy loading heavy components, optimizing images and keeping state close to where it is needed. I also use production builds and measure performance before adding optimization complexity.",
+      "keyPoints": [
+        "Reduce renders.",
+        "Code split/lazy load.",
+        "Measure before optimizing."
+      ]
+    },
+    {
+      "id": 232,
+      "category": "Resume-Specific Questions",
+      "type": "Technical HR",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "mongodb",
+        "safetrack"
+      ],
+      "question": "Why MongoDB for SafeTrack?",
+      "answer": "MongoDB fits SafeTrack because location events, SOS records, devices and notification metadata can be stored as flexible documents. It also supports indexing by child id and timestamp for location history. For geospatial needs, MongoDB geospatial indexes can help query nearby or boundary-related data.",
+      "keyPoints": [
+        "Flexible documents.",
+        "Index child/time fields.",
+        "Geospatial support."
+      ]
+    },
+    {
+      "id": 233,
+      "category": "Resume-Specific Questions",
+      "type": "Technical HR",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "websocket"
+      ],
+      "question": "Explain WebSockets.",
+      "answer": "WebSockets provide a persistent full-duplex connection between client and server. Unlike HTTP request-response, either side can send messages anytime after connection. They are useful for chat, live notifications, dashboards and real-time tracking. For scaling, multiple servers need pub/sub coordination like Redis.",
+      "keyPoints": [
+        "Persistent full-duplex connection.",
+        "Real-time updates.",
+        "Redis/pubsub for scaling."
+      ]
+    },
+    {
+      "id": 234,
+      "category": "Resume-Specific Questions",
+      "type": "Technical HR",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "oauth"
+      ],
+      "question": "Explain OAuth 2.0.",
+      "answer": "OAuth 2.0 is an authorization framework that lets an app access user resources from another service without collecting the user password. The user grants scopes, the app receives tokens, and the backend uses those tokens to call APIs such as Gmail or Calendar. It improves security because access is scoped and revocable.",
+      "keyPoints": [
+        "Authorization, not password sharing.",
+        "Scopes and tokens.",
+        "Used for Gmail/Calendar integration."
+      ]
+    },
+    {
+      "id": 235,
+      "category": "Resume-Specific Questions",
+      "type": "Technical HR",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "gmail"
+      ],
+      "question": "Explain Gmail API integration.",
+      "answer": "Gmail API integration starts with OAuth consent. After receiving tokens, the backend calls Gmail endpoints to list and fetch emails within allowed scopes. In my AI Task Agent, the email content is processed for task extraction, and the system stores only the metadata required for scheduling and duplicate prevention.",
+      "keyPoints": [
+        "OAuth first.",
+        "Fetch permitted emails.",
+        "Process and store minimal metadata."
+      ]
+    },
+    {
+      "id": 236,
+      "category": "Resume-Specific Questions",
+      "type": "Technical HR",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "kubernetes"
+      ],
+      "question": "Explain Kubernetes orchestration.",
+      "answer": "Kubernetes orchestration means managing containers automatically through pods, deployments, services and scaling rules. It keeps desired replicas running, routes traffic through services, supports rolling updates and can recover failed pods. It is useful when applications need reliable container deployment at scale.",
+      "keyPoints": [
+        "Pods and deployments.",
+        "Services route traffic.",
+        "Self-healing and rolling updates."
+      ]
+    },
+    {
+      "id": 237,
+      "category": "Resume-Specific Questions",
+      "type": "Technical HR",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "jenkins"
+      ],
+      "question": "Explain Jenkins workflow.",
+      "answer": "A Jenkins workflow starts when code is pushed. Jenkins checks out the code, installs dependencies, runs tests, builds the artifact or Docker image and deploys it to the target environment if all stages pass. The workflow is defined in a Jenkinsfile for repeatability.",
+      "keyPoints": [
+        "Trigger on code push.",
+        "Build/test/package/deploy.",
+        "Jenkinsfile controls pipeline."
+      ]
+    },
+    {
+      "id": 238,
+      "category": "Resume-Specific Questions",
+      "type": "Technical HR",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "machine-unlearning"
+      ],
+      "question": "Explain Machine Unlearning.",
+      "answer": "Machine unlearning makes a model forget specific data or users without complete retraining. In my Samsung PRISM work, it is applied to speech models so a speaker identity can be removed while preserving performance for others. It is important for privacy, GDPR-style deletion rights and efficient model maintenance.",
+      "keyPoints": [
+        "Selective forgetting.",
+        "Speaker identity removal.",
+        "Privacy and efficiency."
+      ]
+    },
+    {
+      "id": 239,
+      "category": "Resume-Specific Questions",
+      "type": "Technical HR",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "webrtc"
+      ],
+      "question": "Explain WebRTC architecture.",
+      "answer": "WebRTC architecture includes client browsers, a signaling server, STUN/TURN servers and peer connections. The signaling server exchanges SDP offers/answers and ICE candidates. STUN helps discover public network addresses, TURN relays media when direct connection fails, and then peer-to-peer media flows between clients.",
+      "keyPoints": [
+        "Signaling server.",
+        "STUN/TURN and ICE.",
+        "Peer-to-peer media flow."
+      ]
+    },
+    {
+      "id": 240,
+      "category": "Resume-Specific Questions",
+      "type": "Technical HR",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "geofence"
+      ],
+      "question": "Explain geofencing.",
+      "answer": "Geofencing creates a virtual boundary around a real-world location. The system stores center coordinates and radius, calculates the device distance from that center and triggers entry or exit alerts. GPS accuracy and noisy readings must be handled to avoid false alerts.",
+      "keyPoints": [
+        "Virtual location boundary.",
+        "Center plus radius.",
+        "Handle GPS noise."
+      ]
+    },
+    {
+      "id": 241,
+      "category": "Resume-Specific Questions",
+      "type": "Technical HR",
+      "difficulty": "Must Prepare",
+      "priority": true,
+      "tags": [
+        "llm"
+      ],
+      "question": "Explain LLM integration.",
+      "answer": "LLM integration means sending structured input to a language model and using the output inside an application workflow. In my projects, I use prompts that request structured JSON for summaries or task extraction, then validate that output in the backend before saving or acting on it. The key is reliability, not just generating text.",
+      "keyPoints": [
+        "Structured prompts.",
+        "JSON output and validation.",
+        "Used for summaries/task extraction."
+      ]
+    },
+    {
+      "id": 242,
+      "category": "Resume-Specific Questions",
+      "type": "Technical HR",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "docker"
+      ],
+      "question": "Explain Docker networking.",
+      "answer": "Docker networking lets containers communicate securely. In Docker Compose, services on the same network can call each other by service name, such as backend connecting to mongodb. Port mapping exposes selected container ports to the host. Networks isolate services that should not be public.",
+      "keyPoints": [
+        "Service-name communication.",
+        "Port mapping.",
+        "Network isolation."
+      ]
+    },
+    {
+      "id": 243,
+      "category": "Resume-Specific Questions",
+      "type": "Technical HR",
+      "difficulty": "Common",
+      "priority": false,
+      "tags": [
+        "security",
+        "cve"
+      ],
+      "question": "Explain CVE monitoring.",
+      "answer": "CVE monitoring continuously checks vulnerability feeds like NVD for known issues affecting installed software or dependencies. The system matches product names and versions, calculates severity and alerts or patches based on priority. It helps teams respond before vulnerabilities are exploited.",
+      "keyPoints": [
+        "Monitor vulnerability feeds.",
+        "Match products and versions.",
+        "Prioritize alerts and patches."
+      ]
+    }
+  ]
+}
